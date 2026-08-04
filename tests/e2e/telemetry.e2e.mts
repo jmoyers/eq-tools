@@ -3,9 +3,9 @@
  *
  * WHY IT IS AN E2E SPEC AND NOT A UNIT TEST: every promise this feature makes is a SEAM.
  *   - "the notice is shown before anything could be sent" crosses the store, a migration, an
- *     IPC handler, App.tsx and a MUI Dialog. Only the real app can show the modal appearing on
+ *     IPC handler, App.tsx and a MUI Snackbar. Only the real app can show the bar appearing on
  *     a genuinely fresh userData.
- *   - "Turn it off persists" is a claim about a FILE surviving a process, so it is asserted the
+ *   - "Opt out persists" is a claim about a FILE surviving a process, so it is asserted the
  *     only way that means anything: two launches against the same userData dir.
  *   - "the build sends nothing" is a property of the BUILD, and the running app is where that
  *     property is observable end to end (`endpointConfigured:false`, and the pane saying so).
@@ -40,7 +40,9 @@ import {
 } from './appHarness.mjs'
 
 const NOTICE = '[data-testid="telemetry-notice"]'
-const KEEP = '[data-testid="telemetry-notice-on"]'
+const TEXT = '[data-testid="telemetry-notice-text"]'
+const DETAILS = '[data-testid="telemetry-notice-details"]'
+const DISMISS = '[data-testid="telemetry-notice-dismiss"]'
 const OFF = '[data-testid="telemetry-notice-off"]'
 const PANE = '[data-testid="pref-telemetry"]'
 const SWITCH = '[data-testid="pref-telemetry-enabled"] input'
@@ -88,83 +90,131 @@ function launch(): Promise<ElectronApplication> {
 /**
  * THE T1 ASSERTION. Opt-out is only honest if the telling comes first, so the notice must appear
  * on a genuinely fresh install — and `noticeShown` is the flag main's network gate reads, so a
- * missing modal is not a cosmetic bug, it is the gate never being opened legitimately.
+ * missing bar is not a cosmetic bug, it is the gate never being opened legitimately.
+ *
+ * T1 AMENDED (2026-08-04, owner): the notice is a slim BOTTOM BAR, not a modal. So the copy
+ * assertion is now an assertion of BREVITY — one sentence, no list, no second paragraph. The
+ * explanation lives in Preferences and TELEMETRY.md; a consent wall the user clicks through to
+ * reach the app buys agreement, not understanding.
  */
 async function stepNoticeShown(page: Page): Promise<boolean> {
   await page.waitForSelector(NOTICE, { timeout: 30_000 })
   const shown = await countOf(page, NOTICE)
-  if (!check('the first-run notice renders on a fresh install', shown === 1, `${String(shown)} modal(s)`)) {
+  if (!check('the first-run notice renders on a fresh install', shown === 1, `${String(shown)} bar(s)`)) {
     return false
   }
-  const body = (await textOf(page, NOTICE)).replace(/\s+/g, ' ')
+  const sentence = (await textOf(page, TEXT)).replace(/\s+/g, ' ').trim()
   check(
-    'it states what is collected, in plain language, before anything could be sent',
-    /which tabs you open/i.test(body) && /counts/i.test(body),
-    body.slice(0, 110)
+    'it says what it does, in one sentence, before anything could be sent',
+    sentence === 'We collect completely anonymous usage data.',
+    sentence.slice(0, 110)
   )
+  // …and NOTHING else. The whole bar — sentence plus the three action labels — has to stay
+  // shorter than the first paragraph of the modal this replaced.
+  const body = (await textOf(page, NOTICE)).replace(/\s+/g, ' ').trim()
   check(
-    '…and what it can never contain — by shape, not by policy',
-    /no free-text field/i.test(body) && /character/i.test(body),
-    /no free-text field/i.test(body) ? 'present' : 'the "can never contain" paragraph is missing'
+    'no second paragraph, no list — the amended T1 shape',
+    body.length <= 80 && (await countOf(page, `${NOTICE} li`)) === 0,
+    `${String(body.length)} chars: ${body}`
   )
-  // The dark-build fact, in the modal itself: today this asks permission for something that
-  // physically cannot happen yet, and saying so is the honest version of asking.
-  check(
-    'it says this build sends nothing anywhere at all',
-    (await countOf(page, '[data-testid="telemetry-notice-dark"]')) === 1 &&
-      /nothing is being sent/i.test(body)
-  )
-  check('…and that closing the window keeps it on (dismissal is not a silent opt-out)', /closing this window keeps it on/i.test(body))
   return true
 }
 
 /**
- * EQUAL PROMINENCE, measured. The usual way this pattern is dishonest is a big coloured "Keep
- * it on" beside a grey text link — so the two buttons are compared as BOXES: same height, same
- * font size, same variant class. A design that promotes one of them fails here.
+ * THE SHAPE OF THE BAR, measured. The way this pattern goes dishonest once the wall of text is
+ * gone is by BURYING the opt-out — a plain "Details" link beside a grey whisper of an opt-out,
+ * or an opt-out hidden behind the Details page. So: opt out is a real button, and it is never
+ * smaller than the Details link beside it.
  */
-async function stepEqualProminence(page: Page): Promise<void> {
+async function stepBarShape(page: Page): Promise<void> {
   // NO named function bindings inside this callback: tsx/esbuild `keepNames` wraps
   // `const f = (…) => …` in a `__name` helper that lives in the NODE bundle, and Playwright
   // ships only the callback's source to the page — so the evaluated code throws
   // `__name is not defined`. Anonymous callbacks passed straight to .map are the one shape
   // that stays unwrapped (appHarness.mts learned this the hard way).
-  const pair = await page.evaluate(
+  const els = await page.evaluate(
     (sels) =>
       sels.map((s) => {
         const el = document.querySelector(s) as HTMLElement | null
         if (!el) return null
-        return {
-          h: Math.round(el.getBoundingClientRect().height),
-          fs: getComputedStyle(el).fontSize,
-          // MUI encodes variant/colour in class names; comparing the sorted Mui-* set catches
-          // a `variant="contained"` or `color="primary"` promotion without pinning a stylesheet.
-          cls: [...el.classList].filter((c) => c.startsWith('Mui')).sort().join(' ')
-        }
+        const r = el.getBoundingClientRect()
+        return { h: Math.round(r.height), fs: parseFloat(getComputedStyle(el).fontSize), tag: el.tagName }
       }),
-    [KEEP, OFF]
+    [OFF, DETAILS, DISMISS]
   )
-  if (!check('both answers are rendered as buttons', pair[0] != null && pair[1] != null)) return
-  const on = pair[0] as { h: number; fs: string; cls: string }
-  const off = pair[1] as { h: number; fs: string; cls: string }
+  if (
+    !check(
+      'the bar carries all three exits: Opt out, Details, dismiss',
+      els.every((e) => e != null),
+      JSON.stringify(els)
+    )
+  ) {
+    return
+  }
+  const off = els[0] as { h: number; fs: number; tag: string }
+  const details = els[1] as { h: number; fs: number; tag: string }
   check(
-    'the two answers have EQUAL prominence — same size, same weight, same variant',
-    Math.abs(on.h - off.h) <= 2 && on.fs === off.fs && on.cls === off.cls,
-    `keep ${String(on.h)}px/${on.fs} vs off ${String(off.h)}px/${off.fs}`
+    'Opt out is a BUTTON, never smaller than the Details link beside it',
+    off.tag === 'BUTTON' && off.fs >= details.fs && off.h >= details.h,
+    `off ${String(off.h)}px/${String(off.fs)} vs details ${String(details.h)}px/${String(details.fs)}`
   )
   check(
-    '…and nothing is pre-checked: the notice is two buttons, not a form',
-    (await countOf(page, `${NOTICE} input[type="checkbox"]`)) === 0
+    '…and nothing is pre-checked: the notice is actions, not a form',
+    (await countOf(page, `${NOTICE} input`)) === 0
+  )
+  // A bar, not a panel: it may not eat the app. Anything taller than ~1/5 of the window is a
+  // modal wearing a bar's clothes.
+  const tall = await page.evaluate((sel) => {
+    const el = document.querySelector(sel) as HTMLElement | null
+    return el ? el.getBoundingClientRect().height / window.innerHeight : 1
+  }, NOTICE)
+  check('it is a slim bar — it does not take the window over', tall < 0.2, `${(tall * 100).toFixed(0)}% of the window`)
+}
+
+/**
+ * DISMISSAL KEEPS IT ON — the honest half of opt-out, and the one most easily got wrong. The X
+ * must mark the question ASKED (so it is never asked twice) while leaving collection running,
+ * because that is exactly what "on by default, and we told you" means.
+ */
+async function stepDismissKeepsOn(page: Page): Promise<void> {
+  await page.click(DISMISS)
+  await sleep(600)
+  check('dismissing closes the bar', (await countOf(page, NOTICE)) === 0)
+  const p = await payload(page)
+  check('dismissal KEEPS collection on — it is not a silent opt-out', p.prefs.enabled === true, JSON.stringify(p.prefs))
+  check(
+    '…and still marks the notice shown, so it is a once-ever question',
+    p.prefs.noticeShown === true,
+    JSON.stringify(p.prefs)
   )
 }
 
-/** Turning it off must take effect NOW: the pref flips and the local buffer is dropped. */
-async function stepTurnOff(page: Page): Promise<void> {
+/**
+ * "DETAILS" IS THE REST OF THE SENTENCE. The bar is one line precisely because the explanation
+ * lives somewhere a curious user can reach in one click — so that click is asserted to LAND, on
+ * the pane that holds the switch, the id and the live payload. Reading is not consenting to
+ * anything new, so it answers the notice the same way dismissal does: still on, still asked.
+ */
+async function stepDetailsOpensPane(page: Page): Promise<void> {
+  await page.click(DETAILS)
+  await page.waitForSelector(PANE, { timeout: 15_000 }).catch(() => undefined)
+  check('“Details” closes the bar', (await countOf(page, NOTICE)) === 0)
+  check('…and lands on Preferences → Usage analytics', (await countOf(page, PANE)) === 1)
+  const p = await payload(page)
+  check(
+    '…and reading is not answering twice: collection stays on, the question is marked asked',
+    p.prefs.enabled === true && p.prefs.noticeShown === true,
+    JSON.stringify(p.prefs)
+  )
+}
+
+/** Opting out must take effect NOW: the pref flips and the local buffer is dropped. */
+async function stepOptOut(page: Page): Promise<void> {
   await page.click(OFF)
   await sleep(600)
-  check('answering dismisses the notice', (await countOf(page, NOTICE)) === 0)
+  check('answering closes the bar', (await countOf(page, NOTICE)) === 0)
   const p = await payload(page)
-  check('“Turn it off” switches collection off', p.prefs.enabled === false, JSON.stringify(p.prefs))
+  check('“Opt out” switches collection off', p.prefs.enabled === false, JSON.stringify(p.prefs))
   check(
     '…and marks the notice shown either way, so it is a once-ever question',
     p.prefs.noticeShown === true
@@ -185,7 +235,7 @@ async function stepTurnOff(page: Page): Promise<void> {
   )
 }
 
-// ---- launch 2: the restart ------------------------------------------------------------------
+// ---- launch 3: the restart -------------------------------------------------------------------
 
 /** THE PERSISTENCE ASSERTION — a real second process against the same userData dir. */
 async function stepPersisted(page: Page): Promise<void> {
@@ -276,52 +326,70 @@ async function stepCollects(page: Page): Promise<void> {
   )
 }
 
-async function main(): Promise<void> {
-  buildIfStale()
-  // A genuinely fresh install — the whole first half of this spec is about what happens on one.
-  rmSync(USER_DATA, { recursive: true, force: true })
+/** Every launch collects renderer errors the same way — a missing IPC handler surfaces here. */
+function watch(page: Page, consoleErrors: string[]): void {
+  page.on('console', (m) => {
+    if (m.type() === 'error') consoleErrors.push(m.text())
+  })
+  page.on('pageerror', (e) => consoleErrors.push(String(e)))
+}
 
-  console.log('launch 1: hidden Electron (EQ_E2E=1), fresh userData — Telemetry spec…')
-  let app: ElectronApplication = await launch()
-  let page: Page | null = null
-  const consoleErrors: string[] = []
+/**
+ * ONE FIRST RUN, wiped userData and all — because the notice is once-ever, and each of its
+ * three exits therefore needs an install of its own rather than a second click on a bar that
+ * is already gone.
+ */
+async function firstRun(
+  label: string,
+  errors: string[],
+  step: (p: Page) => Promise<void>
+): Promise<void> {
+  rmSync(USER_DATA, { recursive: true, force: true })
+  console.log(label)
+  const app = await launch()
   try {
-    page = await app.firstWindow({ timeout: 60_000 })
-    page.on('console', (m) => {
-      if (m.type() === 'error') consoleErrors.push(m.text())
-    })
-    page.on('pageerror', (e) => consoleErrors.push(String(e)))
-    if (await stepNoticeShown(page)) {
-      await stepEqualProminence(page)
-      await stepTurnOff(page)
-    }
-    if (failures.length) await dumpArtifacts(page, 'telemetry-FAIL-1')
+    const page = await app.firstWindow({ timeout: 60_000 })
+    watch(page, errors)
+    if (await stepNoticeShown(page)) await step(page)
+    if (failures.length) await dumpArtifacts(page, `telemetry-FAIL-${label.split(':')[0].replace(/\s+/g, '-')}`)
   } finally {
     await app.close().catch(() => undefined)
   }
+}
 
-  // THE RESTART. Same userData dir, new process: the only way "it persists" means anything.
-  console.log('launch 2: same userData — does the answer survive a restart…')
-  app = await launch()
+/**
+ * Three fresh installs, one per exit — dismiss, Details, Opt out — and then the RESTART, which
+ * runs on the userData the opt-out left behind so "it persists" means a real second process.
+ */
+async function main(): Promise<void> {
+  buildIfStale()
+  const consoleErrors: string[] = []
+
+  await firstRun('launch 1: hidden Electron (EQ_E2E=1), fresh userData — the bar, and dismissing it…', consoleErrors, async (page) => {
+    await stepBarShape(page)
+    await stepDismissKeepsOn(page)
+  })
+  await firstRun('launch 2: fresh userData — the Details link…', consoleErrors, stepDetailsOpensPane)
+  await firstRun('launch 3: fresh userData — opting out…', consoleErrors, stepOptOut)
+
+  console.log('launch 4: same userData as launch 3 — does the answer survive a restart…')
+  const app = await launch()
   try {
-    page = await app.firstWindow({ timeout: 60_000 })
-    page.on('console', (m) => {
-      if (m.type() === 'error') consoleErrors.push(m.text())
-    })
-    page.on('pageerror', (e) => consoleErrors.push(String(e)))
+    const page = await app.firstWindow({ timeout: 60_000 })
+    watch(page, consoleErrors)
     await page.waitForSelector('[data-testid="nav-preferences"]', { timeout: 60_000 })
     await sleep(1_000)
     await stepPersisted(page)
     await stepPane(page)
     await stepCollects(page)
-    if (failures.length) await dumpArtifacts(page, 'telemetry-FAIL-2')
+    if (failures.length) await dumpArtifacts(page, 'telemetry-FAIL-restart')
   } finally {
     await app.close().catch(() => undefined)
   }
 
   // A missing IPC handler shows up here first (`invoke` rejects into an unhandled rejection).
   check('no renderer console errors', consoleErrors.length === 0, consoleErrors.slice(0, 3).join(' | '))
-  if (consoleErrors.length === 0) note('two launches, one userData dir — the persistence claim is a real restart')
+  if (consoleErrors.length === 0) note('four launches, three fresh installs — the persistence claim is a real restart')
 
   reportRun()
 }

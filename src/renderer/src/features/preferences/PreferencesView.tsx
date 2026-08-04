@@ -433,13 +433,17 @@ function PrefSearch({
 }
 
 export default function PreferencesView({
-  onSendFeedback
+  onSendFeedback,
+  section = null
 }: {
   onSendFeedback: OpenFeedback
+  /** A deep link's landing section, or null for the usual one. App KEYS this component on it,
+   *  so an arriving link paints its section on the first frame and needs no effect here. */
+  section?: string | null
 }): JSX.Element {
   const [query, setQuery] = useState('')
   const deferred = useDeferredValue(query)
-  const [active, setActive] = useState('game')
+  const [active, setActive] = useState(section ?? 'game')
   const [version, setVersion] = useState('')
   const status = useUpdateStatus()
 

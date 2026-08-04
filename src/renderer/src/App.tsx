@@ -141,6 +141,35 @@ function useAppRouting(setView: (v: View) => void): AppRouting {
 }
 
 /**
+ * A deep link INTO a Preferences section. No nonce: PreferencesView is KEYED on the section, so
+ * asking for one always lands there — even from Preferences itself. The request is dropped the
+ * moment the user leaves the view, so a later plain visit opens on the usual section rather
+ * than wherever the last link pointed.
+ *
+ * Today's only caller is the first-run telemetry notice's "Details" link (plan T1): the notice
+ * is one sentence, and this is where the rest of that sentence lives.
+ */
+interface PrefsRouting {
+  section: string | null
+  openSection: (id: string) => void
+}
+
+function usePrefsRouting(view: View, setView: (v: View) => void): PrefsRouting {
+  const [section, setSection] = useState<string | null>(null)
+  useEffect(() => {
+    if (view !== 'preferences') setSection(null)
+  }, [view])
+  const openSection = useCallback(
+    (id: string) => {
+      setSection(id)
+      setView('preferences')
+    },
+    [setView]
+  )
+  return { section, openSection }
+}
+
+/**
  * The views that take NOTHING but a remount key — split out of `ViewContent` purely as
  * factoring: the switch is one branch per view, so every view added to the app costs the
  * enclosing function a point of cyclomatic complexity, and the routed views (the ones carrying
@@ -171,7 +200,8 @@ function ViewContent({
   onOpenPreferences,
   onOpenLoot,
   onOpenLeveling,
-  onSendFeedback
+  onSendFeedback,
+  prefs
 }: {
   view: View
   hasCharacters: boolean
@@ -185,8 +215,14 @@ function ViewContent({
    *  `onOpenLoot` rather than in `AppRouting`: that hook is for DEEP links, and its nonce
    *  machinery exists to re-deliver a PAYLOAD. This destination carries none. */
   onOpenLeveling: () => void
+  /** Which Preferences section a deep link asked for, and the way to retire that request. */
+  prefs: PrefsRouting
 }): JSX.Element {
-  if (view === 'preferences') return <PreferencesView onSendFeedback={onSendFeedback} />
+  if (view === 'preferences') {
+    return (
+      <PreferencesView key={prefs.section ?? 'prefs'} onSendFeedback={onSendFeedback} section={prefs.section} />
+    )
+  }
   // DEV-ONLY, and ABOVE the no-characters gate on purpose: the triage tab reads the cloud
   // backlog, not the game log, so a machine with no EverQuest install must still reach it.
   if (DEV_TOOLS && view === 'triage') return <DevTriageView />
@@ -348,6 +384,7 @@ export default function App(): JSX.Element {
   const feedback = useFeedbackDialog()
 
   const routing = useAppRouting(setView)
+  const prefsRouting = usePrefsRouting(view, setView)
   const { openMob } = routing
 
   useAppCelebrations(setDefeatToast, setQuestToast)
@@ -435,6 +472,7 @@ export default function App(): JSX.Element {
               hasCharacters={characters.length > 0}
               viewKey={viewKey}
               routing={routing}
+              prefs={prefsRouting}
               onOpenPreferences={() => setView('preferences')}
               onOpenLoot={() => setView('loot')}
               onOpenLeveling={() => setView('leveling')}
@@ -459,10 +497,11 @@ export default function App(): JSX.Element {
           (which reloads and lands a prefilled bug — see useFeedbackDialog). */}
       <FeedbackDialog open={feedback.open} onClose={feedback.close} prefill={feedback.prefill} />
 
-      {/* The first-run usage-analytics notice (plan T1). Renders nothing once answered — which
-          is every launch after the first — and is the ONLY thing that sets `noticeShown`, the
-          flag main's network gate requires. Nothing may be transmitted before it has shown. */}
-      <TelemetryNotice />
+      {/* The first-run usage-analytics notice (plan T1) — a slim bottom bar, not a modal.
+          Renders nothing once answered — which is every launch after the first — and is the
+          ONLY thing that sets `noticeShown`, the flag main's network gate requires. Nothing
+          may be transmitted before it has shown. */}
+      <TelemetryNotice onOpenDetails={() => prefsRouting.openSection('analytics')} />
     </Box>
   )
 }
