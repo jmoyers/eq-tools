@@ -33,7 +33,9 @@ import LinkIcon from '@mui/icons-material/Link'
 import { skyQuestPage, wikiPageUrl } from '@shared/wiki'
 import type { QuestProgress } from './useProgress'
 import { ItemTooltip } from './ItemTooltip'
-import { DropperCell } from './DropperCell'
+import { DropperCell, KillTargetCaption } from './DropperCell'
+import { questKillTargets, type KillTarget } from './poskyDroppers'
+import type { MobTarget } from '../mobs/mobTarget'
 import { sharingQuestLabel, type SharedItem } from './sharedItems'
 import { FavoriteStar } from '../favorites/FavoriteStar'
 import { QuestIgnoreButton, QuestStarButton } from '../favorites/QuestFlagButtons'
@@ -106,16 +108,18 @@ function SharedItemsSection({
   )
 }
 
-// The collapsed header line: flags, class, name/reward/giver, the contested-items count, the
-// ready/missing chip and the progress bar.
+// The collapsed header line: flags, class, name/reward/giver/kill target, the contested-items
+// count, the ready/missing chip and the progress bar.
 function QuestSummaryRow({
   q,
+  killTargets,
   sharedCount,
   favorited,
   onToggleFavorite,
   onToggleIgnore
 }: {
   q: QuestProgress
+  killTargets: KillTarget[]
   sharedCount: number
   favorited: boolean
   onToggleFavorite: () => void
@@ -145,6 +149,9 @@ function QuestSummaryRow({
             Turn in → {q.giver}
           </Typography>
         )}
+        {/* Variable-height box already (reward and giver are each optional), so a third
+            caption line costs the row nothing it wasn't already prepared to pay. */}
+        <KillTargetCaption targets={killTargets} />
       </Box>
       <Box sx={{ flexGrow: 1 }} />
       {sharedCount > 0 && (
@@ -263,11 +270,13 @@ function QuestDetailsToolbar({
 function QuestItemsTable({
   q,
   isFavorite,
-  toggleFavorite
+  toggleFavorite,
+  onOpenMob
 }: {
   q: QuestProgress
   isFavorite: (name: string) => boolean
   toggleFavorite: (name: string) => void
+  onOpenMob: (t: MobTarget) => void
 }): JSX.Element {
   return (
     <Table size="small">
@@ -303,7 +312,12 @@ function QuestItemsTable({
                 {it.have}/{it.need}
               </TableCell>
               <TableCell sx={{ color: 'text.secondary' }}>
-                <DropperCell droppers={it.droppers} who={it.who} />
+                <DropperCell
+                  droppers={it.droppers}
+                  who={it.who}
+                  where={it.where}
+                  onOpenMob={onOpenMob}
+                />
               </TableCell>
               <TableCell sx={{ color: 'text.secondary' }}>{it.where}</TableCell>
             </TableRow>
@@ -324,7 +338,8 @@ export function QuestAccordion({
   isFavorite,
   toggleFavorite,
   onSetComplete,
-  onSelectQuest
+  onSelectQuest,
+  onOpenMob
 }: {
   q: QuestProgress
   shared: SharedItem[]
@@ -336,14 +351,19 @@ export function QuestAccordion({
   toggleFavorite: (name: string) => void
   onSetComplete: (complete: boolean) => void
   onSelectQuest: (name: string) => void
+  /** a dropper name → the Mobs tab's page for that catalog row (App-level routing) */
+  onOpenMob: (t: MobTarget) => void
 }): JSX.Element {
   const wikiHref = wikiClassPage(q.className)
+  // A turned-in quest has nothing left to kill for, whatever its item counts say.
+  const killTargets = q.completed ? [] : questKillTargets(q.items)
   return (
     <Accordion disableGutters>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Stack spacing={0.75} sx={{ width: '100%', pr: 2 }}>
           <QuestSummaryRow
             q={q}
+            killTargets={killTargets}
             sharedCount={shared.length}
             favorited={favorited}
             onToggleFavorite={onToggleFavorite}
@@ -362,7 +382,12 @@ export function QuestAccordion({
         {shared.length > 0 && (
           <SharedItemsSection shared={shared} ambiguousNames={ambiguousNames} onSelectQuest={onSelectQuest} />
         )}
-        <QuestItemsTable q={q} isFavorite={isFavorite} toggleFavorite={toggleFavorite} />
+        <QuestItemsTable
+          q={q}
+          isFavorite={isFavorite}
+          toggleFavorite={toggleFavorite}
+          onOpenMob={onOpenMob}
+        />
       </AccordionDetails>
     </Accordion>
   )

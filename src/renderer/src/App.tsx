@@ -140,7 +140,6 @@ function useAppRouting(setView: (v: View) => void): AppRouting {
 function PlainView({ view, viewKey }: { view: View; viewKey: string }): JSX.Element {
   return (
     <>
-      {view === 'posky' && <PoskyView key={viewKey} />}
       {view === 'loot' && <LootView key={viewKey} />}
       {/* Maps remounts per character rebuild like the rest: the zone it auto-opens comes from
           the character module, which re-hydrates under the new character anyway. */}
@@ -193,6 +192,10 @@ function ViewContent({
         />
       )}
       {view === 'bosses' && <BossView key={viewKey} onOpenMob={routing.openMob} />}
+      {/* Sky quest items name the mob that drops them, so the tracker links out to the Mobs
+          tab exactly the way the boss roster does. It keeps its remount `key`: the deep link
+          runs the other way (out of posky), so there is no payload to preserve across one. */}
+      {view === 'posky' && <PoskyView key={viewKey} onOpenMob={routing.openMob} />}
       {view === 'overview' && (
         <OverviewView
           key={viewKey}

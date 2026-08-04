@@ -29,11 +29,17 @@ import {
   dropperFacts,
   dropperLabel,
   droppersFor,
+  islandLabel,
+  islandOf,
   isSkyMob,
+  killTargetFacts,
+  killTargetLabel,
   mergeDroppers,
+  questKillTargets,
   skyDroppersFor,
   statedDroppers,
-  type DropperMob
+  type DropperMob,
+  type KillTargetItem
 } from '../src/renderer/src/features/posky/poskyDroppers'
 import mobsRaw from '../src/renderer/src/data/eqlegends/mobs.json' with { type: 'json' }
 import poskyRaw from '../src/renderer/src/data/eqlegends/posky.json' with { type: 'json' }
@@ -47,6 +53,29 @@ const FULL_INDEX = buildDropperIndex(MOBS)
 const FULL_NAMES = buildMobNameIndex(MOBS)
 
 const names = (ds: readonly DropperMob[]): string[] => ds.map((d) => d.name)
+
+/** A hand-built dropper, catalog row and all (the row is what a click routes with). */
+const dropper = (name: string, zones: string[] = ['Plane of Sky']): DropperMob => ({
+  name,
+  page: name,
+  zones,
+  entry: { page: name, name, zones }
+})
+
+/** One quest's item rows as the tracker computes them: what it needs, what it has, where. */
+const questRows = (q: PoskyQuest, have: Record<string, number> = {}): KillTargetItem[] =>
+  q.items.map((it) => ({
+    need: it.count > 0 ? it.count : 1,
+    have: have[it.name] ?? 0,
+    where: it.where,
+    droppers: skyDroppersFor(it.name, it.who)
+  }))
+
+const questByName = (className: string, name: string): PoskyQuest => {
+  const q = QUESTS.find((x) => x.className === className && x.name === name)
+  assert.ok(q, `quest not found: ${className} / ${name}`)
+  return q
+}
 
 // =============================================================================
 // 1. The join works: a Sky item names its boss
@@ -147,8 +176,8 @@ test('statedDroppers is case/whitespace tolerant and de-dupes repeats', () => {
 })
 
 test('mergeDroppers keeps layer 1 first and de-dupes by page', () => {
-  const a: DropperMob = { name: 'A', page: 'A', zones: ['Plane of Sky'] }
-  const b: DropperMob = { name: 'B', page: 'B', zones: ['Plane of Sky'] }
+  const a = dropper('A')
+  const b = dropper('B')
   assert.deepEqual(names(mergeDroppers([b], [a, b])), ['B', 'A'])
   assert.deepEqual(names(mergeDroppers([], [a, b])), ['A', 'B'])
 })
@@ -261,5 +290,144 @@ test('every resolved dropper lives in the Plane of Sky and is a real catalog row
         assert.ok(isSkyMob(d), `${d.name} is not in the Plane of Sky`)
       }
     }
+  }
+})
+
+test('a resolved dropper carries its catalog ROW — what a click routes to MobPage with', () => {
+  const [lord] = skyDroppersFor('Ceremonial Belt')
+  // The whole row, not a projection of it: `MobTarget.entry` pins the page this item's loot
+  // list actually came from (a name alone can name several pages, so a name-only link would
+  // let the destination resolve a different one).
+  assert.deepEqual(lord.entry, MOBS.find((m) => m.page === lord.page))
+  assert.equal(lord.entry.name, lord.name)
+  assert.ok((lord.entry.drops ?? []).includes('Ceremonial Belt'))
+})
+
+// =============================================================================
+// 8. The ISLAND — posky's own stated `where`, never prose, never inferred
+// =============================================================================
+
+test('islandOf reads an island NUMBER out of the stated where, and nothing else', () => {
+  assert.equal(islandOf('Island 3'), 'Island 3')
+  assert.equal(islandOf('island 7'), 'Island 7') // normalized
+  // "Plane of Sky" is the wind runes' honest "anywhere" — it is NOT an island.
+  assert.equal(islandOf('Plane of Sky'), undefined)
+  assert.equal(islandOf(''), undefined)
+  assert.equal(islandOf(undefined), undefined)
+})
+
+test('the committed posky.json states an island for every non-rune item row it can', () => {
+  // The three shapes the field actually holds today — the reason the matcher is this narrow.
+  const shapes = new Map<string, number>()
+  for (const q of QUESTS)
+    for (const it of q.items) {
+      const k = islandOf(it.where) ? 'island' : it.where.trim() === '' ? 'blank' : it.where
+      shapes.set(k, (shapes.get(k) ?? 0) + 1)
+    }
+  assert.deepEqual([...shapes.keys()].sort(), ['Plane of Sky', 'blank', 'island'])
+  assert.ok((shapes.get('island') ?? 0) >= 103, `island rows: ${shapes.get('island')}`)
+  // Every "Plane of Sky" row is a wind rune, which is why it resolves to no island.
+  for (const q of QUESTS)
+    for (const it of q.items)
+      if (it.where === 'Plane of Sky')
+        assert.ok(it.name.toLowerCase().startsWith('wind rune'), `not a rune: ${it.name}`)
+})
+
+test('islandLabel de-dupes, sorts NUMERICALLY and never invents a range', () => {
+  assert.equal(islandLabel([]), '')
+  assert.equal(islandLabel(['Island 3']), 'Island 3')
+  assert.equal(islandLabel(['Island 3', 'Island 3']), 'Island 3')
+  // A list, not "3–6": islands 4 and 5 are not part of this quest and must not read as if.
+  assert.equal(islandLabel(['Island 6', 'Island 3']), 'Islands 3, 6')
+  // String sort would put 10 before 2.
+  assert.equal(islandLabel(['Island 10', 'Island 2']), 'Islands 2, 10')
+})
+
+// =============================================================================
+// 9. The QUEST-level kill set — the collapsed summary row's caption
+// =============================================================================
+
+test('a quest names the mob AND the island for the items it still needs', () => {
+  // Bard Test of Tone: Light Woolen Mask (Gorgalosk, Island 3) + Wind Rune Meda (random drop).
+  const q = questByName('Bard', 'Bard Test of Tone')
+  const targets = questKillTargets(questRows(q))
+  assert.deepEqual(
+    targets.map((t) => [t.mob.name, t.covers, t.islands]),
+    [['Gorgalosk', 1, ['Island 3']]]
+  )
+  assert.equal(killTargetLabel(targets), 'Kill: Gorgalosk · Island 3')
+  assert.equal(killTargetFacts(targets[0]), 'Gorgalosk · level 60 · Plane of Sky · Island 3')
+})
+
+test('items already in hand drop OUT of the kill set — the caption is what is LEFT', () => {
+  const q = questByName('Bard', 'Bard Test of Tone')
+  const done = questKillTargets(questRows(q, { 'Light Woolen Mask': 1 }))
+  assert.deepEqual(done, [])
+  assert.equal(killTargetLabel(done), '') // ⇒ the row renders no caption at all
+})
+
+test('a random-drop item contributes NO kill target and NO island', () => {
+  // The wind runes: posky says "random drop — any Plane of Sky mob", the catalog lists no
+  // dropper, and `where` is the zone itself. Nothing is invented from any of that (law 1).
+  const runes: KillTargetItem[] = [
+    { need: 1, have: 0, where: 'Plane of Sky', droppers: skyDroppersFor('Wind Rune Meda') }
+  ]
+  assert.deepEqual(questKillTargets(runes), [])
+  assert.equal(killTargetLabel(questKillTargets(runes)), '')
+})
+
+test('the lead target is the mob covering the MOST still-needed items', () => {
+  const boss = dropper('Zzz Boss')
+  const trash = dropper('a trash mob')
+  const items: KillTargetItem[] = [
+    { need: 1, have: 0, where: 'Island 3', droppers: [boss] },
+    { need: 1, have: 0, where: 'Island 5', droppers: [boss, trash] }
+  ]
+  const targets = questKillTargets(items)
+  // Name order would lead with "a trash mob"; coverage leads with the mob that closes two.
+  assert.deepEqual(
+    targets.map((t) => [t.mob.name, t.covers]),
+    [['Zzz Boss', 2], ['a trash mob', 1]]
+  )
+  // The islands ride PER MOB — the lead's two items sit on two islands, the other's on one.
+  assert.deepEqual(targets[0].islands, ['Island 3', 'Island 5'])
+  assert.deepEqual(targets[1].islands, ['Island 5'])
+  assert.equal(killTargetLabel(targets), 'Kill: Zzz Boss +1 · Islands 3, 5')
+})
+
+test('equal coverage falls back to the module\'s name order, and a repeat counts once', () => {
+  const a = dropper('Alpha')
+  const z = dropper('Zeta')
+  const items: KillTargetItem[] = [
+    // Zeta listed twice on ONE item must not out-rank Alpha by inflating its coverage.
+    { need: 2, have: 0, where: 'Island 2', droppers: [z, z] },
+    { need: 1, have: 0, where: '', droppers: [a] }
+  ]
+  const targets = questKillTargets(items)
+  assert.deepEqual(
+    targets.map((t) => [t.mob.name, t.covers]),
+    [['Alpha', 1], ['Zeta', 1]]
+  )
+  // No island stated for Alpha's item ⇒ no island clause. Never a guess.
+  assert.equal(killTargetLabel(targets), 'Kill: Alpha +1')
+  assert.equal(killTargetFacts(targets[0]), 'Alpha · Plane of Sky')
+})
+
+test('the caption covers nearly every quest, and states an island for most', () => {
+  // Floors, not frozen counts (a re-scrape may fill gaps): today 93 of 95 quests name a kill
+  // target and 82 of those carry an island. The two silent ones are the quests whose every
+  // item is a wind rune or one of the items no catalog page lists.
+  const labels = QUESTS.map((q) => killTargetLabel(questKillTargets(questRows(q))))
+  const captioned = labels.filter((l) => l !== '')
+  assert.ok(captioned.length >= 93, `captioned: ${captioned.length} of ${QUESTS.length}`)
+  assert.ok(
+    captioned.filter((l) => l.includes('Island')).length >= 82,
+    `with island: ${captioned.filter((l) => l.includes('Island')).length}`
+  )
+  // Every island a caption states came from a stated `where` on one of that quest's items.
+  for (const q of QUESTS) {
+    const stated = new Set(q.items.map((it) => islandOf(it.where)).filter(Boolean))
+    for (const t of questKillTargets(questRows(q)))
+      for (const i of t.islands) assert.ok(stated.has(i), `${q.name}: ${i} is not stated by any item`)
   }
 })

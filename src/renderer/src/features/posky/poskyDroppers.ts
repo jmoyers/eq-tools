@@ -76,6 +76,13 @@ export interface DropperMob {
   level?: string
   /** the page's home zone(s). Never empty for anything this module returns. */
   zones: string[]
+  /**
+   * The catalog ROW this projection came from, carried so a click can route to the mob page
+   * (`MobTarget.entry`). A name alone can name several pages — MobsView's search results pin
+   * the identity half of the page with the row the user actually picked, and a kill target
+   * resolved from that same catalog has no reason to be vaguer than a search hit.
+   */
+  entry: MobEntry
 }
 
 /** item counting key -> the mobs that drop it, deduped and deterministically ordered. */
@@ -91,7 +98,7 @@ export function isSkyMob(m: Pick<MobEntry, 'zones'>): boolean {
 }
 
 function toDropper(m: MobEntry): DropperMob {
-  const out: DropperMob = { name: m.name, page: m.page, zones: m.zones ?? [] }
+  const out: DropperMob = { name: m.name, page: m.page, zones: m.zones ?? [], entry: m }
   if (m.level) out.level = m.level
   return out
 }
@@ -198,6 +205,116 @@ export function dropperFacts(m: DropperMob): string {
   if (m.level) parts.push(`level ${m.level}`)
   if (m.zones.length > 0) parts.push(m.zones.join(', '))
   return parts.join(' · ')
+}
+
+// ---- WHERE: the island, from posky's own stated field ----
+//
+// "show which mob AND ISLAND they are on at a top level without needing to mouse over" (owner).
+// The island is NOT inferred and NOT parsed out of prose: `PoskyItem.where` is a STATED field
+// ("island / location string from the wiki", shared/types.ts), and over the committed posky.json
+// it holds exactly three shapes across 222 item rows — `Island 2..8` (103 rows), `Plane of Sky`
+// (95 rows, every one of them a wind rune, i.e. the honest "anywhere") and `""` (24 rows). So the
+// matcher below is deliberately narrow: an explicit island NUMBER or nothing at all. "Plane of
+// Sky" is not an island and must never be dressed up as one.
+
+const ISLAND_RE = /\bisland\s+(\d+)\b/i
+
+/** The island a stated `where` names, normalized to "Island N". Undefined when it names none. */
+export function islandOf(where: string | undefined): string | undefined {
+  const m = ISLAND_RE.exec(where ?? '')
+  return m ? `Island ${m[1]}` : undefined
+}
+
+/** Ascending by island NUMBER (so 10 would sort after 9, which a string sort gets wrong). */
+function islandNo(island: string): number {
+  return Number(ISLAND_RE.exec(island)?.[1] ?? 0)
+}
+
+/** "Island 3" / "Islands 3, 5" — a LIST, never a range: a quest whose items sit on islands 3 and
+ *  6 must not read as though island 4 and 5 were involved. Empty string for none stated. */
+export function islandLabel(islands: readonly string[]): string {
+  const sorted = [...new Set(islands)].sort((a, b) => islandNo(a) - islandNo(b))
+  if (sorted.length === 0) return ''
+  if (sorted.length === 1) return sorted[0]
+  return `Islands ${sorted.map((i) => String(islandNo(i))).join(', ')}`
+}
+
+// ---- the QUEST-level kill set (the collapsed summary row's "Kill: <boss>" caption) ----
+
+/**
+ * The part of an item row this derivation reads. `ItemProgress` (useProgress.ts) satisfies it
+ * structurally; spelling the shape out here keeps the module React-free and node-testable.
+ */
+export interface KillTargetItem {
+  need: number
+  have: number
+  /** posky's stated location string for this item, e.g. "Island 3" */
+  where: string
+  droppers: readonly DropperMob[]
+}
+
+/** One mob standing between the player and a quest, with the evidence behind it. */
+export interface KillTarget {
+  mob: DropperMob
+  /** how many of the quest's STILL-NEEDED items this mob drops */
+  covers: number
+  /** the islands those items are stated to be on ("Island 3"), ascending. Empty when none. */
+  islands: string[]
+}
+
+/**
+ * Who you still have to kill for a whole quest: the distinct droppers of the items it STILL
+ * NEEDS. An item already in hand (`have >= need`) contributes nothing — the caption answers
+ * "where do I go next", not "where did this quest come from" — and an item that resolved no
+ * dropper contributes nothing either, so a wind-rune quest (posky: "random drop — any Plane of
+ * Sky mob") yields an EMPTY set and the caller shows no caption at all. Never a guess (law 1).
+ *
+ * ORDER IS COUNTED, NOT GUESSED: by how many of the still-needed items that mob covers, then by
+ * the module's own name order as the tiebreak. That is what makes the collapsed one-name form
+ * honest — "Kill: Gorgalosk +2" names the mob that closes the most of what is left, not
+ * whichever name happens to sort first. A caller wanting the whole roster has it in that order.
+ *
+ * The islands ride PER MOB, from the items that mob is the target for — so "Kill: X · Island 3"
+ * says where X's outstanding drops are, never where some other target's are.
+ */
+export function questKillTargets(items: readonly KillTargetItem[]): KillTarget[] {
+  const byPage = new Map<string, { mob: DropperMob; covers: number; islands: Set<string> }>()
+  for (const it of items) {
+    if (it.have >= it.need) continue
+    const island = islandOf(it.where)
+    // Per ITEM, so a page listed twice on one item can't inflate its coverage.
+    const seen = new Set<string>()
+    for (const m of it.droppers) {
+      if (seen.has(m.page)) continue
+      seen.add(m.page)
+      const hit = byPage.get(m.page) ?? { mob: m, covers: 0, islands: new Set<string>() }
+      hit.covers += 1
+      if (island) hit.islands.add(island)
+      byPage.set(m.page, hit)
+    }
+  }
+  return [...byPage.values()]
+    .sort((a, b) => (a.covers === b.covers ? byName(a.mob, b.mob) : b.covers - a.covers))
+    .map((e) => ({ mob: e.mob, covers: e.covers, islands: [...e.islands].sort((a, b) => islandNo(a) - islandNo(b)) }))
+}
+
+/**
+ * "Kill: Gorgalosk · Island 3" / "Kill: Gorgalosk +2 · Islands 3, 5" — the lead target, how many
+ * others remain, and where the lead's outstanding drops are. The island clause is dropped
+ * entirely when posky states none. Empty string for an empty set: the caller renders nothing.
+ */
+export function killTargetLabel(targets: readonly KillTarget[]): string {
+  const lead = targets[0]
+  if (!lead) return ''
+  const more = targets.length - 1
+  const islands = islandLabel(lead.islands)
+  return `Kill: ${lead.mob.name}${more > 0 ? ` +${more}` : ''}${islands === '' ? '' : ` · ${islands}`}`
+}
+
+/** One roster line: everything the catalog states about the mob, plus posky's island. */
+export function killTargetFacts(t: KillTarget): string {
+  const islands = islandLabel(t.islands)
+  return islands === '' ? dropperFacts(t.mob) : `${dropperFacts(t.mob)} · ${islands}`
 }
 
 // ---- the app-wide singleton, built once, lazily, over the committed catalog ----
