@@ -95,6 +95,25 @@ export function feedbackEndpointConfigured(): boolean {
 }
 
 /**
+ * May this process make UNATTENDED background requests for feedback — i.e. should the offline
+ * queue's drain timers run at all? Two facts, both fatal on their own:
+ *
+ *   * `e2e`      — the headless harness never submits, so it must never spin a timer that would
+ *                  reach the network behind the test's back (the same law as the rest of the
+ *                  feedback stack, and as `provisionDefaultPacks` in index.ts).
+ *   * `endpoint` — a DARK build (no `FEEDBACK_API_URL` compiled in, §6.2) has nowhere to send;
+ *                  timers that can only ever no-op are noise, not resilience.
+ *
+ * PURE, and it lives here rather than in queue.ts because this is the Electron-free module that
+ * owns both facts: queue.ts reaches `app.getPath('userData')` through state.ts, so it cannot be
+ * imported by a node-only test at all, and the startup decision must stay pinnable
+ * (tests/feedbackNet.test.mts).
+ */
+export function queueFlushEnabled(e2e: boolean, endpoint: string): boolean {
+  return !e2e && endpoint.length > 0
+}
+
+/**
  * S3 bucket names we accept as OUR bucket. Deliberately stricter than S3's own rule: no dots.
  *
  * A dot in a bucket name adds a label boundary to the virtual-hosted hostname

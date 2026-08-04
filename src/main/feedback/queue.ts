@@ -10,15 +10,15 @@
 // user pressed Send and are what they previewed), never rewrites `env` (the environment the bug
 // happened in is the interesting one), and gives up permanently on a 4xx.
 //
-// NOT WIRED INTO STARTUP BY THIS WAVE. `startQueueFlush()` is exported and unused until the
-// composition root calls it (+30 s after the tail attaches, then every 30 min) — src/main/index.ts
-// belongs to another agent, and a queue nobody drains is a bounded, self-pruning inconvenience
-// rather than a broken build.
+// WIRED INTO STARTUP. `src/main/index.ts` (the composition root) calls `startQueueFlush()` once
+// the tail has attached — first drain +30 s later, then every 30 min — and `stopQueueFlush()`
+// from `window-all-closed`. Whether the loop runs at all is `queueFlushEnabled` (net.ts): never
+// under `EQ_E2E=1`, never in a build with no endpoint compiled in.
 
 import { E2E } from '../e2e'
 import { logInfo } from '../errorLog'
 import type { SubmitRequest } from '../../shared/feedback'
-import { FEEDBACK_API_URL } from './net'
+import { FEEDBACK_API_URL, queueFlushEnabled } from './net'
 import { sendReport } from './submit'
 import {
   backoff,
@@ -57,7 +57,7 @@ function requestOf(entry: QueuedReport): SubmitRequest {
  * that does not happen and a `logUploaded:false` we do not surface anywhere.
  */
 export async function flushQueue(): Promise<number> {
-  if (E2E || FEEDBACK_API_URL === '') return 0
+  if (!queueFlushEnabled(E2E, FEEDBACK_API_URL)) return 0
   const now = Date.now()
   pruneQueue(now)
   let sent = 0
@@ -81,7 +81,7 @@ let repeat: ReturnType<typeof setInterval> | null = null
 
 /** Start the periodic drain. Idempotent; a no-op in e2e and in a build with no endpoint. */
 export function startQueueFlush(): void {
-  if (E2E || FEEDBACK_API_URL === '' || first !== null || repeat !== null) return
+  if (!queueFlushEnabled(E2E, FEEDBACK_API_URL) || first !== null || repeat !== null) return
   const run = (): void => {
     void flushQueue()
   }

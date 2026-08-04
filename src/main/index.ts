@@ -32,6 +32,7 @@ import { app, BrowserWindow, protocol, session } from 'electron'
 import { IPC } from '../shared/ipc'
 import { errorLogPath, logError, logInfo } from './errorLog'
 import { saveUserOverlay } from './data/overlayPersistence'
+import { startQueueFlush, stopQueueFlush } from './feedback'
 import { registerAppSchemes } from './appSchemes'
 import { installImageCacheProtocol } from './imageCache'
 import { installSpeechCacheProtocol } from './speech/cache'
@@ -185,6 +186,16 @@ if (!gotSingleInstanceLock) {
     })
     createMainWindow()
     void startTailing()
+    // Drain the offline feedback queue (feedback/queue.ts). A report filed while the user's
+    // network was unhappy is spooled to <userData>/feedback.json + feedback-pending/*.gz and
+    // sent later over the same wire, carrying the same idempotency key; without this call it
+    // would spool until it aged out unsent. Started HERE, right after the tail attaches,
+    // because the first drain is deliberately +30 s behind startup (then every 30 min) and the
+    // timers are unref'd, so it can neither compete with the replay nor hold the process open.
+    // The E2E / no-endpoint guards live inside `startQueueFlush` (one predicate,
+    // `queueFlushEnabled` in net.ts, shared with `flushQueue`) rather than being restated
+    // here — two copies of a network gate is how one of them drifts.
+    startQueueFlush()
     // Self-provision the shipped voice packs (Task #39): a CI-built installer ships
     // WITHOUT the gitignored peon/sc_marine packs, so a fresh install's seeded
     // charm-break alert would reference a missing sound. Download any missing default
@@ -225,6 +236,9 @@ app.on('window-all-closed', () => {
   // Kill the presence watcher child + the cursor stream. Both already unref their timers, but a
   // child process is not a timer: nothing else would reap it.
   stopPresenceEffects()
+  // Stop the feedback drain's timers. They are unref'd, so they cannot be the reason the
+  // process lives on; this is about not starting an attempt into a process that is quitting.
+  stopQueueFlush()
   // Flush the learned message overlay one last time so the final session's observations
   // aren't lost between debounced saves (Task #36).
   saveUserOverlay(buffsModule.overlaySnapshot())

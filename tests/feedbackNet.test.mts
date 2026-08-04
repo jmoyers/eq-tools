@@ -13,6 +13,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import * as net from '../src/main/feedback/net'
 import { allowedUploadUrl, allowedUploadUrlFor, feedbackEndpointConfigured, uploadEndpoints } from '../src/main/feedback/net'
 
@@ -306,4 +307,47 @@ test('IN A REAL PROCESS: setting EQ_FEEDBACK_URL changes nothing when the gate i
   assert.equal(withEnv, without)
   assert.equal(JSON.parse(withEnv)[1], '')
   assert.equal(JSON.parse(withEnv)[2], null)
+})
+
+// ---- THE STARTUP WIRING (feedback/queue.ts ← src/main/index.ts) --------------------------
+//
+// The offline queue only helps if something DRAINS it. `startQueueFlush()` shipped exported and
+// uncalled, so a report queued after a failed send spooled to `<userData>/feedback.json` +
+// `feedback-pending/*.gz` and sat there until it aged out unsent — silent data loss under a
+// green suite. Two things are pinned here:
+//
+//   1. THE DECISION, as a pure function. `queueFlushEnabled` is the ONE guard both `flushQueue`
+//      and `startQueueFlush` route through. The queue itself resolves
+//      `app.getPath('userData')` through state.ts and therefore cannot be imported outside
+//      Electron at all, which is exactly why the decision was lifted into net.ts.
+//   2. THE SEAM, read off the composition root's source. Booting Electron to watch a timer is
+//      the e2e harness's job, and the e2e harness is guard-excluded from this path by design,
+//      so it can never observe it. A source pin costs nothing, never skips, and fails loudly if
+//      a later refactor drops the call the way the first wave did.
+
+test('queueFlushEnabled: the drain runs only with an endpoint, and never under EQ_E2E', () => {
+  const url = 'https://pcy0z3xjp9.execute-api.us-east-1.amazonaws.com/v1/feedback'
+  assert.equal(net.queueFlushEnabled(false, url), true)
+  // A DARK build (§6.2: the constant ships empty until the stack is deployed) has nowhere to
+  // send, so it must not spin timers that could only ever no-op.
+  assert.equal(net.queueFlushEnabled(false, ''), false)
+  // The headless harness never submits, so it never drains either — endpoint or not.
+  assert.equal(net.queueFlushEnabled(true, url), false)
+  assert.equal(net.queueFlushEnabled(true, ''), false)
+  // …and the two ways of asking "does this build have an endpoint" agree.
+  assert.equal(net.queueFlushEnabled(false, net.FEEDBACK_API_URL), net.feedbackEndpointConfigured())
+})
+
+test('the composition root STARTS the drain and stops it on shutdown', () => {
+  const src = readFileSync(new URL('../src/main/index.ts', import.meta.url), 'utf8')
+  assert.match(src, /import \{ startQueueFlush, stopQueueFlush \} from '\.\/feedback'/)
+  assert.match(src, /^\s*startQueueFlush\(\)$/m)
+  assert.match(src, /^\s*stopQueueFlush\(\)$/m)
+})
+
+test('both queue entry points route through the ONE guard', () => {
+  // Two copies of a network gate is how one of them drifts: `flushQueue` and `startQueueFlush`
+  // ask the same question, in the same words, of the same predicate.
+  const src = readFileSync(new URL('../src/main/feedback/queue.ts', import.meta.url), 'utf8')
+  assert.equal((src.match(/queueFlushEnabled\(E2E, FEEDBACK_API_URL\)/g) ?? []).length, 2)
 })
