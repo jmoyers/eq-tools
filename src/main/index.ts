@@ -287,6 +287,18 @@ if (!gotSingleInstanceLock) {
   })
 }
 
+/**
+ * REAPING THE WATCHER, BELT AND BRACES. `window-all-closed` below is the ordinary teardown, but
+ * it is not the only way this process ends: an auto-updater `quitAndInstall`, a `app.quit()`
+ * from anywhere, or an OS session logoff can reach `before-quit` on a path that never lands
+ * there. The presence watcher is a CHILD PROCESS, and Windows does not kill children with their
+ * parent — one missed teardown is a PowerShell loop polling user32 forever with nobody reading
+ * the pipe. `stopPresenceEffects()` is idempotent, so running it on both events costs nothing.
+ * (The child also self-reaps when this pid disappears — see presence.ts — which is what covers
+ * the kill -9 case that no in-process handler can.)
+ */
+app.on('before-quit', () => stopPresenceEffects())
+
 app.on('window-all-closed', () => {
   stopSession()
   // Kill the presence watcher child + the cursor stream. Both already unref their timers, but a

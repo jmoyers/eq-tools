@@ -15,13 +15,17 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import {
   FOCUS_DEBOUNCE_MS,
+  WATCHER_RESTART_BACKOFF_MS,
+  WATCHER_STALE_MS,
   cursorRingActive,
   eqRootPrefix,
   focusDebounceStep,
   isEqWindow,
   newFocusDebounce,
   overlaysShouldHide,
-  parsePresenceLine
+  parsePresenceLine,
+  watcherIsStale,
+  watcherRestartDelayMs
 } from '../src/main/presenceProtocol'
 import {
   DEFAULT_CURSOR_RING,
@@ -92,6 +96,17 @@ test('a trailing CR is stripped — the child writes Windows line endings', () =
   assert.deepEqual(parsePresenceLine('R|1\r'), { t: 'run', running: true })
 })
 
+test('the HEARTBEAT is a bare line — the one record the child prints unconditionally', () => {
+  // Every other record is change-driven, so a healthy idle watcher says nothing at all and is
+  // indistinguishable from a wedged one. This line is what makes the difference observable.
+  assert.deepEqual(parsePresenceLine('H'), { t: 'beat' })
+  assert.deepEqual(parsePresenceLine('H\r'), { t: 'beat' })
+  assert.deepEqual(parsePresenceLine('  H  '), { t: 'beat' })
+  // It carries no payload, so anything after the H is not a heartbeat.
+  assert.equal(parsePresenceLine('H|1'), null)
+  assert.equal(parsePresenceLine('Hello'), null)
+})
+
 test('anything malformed decodes to null and can never move the state', () => {
   // The stream can also carry a PowerShell warning, a blank line, or a partially-flushed write.
   for (const junk of [
@@ -134,11 +149,57 @@ test('the path match is case-insensitive — Windows paths are, and the log is n
   assert.equal(isEqWindow({ exePath: 'c:\\games\\eq\\EQGAME.EXE', title: '' }, 'C:\\Games\\EQ'), true)
 })
 
-test('the TITLE is a fallback, not a peer: it only fires when the path did not', () => {
-  // Needed because a process image path is not always readable (elevation/protection) and a
-  // user can run a second install the app was never pointed at.
+test('the TITLE is a LAST RESORT: it fires only when the image path is UNREADABLE', () => {
+  // A process image path is not always readable (elevation/protection); the watcher reports an
+  // empty path and the title is genuinely all there is.
   assert.equal(isEqWindow({ exePath: '', title: 'EverQuest' }, EQ_ROOT), true)
-  assert.equal(isEqWindow({ exePath: 'C:\\other\\x.exe', title: 'everquest legends' }, EQ_ROOT), true)
+  assert.equal(isEqWindow({ exePath: '   ', title: 'EverQuest: Firiona Vie' }, EQ_ROOT), true)
+  assert.equal(isEqWindow({ exePath: '', title: 'EverQuestly Speaking' }, EQ_ROOT), false)
+  assert.equal(isEqWindow({ exePath: '', title: 'Everything about EverQuest' }, EQ_ROOT), false)
+})
+
+test('THE RING FOLLOWED THE CURSOR OVER THE BROWSER — a readable path is the answer', () => {
+  // THE BUG, as a test. `isEqWindow` used to fall back to "the title contains everquest" for
+  // every window the install-root check declined, so ANY process could be classified as the
+  // game by what its window happened to say. For the owner of an EverQuest companion app — who
+  // is on an EQ wiki, or in an #everquest channel, all day — that is not an edge case, it is
+  // Tuesday: the browser took `eqFocused`, handed `eqBounds` its own rectangle, and
+  // `cursorRingActive` drew a halo chasing the pointer around a web page.
+  //
+  // A readable image path is a positive answer to "whose window is this?", so nothing else gets
+  // to overrule it.
+  for (const [exePath, title] of [
+    ['C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'EverQuest Wiki - Google Chrome'],
+    ['C:\\Program Files\\Mozilla Firefox\\firefox.exe', 'EverQuest — Wikipedia — Mozilla Firefox'],
+    ['C:\\Users\\me\\AppData\\Local\\Discord\\Discord.exe', '#everquest | Raid Guild - Discord'],
+    ['C:\\Windows\\explorer.exe', 'EverQuest — File Explorer'],
+    ['C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe', 'EverQuest stream - OBS']
+  ] as const) {
+    assert.equal(isEqWindow({ exePath, title }, EQ_ROOT), false, title)
+  }
+})
+
+test('a SECOND INSTALL still counts — by the client’s image NAME, not by its window text', () => {
+  // The case the old title fallback was actually written for: a client the app was never
+  // pointed at. `eqgame.exe` is the EverQuest client on every build, and it is the same name
+  // the watcher's own "is the game running" scan keys on — so the narrowed predicate keeps this
+  // working without letting chrome.exe in behind it.
+  assert.equal(isEqWindow({ exePath: 'D:\\Games\\P99\\eqgame.exe', title: 'EverQuest' }, EQ_ROOT), true)
+  assert.equal(
+    isEqWindow({ exePath: 'D:\\Games\\P99\\EQGAME.EXE', title: '' }, EQ_ROOT),
+    true,
+    'the image name is matched case-insensitively, like the path'
+  )
+  assert.equal(
+    isEqWindow({ exePath: 'D:\\Games\\P99\\eqgame.exe', title: '' }, ''),
+    true,
+    'and it holds even with no install root at all, which is when it matters most'
+  )
+  assert.equal(
+    isEqWindow({ exePath: 'D:\\Games\\EQ2\\eqgame2.exe', title: 'EverQuest II' }, EQ_ROOT),
+    false,
+    'a different game with a similar name is still a different game'
+  )
 })
 
 test("this app's own windows never look like EverQuest", () => {
@@ -328,6 +389,83 @@ test('the cursor is presumed VISIBLE until the watcher says otherwise', () => {
     cursorRingActive({ ...INITIAL_PRESENCE, eqFocused: true, eqBounds: BOUNDS }, on),
     true
   )
+})
+
+// ------------------------------------------------------------------- watcher health
+//
+// The state is a CACHE of the last thing the watcher said, and every consumer reads it as
+// current fact — so a stream that stops does not make the app cautious, it makes it confidently
+// wrong. These pin the two answers: what a dead/wedged watcher must leave behind, and how hard
+// we are allowed to try to get one back.
+
+test('A DEAD OR WEDGED WATCHER PARKS THE RING AND GIVES THE OVERLAYS BACK', () => {
+  // The safety property behind both `handleChildGone` and the staleness watchdog, stated where
+  // it is actually decided. presence.ts's whole job on a failure is to put THIS value back.
+  const on = { ...DEFAULT_CURSOR_RING, enabled: true }
+
+  // Before: the game is focused, its window is known, the halo is live and the 8 ms stream runs.
+  const live = presence({ eqRunning: true, eqFocused: true, eqBounds: BOUNDS })
+  assert.equal(cursorRingActive(live, on), true)
+
+  // The watcher dies here. Freezing `live` is the reported bug — `eqFocused`, `cursorVisible`
+  // and `eqBounds` all outlive the pipe, so the ring keeps drawing over whatever the user
+  // alt-tabs to. Resetting to INITIAL_PRESENCE is what makes that impossible.
+  assert.equal(
+    cursorRingActive(INITIAL_PRESENCE, on),
+    false,
+    'no committed focus and no known bounds ⇒ the ring parks and the cursor stream stops'
+  )
+  for (const prefs of [
+    DEFAULT_OVERLAY_AUTO_HIDE,
+    { hideWhenNotRunning: true, hideWhenUnfocused: true }
+  ]) {
+    assert.equal(
+      overlaysShouldHide(INITIAL_PRESENCE, prefs),
+      false,
+      'and `observed:false` fails OPEN: a dead watcher must not hide the overlays forever'
+    )
+  }
+})
+
+test('STALENESS: silence past the window is wedged; anything inside it is just quiet', () => {
+  const t0 = 10_000_000
+  // [ lastSignalAt, now, stale?, why ]
+  const cases: [number, number, boolean, string][] = [
+    [t0, t0, false, 'a child that just spoke'],
+    [t0, t0 + 1, false, 'one tick of silence'],
+    [t0, t0 + 5_000, false, 'one missed heartbeat is a busy machine, not a dead watcher'],
+    [t0, t0 + WATCHER_STALE_MS - 1, false, 'just inside the window is still alive'],
+    [t0, t0 + WATCHER_STALE_MS, true, 'the window is inclusive'],
+    [t0, t0 + 10 * WATCHER_STALE_MS, true, 'and it stays stale'],
+    // `lastSignalAt` is seeded at SPAWN, so a child that has never spoken gets the same window —
+    // which is what makes the one-time PowerShell compile a non-event.
+    [t0, t0 + 2_000, false, 'the Add-Type compile is inside the first window']
+  ]
+  for (const [last, now, expected, why] of cases) {
+    assert.equal(watcherIsStale(last, now), expected, why)
+  }
+  // A caller-supplied window is honored (the seam the app itself does not use, but tests do).
+  assert.equal(watcherIsStale(t0, t0 + 100, 50), true)
+  assert.equal(watcherIsStale(t0, t0 + 100, 500), false)
+})
+
+test('RESTART BACKOFF: fast when it might be a hiccup, CAPPED when it is not', () => {
+  // An uncapped retry against a failure that will never clear on this machine (PowerShell
+  // removed by policy, an execution policy that kills the child on sight) is a spawn storm.
+  assert.deepEqual(
+    [1, 2, 3, 4, 5].map(watcherRestartDelayMs),
+    [...WATCHER_RESTART_BACKOFF_MS],
+    'the schedule is walked in order, one step per consecutive failure'
+  )
+  const cap = WATCHER_RESTART_BACKOFF_MS[WATCHER_RESTART_BACKOFF_MS.length - 1]
+  for (const n of [6, 7, 50, 10_000]) {
+    assert.equal(watcherRestartDelayMs(n), cap, `failure #${n} sits on the ceiling`)
+  }
+  // Degenerate counters land on the first step rather than off the end of the array.
+  for (const n of [0, -1, Number.NaN, Number.POSITIVE_INFINITY]) {
+    assert.equal(watcherRestartDelayMs(n), WATCHER_RESTART_BACKOFF_MS[0], String(n))
+  }
+  assert.ok(cap <= 30_000, 'the ceiling is a recovery interval, not a giving-up interval')
 })
 
 // ------------------------------------------------------------- prefs: defaults + clamps

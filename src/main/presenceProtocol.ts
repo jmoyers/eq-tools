@@ -26,15 +26,25 @@ import type {
 //   F|<pid>|<x>|<y>|<w>|<h>|<exePath>|<title>   foreground window changed
 //   R|<0|1>                                      EQ process existence changed (5 s cadence)
 //   C|<0|1>                                      system cursor visibility changed
+//   H                                            heartbeat — "still looping" (5 s cadence)
 //
 // `title` is last because it is the only field that may contain anything (including `|`); a
 // Windows path cannot contain `|`, so every field before it is unambiguous.
+//
+// THE HEARTBEAT IS THE ONE UNCONDITIONAL LINE, and it is why it exists. Every other record is
+// printed ONLY on a change, so a healthy watcher's steady state is total silence on the pipe —
+// which is exactly what a WEDGED watcher looks like from the parent. Without an explicit
+// liveness signal there is no observation that separates "nothing has happened" from "nothing
+// will ever happen again", and the second one FREEZES the presence state: `eqFocused:true`
+// outlives the alt-tab that should have cleared it and the ring keeps drawing over whatever the
+// user switched to. One 1-byte line per 5 s on an otherwise idle pipe buys that distinction.
 
 /** One decoded watcher record. */
 export type PresenceRecord =
   | { t: 'fg'; pid: number; rect: ScreenRect; exePath: string; title: string }
   | { t: 'run'; running: boolean }
   | { t: 'cursor'; visible: boolean }
+  | { t: 'beat' }
 
 /** A finite integer from one protocol field, or null when the field is not one. */
 function intField(s: string | undefined): number | null {
@@ -74,6 +84,8 @@ export function parsePresenceLine(line: string): PresenceRecord | null {
   if (trimmed === '') return null
   const parts = trimmed.split('|')
   if (parts[0] === 'F') return parseForeground(parts)
+  // The heartbeat carries no payload, so it is the whole line or it is not a heartbeat.
+  if (trimmed === 'H') return { t: 'beat' }
   const flag = boolField(parts[1])
   if (parts[0] === 'R') return flag === null ? null : { t: 'run', running: flag }
   if (parts[0] === 'C') return flag === null ? null : { t: 'cursor', visible: flag }
@@ -91,24 +103,60 @@ export function eqRootPrefix(root: string): string {
 }
 
 /**
+ * The image names the EverQuest CLIENT actually ships under. `eqgame.exe` has been the client
+ * binary on every build from Titanium to Live, and it is the SAME name the watcher's own
+ * "is the game running" scan keys on (`$p.ProcessName -eq 'eqgame'`) — one fact, one spelling.
+ */
+const EQ_CLIENT_EXES = new Set(['eqgame.exe'])
+
+/** The last path segment of a Windows image path, lowercased. */
+function exeBaseName(exePath: string): string {
+  const p = exePath.trim().toLowerCase()
+  const cut = Math.max(p.lastIndexOf('\\'), p.lastIndexOf('/'))
+  return cut === -1 ? p : p.slice(cut + 1)
+}
+
+/**
+ * Does this title belong to the EverQuest CLIENT — as opposed to a window that merely mentions
+ * the game? The client titles its window "EverQuest" (some builds append a server or character),
+ * so the match is ANCHORED at the start and stops at a word boundary. `…includes('everquest')`
+ * was the old test and it is the bug this predicate exists to not have: a browser tab reading
+ * "EverQuest Wiki — Google Chrome" contains the substring in the middle, and so does a Discord
+ * window sitting in an #everquest channel.
+ */
+function titleIsEqClient(title: string): boolean {
+  return /^everquest\b/i.test(title.trim())
+}
+
+/**
  * Is the foreground window EverQuest?
  *
  * PRIMARY signal: the process image lives under the effective EQ install root
  * (`log/config.ts effectiveEqRoot()` — never a hardcoded Daybreak path). That is an identity,
  * not a guess, and it follows the user's Settings override for free.
  *
- * FALLBACK: the window TITLE contains "EverQuest". Needed because a process's image path is not
- * always readable (elevation, protected processes) and because a user can run the client from a
- * second install the app has not been pointed at. It is deliberately a fallback, not a peer: it
- * is the weaker claim, and it can only ever fire when the path check has already declined.
+ * THE PATH, WHEN WE HAVE ONE, IS THE ANSWER — and this is the fix for a real, reported bug: the
+ * cursor ring followed the pointer around the user's WEB BROWSER. The old predicate fell back to
+ * "the title contains EverQuest" for EVERY window the root check declined, so any window of any
+ * process — a browser on an EQ wiki, a chat client in an #everquest channel — was classified as
+ * the game, took `eqFocused`, and handed the ring its own rectangle to draw in. A READABLE image
+ * path is a positive answer to "whose window is this?", so once we have one the only thing that
+ * can still make it EverQuest is the client's own image NAME. That keeps the case the fallback
+ * was actually written for — a second install the app was never pointed at — while costing every
+ * unrelated process its ability to impersonate the game by title.
+ *
+ * THE TITLE IS THE LAST RESORT, and only when the path is UNKNOWN (elevation, protected
+ * processes: the watcher reports an empty path and there is nothing else to go on).
+ *
  * (This app's own windows are titled "EQ Legends Companion" / "… Overlay" / "Cursor Ring" and
- * match neither — and are classified by pid before they ever reach this predicate.)
+ * match none of it — and are classified by pid before they ever reach this predicate.)
  */
 export function isEqWindow(w: { exePath: string; title: string }, eqRoot: string): boolean {
   const prefix = eqRootPrefix(eqRoot).toLowerCase()
   const exe = w.exePath.trim().toLowerCase()
   if (prefix && exe.startsWith(prefix)) return true
-  return w.title.toLowerCase().includes('everquest')
+  if (exe) return EQ_CLIENT_EXES.has(exeBaseName(exe))
+  return titleIsEqClient(w.title)
 }
 
 // ---------------------------------------------------------------- the focus debounce
@@ -207,4 +255,70 @@ export function overlaysShouldHide(p: PresenceState, prefs: OverlayAutoHidePrefs
  */
 export function cursorRingActive(p: PresenceState, ring: CursorRingPrefs): boolean {
   return ring.enabled && p.eqFocused && p.cursorVisible && p.eqBounds !== null
+}
+
+// ------------------------------------------------------------------- watcher health
+//
+// THE STATE IS ONLY AS GOOD AS THE STREAM THAT FEEDS IT. `PresenceState` is a CACHE of the last
+// thing the watcher said, and every consumer treats it as current fact — so a stream that stops
+// does not make the app cautious, it makes the app confidently wrong. The reported failure is
+// the ring: `cursorRingActive` needs `eqFocused && cursorVisible && eqBounds`, all three of
+// which SURVIVE a dead pipe, so a watcher that stops mid-game leaves a halo chasing the pointer
+// across whatever the user alt-tabs to.
+//
+// Two things can stop the stream, and they need different answers:
+//
+//   * the child EXITS — observable directly (`'exit'`), handled in presence.ts.
+//   * the child WEDGES — alive, pid intact, loop not advancing. Only the HEARTBEAT's absence
+//     reveals it, which is what these two functions decide.
+//
+// Both are decided here, purely, so `tests/presence.test.mts` can pin them with an injected
+// clock instead of a real 30-second wait.
+
+/** Heartbeat cadence inside the child. Rides the existing 5 s process-existence poll. */
+export const WATCHER_HEARTBEAT_MS = 5_000
+
+/**
+ * How long a silent pipe is tolerated before the watcher is declared wedged.
+ *
+ * SIX missed heartbeats. Deliberately generous: the cost of being wrong in one direction is a
+ * needless respawn (a one-second PowerShell compile nobody sees), and in the other it is the
+ * ring drawing over the user's browser until they quit the app. It still has to be a multiple,
+ * not a margin — a machine that is swapping, or a game that just grabbed every core for a zone
+ * load, can starve a 150 ms loop for several seconds without anything being wrong with it.
+ */
+export const WATCHER_STALE_MS = 30_000
+
+/**
+ * Has the watcher gone quiet long enough to be presumed wedged? `lastSignalAt` is the timestamp
+ * of the last thing the child said OR of the spawn itself — a child that has never spoken is
+ * given exactly the same window as one that has stopped, which is correct: the one-time
+ * `Add-Type` compile means silence right after a spawn is normal and silence forever is not.
+ */
+export function watcherIsStale(
+  lastSignalAt: number,
+  now: number,
+  staleMs: number = WATCHER_STALE_MS
+): boolean {
+  return now - lastSignalAt >= staleMs
+}
+
+/**
+ * The respawn schedule, in ms, indexed by how many times in a row we have had to do it.
+ *
+ * CAPPED, and capped low enough to still be a recovery. A watcher can fail for a reason that is
+ * never going to clear on this machine — PowerShell removed by policy, an execution policy that
+ * kills the child on sight — and an uncapped retry against that is a spawn storm. It can also
+ * fail for a reason that clears on its own in a second, which is why the first retry is fast.
+ * The counter resets the moment a child produces a record, so an app that runs for eight hours
+ * with one hiccup at hour three retries at 1 s, not at 30.
+ */
+export const WATCHER_RESTART_BACKOFF_MS: readonly number[] = [1_000, 2_000, 5_000, 15_000, 30_000]
+
+/** The delay before restart attempt number `consecutiveFailures` (1-based); the last entry is
+ *  the ceiling and every later failure sits on it. */
+export function watcherRestartDelayMs(consecutiveFailures: number): number {
+  const last = WATCHER_RESTART_BACKOFF_MS.length - 1
+  const i = Number.isFinite(consecutiveFailures) ? Math.floor(consecutiveFailures) - 1 : 0
+  return WATCHER_RESTART_BACKOFF_MS[Math.min(Math.max(i, 0), last)]
 }

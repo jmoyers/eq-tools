@@ -33,11 +33,15 @@ import { logError, logInfo } from './errorLog'
 import { effectiveEqRoot } from './log/config'
 import {
   type PresenceRecord,
+  WATCHER_HEARTBEAT_MS,
+  WATCHER_STALE_MS,
   eqRootPrefix,
   focusDebounceStep,
   isEqWindow,
   newFocusDebounce,
-  parsePresenceLine
+  parsePresenceLine,
+  watcherIsStale,
+  watcherRestartDelayMs
 } from './presenceProtocol'
 import { INITIAL_PRESENCE } from '../shared/presencePrefs'
 import type { PresenceState, ScreenRect } from '../shared/presencePrefs'
@@ -72,7 +76,12 @@ import type { PresenceState, ScreenRect } from '../shared/presencePrefs'
  * fallback for a client installed under a different exe name — runs only when the cheap pass
  * found nothing.
  */
-function watcherScript(eqRootWithSep: string, runningPollMs: number, tickMs: number): string {
+function watcherScript(
+  eqRootWithSep: string,
+  runningPollMs: number,
+  tickMs: number,
+  parentPid: number
+): string {
   // A single-quoted PowerShell literal: the only character that needs escaping is `'`, and a
   // Windows path cannot contain one. Doubling it keeps that true even for a pathological root.
   const rootLiteral = eqRootWithSep.replace(/'/g, "''")
@@ -106,6 +115,7 @@ public static class EqcWin {
 '@
 $ErrorActionPreference = 'SilentlyContinue'
 $root = '${rootLiteral}'
+$parentPid = ${parentPid}
 $cmp = [System.StringComparison]::OrdinalIgnoreCase
 $paths = @{}
 $lastFg = ''
@@ -132,6 +142,17 @@ while ($true) {
   $now = [DateTime]::UtcNow
   if ($now -ge $nextRun) {
     $nextRun = $now.AddMilliseconds(${runningPollMs})
+    # SELF-REAP. Windows does not kill a child when its parent dies, so a main process that goes
+    # away without running its quit path — a crash, or the Stop-Process -Force an integrator
+    # reaches for — leaves this loop polling user32 forever with nobody reading the pipe. The
+    # parent pid is baked in at spawn; when it stops existing, so do we.
+    if (-not (Get-Process -Id $parentPid -ErrorAction SilentlyContinue)) { break }
+    # The pid -> image-path memo is dropped on every beat rather than only when it grows past
+    # 256 entries. Windows RECYCLES pids, and an entry that outlives its process is not stale
+    # data, it is WRONG data: the browser that inherits a departed eqgame.exe's pid would be
+    # handed eqgame's path and classified as the game. Five seconds bounds that window, and the
+    # memo still absorbs the ~33 ticks between beats, which is all it was ever for.
+    $paths.Clear()
     $running = 0
     $procs = [System.Diagnostics.Process]::GetProcesses()
     foreach ($p in $procs) { if ($p.ProcessName -eq 'eqgame') { $running = 1; break } }
@@ -143,6 +164,10 @@ while ($true) {
     }
     foreach ($p in $procs) { $p.Dispose() }
     if ($running -ne $lastRun) { $lastRun = $running; [Console]::Out.WriteLine('R|' + $running) }
+    # THE HEARTBEAT, and the only line printed unconditionally. Everything else is change-driven,
+    # so a healthy idle watcher is indistinguishable from a wedged one on the pipe alone — see
+    # presenceProtocol.ts's note. One byte per beat is what buys the parent that distinction.
+    [Console]::Out.WriteLine('H')
   }
   Start-Sleep -Milliseconds ${tickMs}
 }
@@ -166,6 +191,18 @@ let stdoutTail = ''
 let focus = newFocusDebounce(false)
 let focusTimer: NodeJS.Timeout | null = null
 let lastObservedFocus = false
+
+// ---- watcher health (see presenceProtocol.ts's "watcher health" section for the WHY) --------
+/** When the current child last said ANYTHING — seeded at spawn, so the one-time `Add-Type`
+ *  compile is inside the first staleness window rather than a false positive against it. */
+let lastSignalAt = 0
+/** When the current child was spawned. Only a child that has outlived a full staleness window
+ *  is allowed to forgive its predecessors' failures — see `noteSignal`. */
+let childStartedAt = 0
+/** Consecutive spawn/exit/wedge failures; indexes the backoff schedule. */
+let restartFailures = 0
+let restartTimer: NodeJS.Timeout | null = null
+let staleTimer: NodeJS.Timeout | null = null
 
 let state: PresenceState = INITIAL_PRESENCE
 
@@ -240,6 +277,10 @@ function applyFocus(observed: boolean): void {
  * question but they are not where the game is, and the ring must not jump onto them.
  */
 function applyRecord(rec: PresenceRecord): void {
+  // The heartbeat is LIVENESS, not an observation. It says the loop is turning, which is exactly
+  // what `noteSignal` already recorded; it deliberately does not set `observed`, because a beat
+  // is not a look at the world and must never be the reason auto-hide starts acting.
+  if (rec.t === 'beat') return
   // ANY record means we have actually looked (the child emits an `F`, a `C` and an `R` on its
   // very first tick, in that order). Until then `observed:false` keeps auto-hide from acting on
   // a default that only looks like a fact — see `overlaysShouldHide`.
@@ -257,6 +298,21 @@ function applyRecord(rec: PresenceRecord): void {
   applyFocus(isEq || ours)
 }
 
+/**
+ * Note that the child is alive and talking. Any well-formed record counts, including a bare
+ * heartbeat — the watchdog's question is "is the loop turning", not "did the world change".
+ *
+ * IT IS ALSO WHERE THE BACKOFF DEBT IS FORGIVEN, and the condition is the load-bearing part: a
+ * child clears the counter only once it has run a FULL staleness window without going quiet.
+ * Resetting on the first record instead would make a watcher that dies right after its first
+ * line retry at 1 s forever — a spawn storm dressed up as a recovery.
+ */
+function noteSignal(): void {
+  const now = Date.now()
+  lastSignalAt = now
+  if (restartFailures > 0 && now - childStartedAt >= WATCHER_STALE_MS) restartFailures = 0
+}
+
 /** Split the stdout stream into lines, carrying the partial tail across chunks. */
 function pumpStdout(chunk: string): void {
   stdoutTail += chunk
@@ -264,8 +320,133 @@ function pumpStdout(chunk: string): void {
   stdoutTail = lines.pop() ?? ''
   for (const line of lines) {
     const rec = parsePresenceLine(line)
-    if (rec) applyRecord(rec)
+    if (!rec) continue
+    noteSignal()
+    applyRecord(rec)
   }
+}
+
+/**
+ * Fall back to "nothing known" and tell everyone.
+ *
+ * THIS IS THE WHOLE SAFETY PROPERTY, so it is worth stating what `INITIAL_PRESENCE` buys: with
+ * `eqFocused:false` and `eqBounds:null` the ring PARKS (`cursorRingActive` needs both), and with
+ * `observed:false` auto-hide fails OPEN and un-hides the overlays (`overlaysShouldHide`'s first
+ * line). A presence source that has stopped being trustworthy must take the features it drives
+ * with it — a frozen `eqFocused:true` is what left a halo chasing the pointer across the user's
+ * browser, and a frozen `eqRunning:false` would hide every overlay forever.
+ */
+function resetPresence(): void {
+  if (focusTimer) {
+    clearTimeout(focusTimer)
+    focusTimer = null
+  }
+  focus = newFocusDebounce(false)
+  lastObservedFocus = false
+  stdoutTail = ''
+  if (state === INITIAL_PRESENCE) return
+  state = INITIAL_PRESENCE
+  emit()
+}
+
+/**
+ * Unhook a child so nothing it does on the way out can move any state or fire any handler.
+ *
+ * A RETIRED CHILD STILL NEEDS AN `'error'` SINK, on the process and on both pipes. `'error'` is
+ * not an ordinary event: an EventEmitter with no listener for it THROWS the payload, so removing
+ * the handlers wholesale converts a failed `kill()` or a post-mortem EPIPE from a log line into
+ * an uncaught exception in the main process. These sinks are terminal on purpose — this child is
+ * already on its way out, and there is nothing left to do about it but say so.
+ */
+function detach(c: WatcherChild): void {
+  const sink = (what: string) => (err: unknown) =>
+    logError('main:presence', { message: `retired watcher child (${what})`, err })
+  c.stdout.removeAllListeners()
+  c.stderr.removeAllListeners()
+  c.removeAllListeners('exit')
+  c.removeAllListeners('error')
+  c.on('error', sink('process'))
+  c.stdout.on('error', sink('stdout'))
+  c.stderr.on('error', sink('stderr'))
+}
+
+function clearStaleWatchdog(): void {
+  if (!staleTimer) return
+  clearInterval(staleTimer)
+  staleTimer = null
+}
+
+/**
+ * THE STALENESS WATCHDOG — the half of the fix that a dead-child handler cannot cover.
+ *
+ * A child that EXITS announces itself. A child that WEDGES — alive, pid intact, loop not
+ * advancing (a blocked handle, a suspended process, a pipe nobody drained) — announces nothing
+ * at all, and the only evidence is the heartbeat that stopped arriving. So: check the clock, and
+ * when the pipe has been silent past `WATCHER_STALE_MS`, treat the child as gone. Reset FIRST
+ * (the state has been wrong for thirty seconds already and the respawn takes another second),
+ * then kill and restart on the same backoff an exit uses.
+ *
+ * The interval exists only while a child does, and is unref'd: it can never be the reason the
+ * app stays alive at quit.
+ */
+function armStaleWatchdog(): void {
+  clearStaleWatchdog()
+  staleTimer = setInterval(() => {
+    const c = child
+    if (!c || !watcherIsStale(lastSignalAt, Date.now())) return
+    logError('main:presence', {
+      message: 'presence watcher went silent; assuming it is wedged and restarting',
+      silentMs: Date.now() - lastSignalAt
+    })
+    child = null
+    clearStaleWatchdog()
+    detach(c)
+    c.kill()
+    resetPresence()
+    restartFailures++
+    scheduleRestart()
+  }, WATCHER_HEARTBEAT_MS)
+  staleTimer.unref?.()
+}
+
+/**
+ * Bring the watcher back after a failure, on a capped backoff.
+ *
+ * Not restarting at all was the old behavior and it is a silent, permanent feature outage: the
+ * state reset made the app SAFE (overlays back, ring parked) but nothing ever looked at the game
+ * again for the rest of the session. Both consumers are supposed to be always-on.
+ *
+ * The `listeners.size` check is what makes this respect the ref-count: a restart scheduled a
+ * moment before the user turns the last feature off must not spawn a child nobody wants.
+ */
+function scheduleRestart(): void {
+  if (restartTimer || listeners.size === 0) return
+  restartTimer = setTimeout(() => {
+    restartTimer = null
+    if (listeners.size === 0 || child) return
+    startWatcher()
+  }, watcherRestartDelayMs(restartFailures))
+  restartTimer.unref?.()
+}
+
+/**
+ * The one path off the child, for every way it can end: a clean exit, a crash, a spawn that
+ * never happened, and the watchdog's kill. Idempotent by identity — `child !== proc` means this
+ * one has already been retired (or replaced), so a late `'exit'` after an `'error'` is a no-op
+ * rather than a second restart.
+ */
+function handleChildGone(proc: WatcherChild, code: number | null): void {
+  if (child !== proc) return
+  child = null
+  clearStaleWatchdog()
+  detach(proc)
+  // An exit while consumers remain is a real failure (the script threw, or PowerShell is
+  // missing). Report it, fall back to "nothing known", and try again on the backoff.
+  if (listeners.size === 0) return
+  logError('main:presence', { message: 'presence watcher exited unexpectedly', code })
+  resetPresence()
+  restartFailures++
+  scheduleRestart()
 }
 
 /**
@@ -288,7 +469,14 @@ function cleanWatcherStderr(text: string): string {
 
 function startWatcher(): void {
   if (child || E2E || process.platform !== 'win32') return
-  const script = watcherScript(eqRootPrefix(effectiveEqRoot()), RUNNING_POLL_MS, TICK_MS)
+  const script = watcherScript(
+    eqRootPrefix(effectiveEqRoot()),
+    RUNNING_POLL_MS,
+    TICK_MS,
+    // Baked in so the child can reap ITSELF when this process dies without running its quit path
+    // (a crash, or a force-kill of the tree). Windows orphans children rather than killing them.
+    process.pid
+  )
   let proc: WatcherChild
   try {
     proc = spawn(
@@ -305,9 +493,17 @@ function startWatcher(): void {
     )
   } catch (err) {
     logError('main:presence', { message: 'could not start the presence watcher', err })
+    // A spawn that throws is as much a failure as one that exits, and it is the one most likely
+    // to be transient (a momentarily unavailable powershell.exe). Back off and try again.
+    restartFailures++
+    scheduleRestart()
     return
   }
   child = proc
+  childStartedAt = Date.now()
+  // Seed the silence clock at the spawn, not at the first line: the child pays a one-time
+  // `Add-Type` compile before it can say anything, and that quiet second is normal.
+  lastSignalAt = childStartedAt
   logInfo('[everquest-companion] presence watcher started')
   stdoutTail = ''
   proc.stdout.setEncoding('utf8')
@@ -317,19 +513,12 @@ function startWatcher(): void {
     const message = cleanWatcherStderr(text)
     if (message) logError('main:presence', { stderr: message.slice(0, 500) })
   })
-  proc.on('error', (err) => logError('main:presence', err))
-  proc.on('exit', (code) => {
-    child = null
-    // An exit while consumers remain is a real failure (the script threw, or PowerShell is
-    // missing). Report it and fall back to "nothing known" rather than freezing the last state
-    // — a stuck `eqRunning:false` would hide every overlay forever.
-    if (listeners.size > 0) {
-      logError('main:presence', { message: 'presence watcher exited unexpectedly', code })
-      state = INITIAL_PRESENCE
-      focus = newFocusDebounce(false)
-      emit()
-    }
+  proc.on('error', (err) => {
+    logError('main:presence', err)
+    handleChildGone(proc, null)
   })
+  proc.on('exit', (code) => handleChildGone(proc, code))
+  armStaleWatchdog()
 }
 
 function stopWatcher(): void {
@@ -337,16 +526,23 @@ function stopWatcher(): void {
     clearTimeout(focusTimer)
     focusTimer = null
   }
+  clearStaleWatchdog()
+  if (restartTimer) {
+    clearTimeout(restartTimer)
+    restartTimer = null
+  }
+  // A deliberate stop is not a failure — the next start deserves a clean slate.
+  restartFailures = 0
   const c = child
   child = null
   if (!c) return
-  c.stdout.removeAllListeners()
-  c.stderr.removeAllListeners()
-  c.removeAllListeners('exit')
+  detach(c)
   c.kill()
   logInfo('[everquest-companion] presence watcher stopped')
   state = INITIAL_PRESENCE
   focus = newFocusDebounce(false)
+  lastObservedFocus = false
+  stdoutTail = ''
 }
 
 /**
