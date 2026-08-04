@@ -453,6 +453,7 @@ export function createOverlayWindow(kind: OverlayKind): void {
   // Always-on-top at the screen-saver level so it floats above ordinary windows
   // (and the borderless game). Re-assert after show for reliability on Windows.
   w.setAlwaysOnTop(true, 'screen-saver')
+  raiseCursorRing()
 
   const wc = w.webContents
   wc.on('preload-error', (_e, preloadPath, error) =>
@@ -473,6 +474,7 @@ export function createOverlayWindow(kind: OverlayKind): void {
     w.showInactive()
     w.setAlwaysOnTop(true, 'screen-saver')
     applyOverlayLocked(kind, getOverlayConfig(kind).locked)
+    raiseCursorRing()
   })
 
   // Persist position + size so the overlay restores where the user left it.
@@ -557,6 +559,10 @@ export function setOverlaysHidden(hidden: boolean): void {
     w.setAlwaysOnTop(true, 'screen-saver')
     applyOverlayLocked(kind, getOverlayConfig(kind).locked)
   }
+  // Overlays re-asserting always-on-top just raised them ABOVE the ring (same 'screen-saver'
+  // level; the most recent assertion wins). Put the ring back on top, or the circle slides
+  // BEHIND an overlay on mouseover — the flicker auto-hide users saw on every EQ refocus.
+  raiseCursorRing()
 }
 
 // ---- the CURSOR RING window ----
@@ -624,8 +630,11 @@ export function createCursorRingWindow(bounds: ScreenRect): void {
   })
   cursorRingWindow = w
 
-  // Above the overlays' own 'screen-saver' level is not expressible, but the ring is created
-  // after them in practice and re-asserts on every show, which puts it on top in Z order.
+  // Above the overlays' own 'screen-saver' level is not expressible; within one level the most
+  // recent setAlwaysOnTop assertion wins. "Ring above overlays" is therefore an INVARIANT kept
+  // by construction: every overlay show/re-raise path ends with raiseCursorRing(), never by
+  // creation-order luck — auto-hide re-shows overlays on every EQ refocus, and before this rule
+  // each re-show buried the ring, so the circle slid behind an overlay on mouseover.
   w.setAlwaysOnTop(true, 'screen-saver')
   // Unconditional and permanent: this window is never a mouse target. `forward:true` costs
   // nothing here (nothing listens for the forwarded moves) and keeps the flag identical to the
@@ -687,6 +696,18 @@ export function setCursorRingVisible(visible: boolean): void {
   }
   if (E2E || w.isVisible()) return
   w.showInactive()
+  w.setAlwaysOnTop(true, 'screen-saver')
+}
+
+/**
+ * Re-assert the ring's always-on-top so it sits ABOVE the overlays. Within one z-level the most
+ * recent assertion wins, so every overlay show/re-raise path calls this last — that ordering IS
+ * the "ring above overlays" invariant (see the creation-time comment). A no-op when the ring is
+ * absent, destroyed, or hidden: raising a hidden window on Windows can flash it.
+ */
+function raiseCursorRing(): void {
+  const w = cursorRingWindow
+  if (!w || w.isDestroyed() || !w.isVisible()) return
   w.setAlwaysOnTop(true, 'screen-saver')
 }
 
