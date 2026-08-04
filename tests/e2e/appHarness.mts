@@ -11,6 +11,7 @@
 
 import type { Page } from 'playwright-core'
 import { spawnSync } from 'node:child_process'
+import { createHash } from 'node:crypto'
 import { mkdirSync, readdirSync, statSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
@@ -27,9 +28,27 @@ export const ARTIFACTS = join(ROOT, 'tests', 'e2e', 'artifacts')
  */
 const OUT_DIR = join(ROOT, 'out-e2e')
 export const MAIN_ENTRY = join(OUT_DIR, 'main', 'index.js')
-/** Throwaway `userData` for the app under test — wiped per run, so every run starts fresh
- *  (default view, no saved character, no overlays) and the real store is never opened. */
-export const USER_DATA = join(tmpdir(), 'everquest-companion-e2e-userdata')
+/**
+ * Throwaway `userData` for the app under test — wiped per run, so every run starts fresh
+ * (default view, no saved character, no overlays) and the real store is never opened.
+ *
+ * KEYED BY CHECKOUT, and that suffix is load-bearing. It used to be one fixed path in the OS
+ * temp dir, which is a SINGLETON PER MACHINE, not per repo: a second checkout of this repo (a
+ * `git worktree`, a CI runner with two jobs, two agents working in parallel) ran its specs
+ * against the very same dir. That is not a slow test, it is a WRONG one — `firstRun()` wipes
+ * this dir with `rmSync`, so a neighbour's fresh-install step deletes the store THIS spec is
+ * mid-way through asserting about. The telemetry spec is where it surfaced, because it is the
+ * only spec whose assertion spans two launches: launch 3 opted out, a neighbour wiped the dir,
+ * and launch 4 read defaults back — "the answer SURVIVES a restart" failing against an app
+ * that had persisted the answer perfectly.
+ *
+ * A hash of ROOT keeps every property the fixed path had — stable across runs of THIS checkout,
+ * so runs still overwrite rather than litter temp — while making the collision impossible.
+ */
+export const USER_DATA = join(
+  tmpdir(),
+  `everquest-companion-e2e-userdata-${createHash('sha1').update(ROOT).digest('hex').slice(0, 10)}`
+)
 
 /** A full-log scan of a months-old live log takes a while; be generous, fail loudly. */
 export const HYDRATE_TIMEOUT_MS = 300_000

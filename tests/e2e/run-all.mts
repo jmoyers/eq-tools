@@ -5,6 +5,11 @@
 //
 // Specs share the singleton e2e build + userData conventions, so they must not
 // run concurrently — sequential is a constraint here, not a simplification.
+//
+// That singleton is per CHECKOUT, not per machine (appHarness.mts hashes ROOT into
+// USER_DATA, and out-e2e/ has always lived under ROOT). Two checkouts — a git worktree,
+// two CI jobs on one runner — may therefore run this at the same time; two specs inside
+// one checkout may not.
 import { spawnSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'

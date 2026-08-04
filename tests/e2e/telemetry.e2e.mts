@@ -23,7 +23,8 @@
  * Never run it beside another spec — they share the userData singleton.
  */
 import { _electron as electron, type ElectronApplication, type Page } from 'playwright-core'
-import { rmSync } from 'node:fs'
+import { readFileSync, rmSync } from 'node:fs'
+import { join } from 'node:path'
 import {
   MAIN_ENTRY,
   ROOT,
@@ -48,6 +49,12 @@ const PANE = '[data-testid="pref-telemetry"]'
 const SWITCH = '[data-testid="pref-telemetry-enabled"] input'
 /** `useViewDwell` ignores anything under a second — a pass-through is not a visit. */
 const DWELL_MS = 1_400
+/**
+ * The settings file inside `USER_DATA`, spelled out rather than imported: `STORE_NAME` lives in
+ * src/main/channel.ts, which imports `electron` at module scope and therefore cannot be loaded by
+ * a plain node process. tests/storeMigrations.test.mts hardcodes the same name for the same reason.
+ */
+const STORE_NAME = 'everquest-companion-progress'
 
 interface Prefs {
   enabled: boolean
@@ -237,6 +244,35 @@ async function stepOptOut(page: Page): Promise<void> {
 
 // ---- launch 3: the restart -------------------------------------------------------------------
 
+/**
+ * THE ANSWER, ON DISK, BETWEEN THE TWO PROCESSES — read with launch 3 gone and launch 4 not yet
+ * started, so nothing is holding it in memory and the only thing that can be true here is what
+ * the file says.
+ *
+ * It exists to SPLIT the failure that `stepPersisted` reports. "Still off after relaunch" is one
+ * assertion over two very different mechanisms — did the app write the answer, and did the answer
+ * survive until the next process read it — and when it failed, it could not say which. (It was
+ * the second: a neighbouring checkout's spec, sharing the machine-wide temp userData dir this
+ * harness used to hardcode, wiped the file in between. See USER_DATA in appHarness.mts.) With
+ * this step, a write bug fails here and an environment eating the file fails only below.
+ */
+function stepOnDisk(): void {
+  const path = join(USER_DATA, `${STORE_NAME}.json`)
+  let telemetry: unknown
+  try {
+    telemetry = (JSON.parse(readFileSync(path, 'utf8')) as { telemetry?: unknown }).telemetry
+  } catch (err) {
+    check('the opt-out is on disk after the app that made it has exited', false, String(err))
+    return
+  }
+  const prefs = telemetry as Prefs | undefined
+  check(
+    'the opt-out is on disk after the app that made it has exited',
+    prefs?.enabled === false && prefs.noticeShown === true,
+    JSON.stringify(telemetry)
+  )
+}
+
 /** THE PERSISTENCE ASSERTION — a real second process against the same userData dir. */
 async function stepPersisted(page: Page): Promise<void> {
   const p = await payload(page)
@@ -371,6 +407,8 @@ async function main(): Promise<void> {
   })
   await firstRun('launch 2: fresh userData — the Details link…', consoleErrors, stepDetailsOpensPane)
   await firstRun('launch 3: fresh userData — opting out…', consoleErrors, stepOptOut)
+
+  stepOnDisk()
 
   console.log('launch 4: same userData as launch 3 — does the answer survive a restart…')
   const app = await launch()
