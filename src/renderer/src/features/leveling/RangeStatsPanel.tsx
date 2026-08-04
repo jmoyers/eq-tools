@@ -99,6 +99,7 @@ function StatCard({ stat }: { stat: HeroStat }): JSX.Element {
     <Paper
       variant="outlined"
       sx={{ p: 1.25, flex: 1, minWidth: 150, borderLeft: `3px solid ${accent}`, display: 'flex', gap: 1 }}
+      data-testid="leveling-range-hero"
     >
       <Box sx={{ color: accent, display: 'flex', alignItems: 'center' }}>{ICON[stat.id]}</Box>
       <Box sx={{ minWidth: 0 }}>
@@ -164,7 +165,7 @@ const CELL_SX = { py: 0.35, fontSize: 12 } as const
 
 function ZoneRow({ row }: { row: ZoneStatRow }): JSX.Element {
   return (
-    <TableRow hover>
+    <TableRow hover data-testid="leveling-range-zone-row">
       <TableCell sx={{ ...CELL_SX, width: 18, pr: 0 }}>
         <Box sx={{ width: 10, height: 10, borderRadius: 0.5, bgcolor: row.color }} />
       </TableCell>
@@ -287,6 +288,7 @@ export function RangeStatsPanel({ stats, onClear }: RangeStatsPanelProps): JSX.E
     <Paper
       variant="outlined"
       sx={{ p: 1.5, display: 'flex', flexDirection: 'column', gap: 1.25, flexGrow: 1, minHeight: 0 }}
+      data-testid="leveling-range-stats"
     >
       <HeaderRow stats={stats} onClear={onClear} />
       <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>

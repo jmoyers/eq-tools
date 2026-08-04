@@ -59,9 +59,18 @@ function ZoneBandStrip({ bands, scale }: { bands: readonly ZoneBand[]; scale: Ch
   const rects = bandRects(bands, scale)
   if (rects.length === 0) return null
   return (
-    <g>
+    <g data-testid="leveling-zone-bands">
       {rects.map((r, i) => (
-        <rect key={`${r.key}-${i}`} x={r.x} y={0} width={r.w} height={BAND_H} fill={r.color} opacity={0.85} />
+        <rect
+          key={`${r.key}-${i}`}
+          data-testid="leveling-zone-band"
+          x={r.x}
+          y={0}
+          width={r.w}
+          height={BAND_H}
+          fill={r.color}
+          opacity={0.85}
+        />
       ))}
     </g>
   )
@@ -133,9 +142,9 @@ export function ZoneLegendStrip({
 }): JSX.Element | null {
   if (legend.rows.length === 0) return null
   return (
-    <div style={LEGEND_STYLE}>
+    <div style={LEGEND_STYLE} data-testid="leveling-zone-legend">
       {legend.rows.map((row) => (
-        <span key={row.key} style={LEGEND_ITEM}>
+        <span key={row.key} style={LEGEND_ITEM} data-testid="leveling-zone-legend-row">
           <span style={{ ...SWATCH, background: row.color }} />
           <span>{row.name}</span>
           <span style={{ opacity: 0.6 }}>{fmtDuration(row.ms)}</span>
@@ -172,7 +181,7 @@ export function AreaChart({
   const tail = `${x(scale.t1).toFixed(1)},${y(points[points.length - 1].y).toFixed(1)}`
   const area = `${x(points[0].ts).toFixed(1)},${H - pad} ${line} ${tail} ${x(scale.t1).toFixed(1)},${H - pad}`
   return (
-    <div style={WRAP_STYLE} {...chrome.pointer}>
+    <div style={WRAP_STYLE} data-testid="leveling-aa-chart" {...chrome.pointer}>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
         <ZoneBandStrip bands={chrome.bands} scale={scale} />
         <polygon points={area} fill={color} opacity={0.18} />
@@ -283,7 +292,7 @@ export function LevelStepChart({
   const drawn = drawSegments(segments, scale, y, floor)
 
   return (
-    <div style={WRAP_STYLE} {...chrome.pointer}>
+    <div style={WRAP_STYLE} data-testid="leveling-level-chart" {...chrome.pointer}>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} preserveAspectRatio="none">
         <ZoneBandStrip bands={chrome.bands} scale={scale} />
         {drawn.map((d, i) => (

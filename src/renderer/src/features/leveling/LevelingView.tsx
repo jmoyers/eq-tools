@@ -439,7 +439,7 @@ export default function LevelingView(): JSX.Element {
   const nothing = sortedLevels.length === 0 && sortedAAs.length === 0
 
   return (
-    <Stack spacing={2} sx={{ height: '100%' }}>
+    <Stack spacing={2} sx={{ height: '100%' }} data-testid="leveling-view">
       <LevelingHeroes
         currentLevel={currentLevel}
         levelCount={sortedLevels.length}
@@ -452,7 +452,7 @@ export default function LevelingView(): JSX.Element {
       />
 
       {nothing || !chrome ? (
-        <Typography color="text.secondary" sx={{ p: 2 }}>
+        <Typography color="text.secondary" sx={{ p: 2 }} data-testid="leveling-empty">
           No level-ups or AA gains found in this character&apos;s log yet. They&apos;ll appear here live as you play.
         </Typography>
       ) : (

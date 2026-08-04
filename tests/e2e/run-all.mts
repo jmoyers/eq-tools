@@ -14,6 +14,7 @@ const SPECS = [
   'combat-dashboard.e2e.mts',
   'overview.e2e.mts',
   'maps.e2e.mts',
+  'leveling.e2e.mts',
   'copy.e2e.mts',
   'feedback.e2e.mts',
   'voice-alerts.e2e.mts'
