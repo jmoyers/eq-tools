@@ -56,6 +56,12 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1102.0",
+    "@aws-sdk/client-s3": "^3.1102.0",
+    "@aws-sdk/credential-providers": "^3.1102.0",
+    "@aws-sdk/lib-dynamodb": "^3.1102.0",
+    "@aws-sdk/s3-presigned-post": "^3.1102.0",
+    "esbuild": "^0.21.5",
     "@eslint/js": "^9.39.5",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",

@@ -1,0 +1,96 @@
+# Terraform + Lambda-bundle verification for infra/.
+#
+# THIS WORKFLOW NEVER PLANS AND NEVER APPLIES. It holds no cloud credentials, no
+# OIDC deploy role and no secrets of any kind, because this repository is PUBLIC
+# and a deploy identity reachable from a public workflow is a deploy identity
+# reachable from a pull request. Deployment is a MANUAL act from the dev machine
+# against the sub-account profile (see infra/README.md); `terraform plan` is the
+# review artifact and a human reads it.
+#
+# What it does prove, on every change to infra/ or to the shared contract:
+#
+#   fmt -check          the HCL is canonically formatted
+#   init -backend=false provider requirements resolve WITHOUT touching the S3
+#                       backend (no credentials, no state, no lock)
+#   validate            every resource/reference/type actually checks out
+#   node infra/build.mjs  the handler still BUNDLES — i.e. the Lambda's import of
+#                       validateSubmit from src/shared/feedback.ts is intact.
+#                       That last one is the point: it is what stops the client
+#                       and the server from drifting apart silently.
+#
+# The bundle step is why `src/shared/feedback.ts` is in the path filter: a change
+# to the contract can break the server bundle without touching a single .tf file.
+#
+# ACTION PINNING follows build.yml — full 40-char commit SHAs with the floating
+# tag in a trailing comment, because a `@v4` tag is a MUTABLE pointer. Re-resolve
+# with: gh api repos/<owner>/<action>/git/ref/tags/<tag> --jq .object.sha
+
+name: infra
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'infra/**'
+      - 'src/shared/feedback.ts'
+      - '.github/workflows/infra.yml'
+  pull_request:
+    paths:
+      - 'infra/**'
+      - 'src/shared/feedback.ts'
+      - '.github/workflows/infra.yml'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: infra
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4 (v4.4.0)
+        with:
+          persist-credentials: false
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4 (v4.0.1)
+        with:
+          terraform_version: 1.9.8
+          # The wrapper rewrites stdout to feed step outputs we do not use, and it
+          # swallows exit codes in ways that make a failing check read as a pass.
+          terraform_wrapper: false
+
+      - name: Terraform fmt
+        run: terraform fmt -check -recursive
+
+      # -backend=false is load-bearing: it resolves providers without reading the
+      # S3 backend, so this job needs no AWS credentials and cannot touch state.
+      - name: Terraform init (no backend)
+        run: terraform init -backend=false
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4 (v4.4.0)
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      # `.npmrc` sets ignore-scripts=true. Unlike build.yml this job does NOT run
+      # `npm run deps:electron`: nothing here launches Electron, and skipping the
+      # ~190 MB binary download keeps the check fast.
+      - name: Install dependencies
+        run: npm ci
+        working-directory: .
+
+      - name: Bundle the Lambda handler
+        run: node infra/build.mjs
+        working-directory: .
