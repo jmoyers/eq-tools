@@ -38,6 +38,14 @@
 //   or 1 s (25). The experience line PRECEDES its kill line — always, and essentially always in
 //   the same second. Not one experience line in the log follows its kill inside 4 s.
 //
+// OFFLINE INTERVALS. The one column here that is not a log line but a DERIVED absence: the
+// `offlineGap` events sessionDetector.ts synthesizes at each login line, carrying the instants
+// the character left and re-entered the world. Folded verbatim (no merging, no inference), and
+// deliberately NOT applied to anything else in this module — the columns record what the log
+// said, and `shared/progressionStats.rangeStats` is the single place that decides what a
+// logout means for idle time, active time and every rate. That split is what keeps a range
+// query over a snapshot with no offline intervals byte-identical to what it always was.
+//
 // So the join looks BACKWARD: a kill takes the most recent UNCLAIMED experience line within
 // KILL_EXP_JOIN_MS before it. That makes the ring row complete the instant it is created, which
 // is why the delta stays a pure append with no patch channel and no deferred commit.
@@ -73,6 +81,13 @@ export const WITNESS_CAP = 20_000
 export const LOOT_CAP = 20_000
 /** Zone bands are the cheapest and most valuable column (~344 intervals / 6 days ⇒ ~70 days). */
 export const ZONE_CAP = 4_000
+/**
+ * Offline intervals are capped like the zone bands and for the same reason (three parallel
+ * numeric columns, negligible), but they are rarer by orders of magnitude — a logout happens a
+ * handful of times a day against hundreds of zone lines, so this cap covers years and exists
+ * only so no column in this snapshot can grow without a stated bound.
+ */
+export const OFFLINE_CAP = 4_000
 
 /** levelTs / aaGainTs are UNCAPPED (~5k rows/year; the chart needs every ding). */
 
@@ -100,7 +115,7 @@ interface PendingExp {
 }
 
 function emptyDropFront(): ProgressionDropFront {
-  return { exp: 0, kill: 0, witness: 0, loot: 0, zone: 0 }
+  return { exp: 0, kill: 0, witness: 0, loot: 0, zone: 0, offline: 0 }
 }
 
 /**
@@ -171,6 +186,9 @@ export class ProgressionModule implements EqModule<ProgressionSnap, ProgressionD
         return
       case 'zone':
         this.onZone(ev.ts, ev.zone)
+        return
+      case 'offlineGap':
+        this.pushOffline(ev.fromTs, ev.toTs, ev.camped)
         return
       case 'loot':
         push1(this.s.lootTs, this.p.lootTs, ev.ts)
@@ -298,6 +316,29 @@ export class ProgressionModule implements EqModule<ProgressionSnap, ProgressionD
     }
   }
 
+  /**
+   * A derived absence: the character was OUT OF THE WORLD between two known instants. Both
+   * edges arrive stated (sessionDetector emits the gap at the login line that ENDED it), so
+   * this is a plain append — there is no open-ended offline interval and no close-in-place
+   * twin of `zoneCloseEnd`. Non-positive spans are dropped rather than stored: an interval
+   * that covers no time is not evidence of anything.
+   *
+   * NOTE WHAT IS *NOT* DONE HERE. No zone interval is closed and no idle bookkeeping happens:
+   * the columns stay a record of what the log said, and `rangeStats` is where offline is
+   * carved out of the silence it sits inside. That keeps the absence attributable to the camp
+   * the player logged out of — the login writes its own zone line a moment later.
+   */
+  private pushOffline(fromTs: number, toTs: number, camped: boolean): void {
+    if (toTs <= fromTs) return
+    this.s.offlineStart.push(fromTs)
+    this.s.offlineEnd.push(toTs)
+    this.s.offlineCamped.push(camped ? 1 : 0)
+    this.p.offlineStart.push(fromTs)
+    this.p.offlineEnd.push(toTs)
+    this.p.offlineCamped.push(camped ? 1 : 0)
+    this.trim()
+  }
+
   /** Close the open interval at the new zone's start, then open the next one. */
   private onZone(ts: number, zone: string): void {
     const n = this.s.zoneStart.length
@@ -335,6 +376,7 @@ export class ProgressionModule implements EqModule<ProgressionSnap, ProgressionD
       for (let i = 0; i < s.killZone.length; i++) s.killZone[i] = Math.max(-1, s.killZone[i] - zoneDrop)
       this.noteDrop('zone', zoneDrop)
     }
+    this.noteDrop('offline', capColumns(OFFLINE_CAP, [s.offlineStart, s.offlineEnd, s.offlineCamped]))
     this.recomputeWindow()
   }
 
@@ -361,6 +403,7 @@ export class ProgressionModule implements EqModule<ProgressionSnap, ProgressionD
     bump(this.droppedBy.witness, s.witnessTs[0])
     bump(this.droppedBy.loot, s.lootTs[0])
     bump(this.droppedBy.zone, s.zoneStart[0])
+    bump(this.droppedBy.offline, s.offlineStart[0])
     s.windowStart = w
   }
 
@@ -382,10 +425,10 @@ export class ProgressionModule implements EqModule<ProgressionSnap, ProgressionD
     const p = this.p
     const appended =
       p.expTs.length + p.killTs.length + p.witnessTs.length + p.lootTs.length + p.zoneStart.length +
-      p.levelTs.length + p.aaGainTs.length + p.recentKills.length
+      p.offlineStart.length + p.levelTs.length + p.aaGainTs.length + p.recentKills.length
     const dropped =
       p.dropFront.exp + p.dropFront.kill + p.dropFront.witness + p.dropFront.loot + p.dropFront.zone +
-      p.recentKillsDrop
+      p.dropFront.offline + p.recentKillsDrop
     if (appended === 0 && dropped === 0 && p.zoneCloseEnd === undefined) return null
     p.lastTs = this.s.lastTs
     p.windowStart = this.s.windowStart
@@ -409,6 +452,7 @@ function blankSnap(): ProgressionSnap {
     recentKills: [],
     lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
+    offlineStart: [], offlineEnd: [], offlineCamped: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
     lastTs: 0, windowStart: 0, dropped: 0
   }
@@ -422,6 +466,7 @@ function blankDelta(): ProgressionDelta {
     recentKills: [], recentKillsDrop: 0,
     lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
+    offlineStart: [], offlineEnd: [], offlineCamped: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
     lastTs: 0, windowStart: 0, dropped: 0, dropFront: emptyDropFront()
   }

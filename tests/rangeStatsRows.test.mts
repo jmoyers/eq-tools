@@ -23,12 +23,16 @@ import assert from 'node:assert/strict'
 import {
   AA_RESPEC_CAPTION,
   NONE,
+  OFFLINE_CAPTION,
+  OFFLINE_TITLE,
   aaText,
   activeIdleText,
   comboInferred,
   comboText,
   idleGapsText,
   idleRuleCaption,
+  offlineGapsText,
+  offlineText,
   rangeHeroes,
   unstatedCaption,
   witnessedText,
@@ -47,12 +51,16 @@ const T0 = Date.parse('Sat Aug 01 12:00:00 2026')
 function zone(over: Partial<ZoneRangeRow> & { zone: string }): ZoneRangeRow {
   const spanMs = over.spanMs ?? HOUR
   const idleMs = over.idleMs ?? 0
-  const activeMs = over.activeMs ?? spanMs - idleMs
+  // The Σ identity the query guarantees (active + idle + offline == span), so a row built here
+  // is a row `rangeStats` could actually have produced.
+  const offlineMs = over.offlineMs ?? 0
+  const activeMs = over.activeMs ?? spanMs - idleMs - offlineMs
   const base: ZoneRangeRow = {
     zone: over.zone,
     spanMs,
     activeMs,
     idleMs,
+    offlineMs,
     visits: 1,
     kills: 0,
     killsSelf: 0,
@@ -64,7 +72,7 @@ function zone(over: Partial<ZoneRangeRow> & { zone: string }): ZoneRangeRow {
     levelsPerHourWall: null,
     killsPerHourActive: null
   }
-  return { ...base, ...over, spanMs, activeMs, idleMs }
+  return { ...base, ...over, spanMs, activeMs, idleMs, offlineMs }
 }
 
 function stats(over: Partial<RangeStats> = {}): RangeStats {
@@ -76,6 +84,8 @@ function stats(over: Partial<RangeStats> = {}): RangeStats {
     idleMs: 0,
     idleGaps: 0,
     idleThresholdMs: IDLE_GAP_MS,
+    offlineMs: 0,
+    offlineGaps: 0,
     kills: 0,
     killsSelf: 0,
     killsPet: 0,
@@ -313,6 +323,55 @@ test('witnessed kills and AA are context, and vanish when there are none', () =>
   assert.equal(aaText(stats({ aaGained: 0, aaGainEvents: 0 })), null)
   assert.equal(aaText(stats({ aaGained: 7, aaGainEvents: 5 })), '+7 AA')
   assert.match(AA_RESPEC_CAPTION, /respec/, 'law 5: Σ gain lines is not the AA identity')
+})
+
+// ---------------------------------------------------------------- offline (rule 4)
+
+test('offline is SAID only where the log said it, and stays out of the idle wording', () => {
+  assert.equal(offlineText(stats()), null, 'no derived logout ⇒ no offline word at all')
+  assert.equal(offlineGapsText(stats()), null)
+  assert.equal(offlineText(stats({ offlineMs: 8 * HOUR + 12 * MIN })), '8h 12m offline')
+  assert.equal(offlineGapsText(stats({ offlineGaps: 1 })), '1 logout')
+  assert.equal(offlineGapsText(stats({ offlineGaps: 3 })), '3 logouts')
+
+  // The active/idle chip is untouched by offline: it reports the two things it always did, and
+  // the offline number is its own chip beside it.
+  const camped = stats({ activeMs: 40 * MIN, idleMs: 20 * MIN, offlineMs: 8 * HOUR, offlineGaps: 1 })
+  assert.equal(activeIdleText(camped), '40m active · 20m idle')
+  assert.ok(!/offline/i.test(activeIdleText(camped)), 'the active/idle chip never grows an offline clause')
+})
+
+test('the offline caption names its evidence, and the tooltip states the limit', () => {
+  assert.match(OFFLINE_CAPTION, /logged out/)
+  assert.match(OFFLINE_CAPTION, /camp\/login lines/, 'it says WHERE the number came from')
+  // The honesty rule this whole feature turns on: an absence in progress has no login line
+  // yet, so it cannot be seen — and the tooltip must say so rather than let the user assume
+  // that "no offline" means "online".
+  assert.match(OFFLINE_TITLE, /only known once you log back in/)
+  assert.match(OFFLINE_TITLE, /still counted as idle/)
+  // …and the idle caption stays exactly what it was: it covers every silence the app cannot
+  // attribute, which is precisely the set that must not be called offline.
+  assert.equal(idleRuleCaption(IDLE_GAP_MS), 'idle = no experience, kill, or loot event for over 5 minutes')
+  assert.ok(!/AFK|offline|away/i.test(idleRuleCaption(IDLE_GAP_MS)))
+})
+
+test('a zone row prints its logout beside its active time, and nothing when there was none', () => {
+  const [plain] = zoneStatRows([zone({ zone: 'Befallen', spanMs: 3 * HOUR, idleMs: 38 * MIN })])
+  assert.equal(plain.offline, null)
+  assert.equal(plain.detail, '2h 22m active', 'unchanged: no offline, no offline clause')
+  assert.equal(plain.offlineMs, 0)
+
+  const [camp] = zoneStatRows([
+    zone({ zone: 'Befallen', spanMs: 10 * HOUR, idleMs: 61 * MIN, offlineMs: 8 * HOUR + 59 * MIN })
+  ])
+  assert.equal(camp.time, '10h 0m')
+  assert.equal(camp.active, '0s', 'the identity holds: 10h - 1h01m idle - 8h59m offline')
+  assert.equal(camp.idle, '1h 1m')
+  assert.equal(camp.offline, '8h 59m')
+  assert.equal(camp.detail, '0s active · 8h 59m offline')
+
+  const [busy] = zoneStatRows([zone({ zone: 'Guk', spanMs: 2 * HOUR })])
+  assert.equal(busy.detail, null, 'pure activity needs no qualifier at all')
 })
 
 test('the unstated footnote appears only when it is true', () => {

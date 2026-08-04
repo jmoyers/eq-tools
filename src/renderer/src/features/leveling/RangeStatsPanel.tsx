@@ -12,7 +12,12 @@
 //   • a range whose experience lines stated no percentage SAYS SO, in a caption on the
 //     number it explains;
 //   • idle is labeled with the literal rule that produced it, and is called "idle" — never
-//     "AFK", never "offline" (the log records events, not presence).
+//     "AFK", never "offline" (the log records events, not presence);
+//   • "offline" appears ONLY when a camp/login line actually derived a logout. No offline
+//     interval in the range ⇒ no offline chip, no offline column, and every other string on
+//     this panel byte-identical to what it printed before offline existed. A logout still in
+//     progress is invisible (the evidence is the login line that has not happened yet), so it
+//     stays inside idle and the offline chip's tooltip says so.
 //
 // Zone swatches come from `zoneBands.zoneColor`, the same function the chart strip uses, so a
 // row and its band are always the same hue.
@@ -43,12 +48,16 @@ import { formatDateTime } from '../../lib/formatDate'
 import { fmtDuration } from './levelChartGeometry'
 import {
   AA_RESPEC_CAPTION,
+  OFFLINE_CAPTION,
+  OFFLINE_TITLE,
   aaText,
   activeIdleText,
   comboInferred,
   comboText,
   idleGapsText,
   idleRuleCaption,
+  offlineGapsText,
+  offlineText,
   rangeHeroes,
   unstatedCaption,
   witnessedText,
@@ -116,12 +125,21 @@ function ChipRow({ stats }: { stats: RangeStats }): JSX.Element {
   const gaps = idleGapsText(stats)
   const witnessed = witnessedText(stats)
   const aa = aaText(stats)
+  // Null unless a login line actually closed a logout inside the range — the offline chip and
+  // its caption exist only when the log said so.
+  const offline = offlineText(stats)
+  const logouts = offlineGapsText(stats)
   return (
     <Box>
       <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
         <Tooltip title={gaps ?? ''} disableHoverListener={!gaps}>
           <Chip size="small" variant="outlined" label={activeIdleText(stats)} sx={CHIP_SX} />
         </Tooltip>
+        {offline && (
+          <Tooltip title={logouts ? `${logouts} · ${OFFLINE_TITLE}` : OFFLINE_TITLE}>
+            <Chip size="small" variant="outlined" label={offline} sx={CHIP_SX} />
+          </Tooltip>
+        )}
         <Chip size="small" variant="outlined" label={comboText(stats.combos)} sx={CHIP_SX} />
         {comboInferred(stats.combos) && <Chip size="small" variant="outlined" label="inferred" sx={CHIP_SX} />}
         {witnessed && (
@@ -135,6 +153,7 @@ function ChipRow({ stats }: { stats: RangeStats }): JSX.Element {
       </Stack>
       <Typography variant="caption" color="text.secondary" display="block" sx={{ mt: 0.5 }}>
         {idleRuleCaption(stats.idleThresholdMs)}
+        {offline && ` · offline: ${OFFLINE_CAPTION}`}
         {aa && ` · AA: ${AA_RESPEC_CAPTION}`}
       </Typography>
     </Box>
@@ -156,8 +175,10 @@ function ZoneRow({ row }: { row: ZoneStatRow }): JSX.Element {
       </TableCell>
       <TableCell align="right" sx={CELL_SX}>
         {row.time}
-        <Box component="span" sx={{ opacity: 0.55 }}>
-          {row.idle ? ` (${row.active} active)` : ''}
+        {/* '(2h 03m active)', or '(2h 03m active · 8h 12m offline)' for the camp you logged
+            out of. Null — and so nothing at all — when the zone was pure activity. */}
+        <Box component="span" sx={{ opacity: 0.55 }} title={row.offline ? OFFLINE_CAPTION : undefined}>
+          {row.detail ? ` (${row.detail})` : ''}
         </Box>
       </TableCell>
       <TableCell align="right" sx={CELL_SX}>

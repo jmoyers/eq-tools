@@ -325,6 +325,45 @@ test('applyProgressionDelta: replaying flushes reproduces main’s ring row for 
   assert.equal(held.dropped, truth.dropped)
 })
 
+// OFFLINE INTERVALS ride the same delta. The simplest capped group in the snapshot — a derived
+// `offlineGap` arrives with BOTH edges stated, so unlike a zone band it never needs an in-place
+// close — but a column the consumer merges wrongly would silently hand the renderer a logout at
+// the wrong instant, and every rate that divides by online wall would follow it.
+test('applyProgressionDelta: offline intervals arrive whole, in order, across flushes', () => {
+  const mod = new ProgressionModule()
+  mod.reset()
+  const base = T('Sat Aug 01 00:00:00 2026')
+  let held = EMPTY_PROGRESSION
+  let seq = 0
+  mod.onEvent({ kind: 'zone', seq: seq++, ts: base, raw: '', zone: 'Befallen' }, false)
+  for (let i = 0; i < 5; i++) {
+    const at = base + i * 4 * 3_600_000
+    // The gap as sessionDetector states it: out at `fromTs`, back at the Welcome (`toTs`).
+    mod.onEvent(
+      { kind: 'offlineGap', seq: seq++, ts: at + 3_600_000, raw: '', fromTs: at, toTs: at + 3_600_000, camped: i % 2 === 0 },
+      false
+    )
+    // Flush between some of them so the consumer merges across a boundary, not in one gulp.
+    if (i % 2 === 1) {
+      const mid = mod.flushDelta()
+      if (mid) held = applyProgressionDelta(held, mid.delta)
+    }
+  }
+  const last = mod.flushDelta()
+  if (last) held = applyProgressionDelta(held, last.delta)
+
+  const truth = mod.snapshot().state
+  assert.equal(truth.offlineStart.length, 5)
+  assert.deepEqual(held.offlineStart, truth.offlineStart)
+  assert.deepEqual(held.offlineEnd, truth.offlineEnd)
+  assert.deepEqual(held.offlineCamped, truth.offlineCamped, 'the camp evidence rides with its interval')
+  assert.deepEqual(held.offlineCamped, [1, 0, 1, 0, 1])
+  assert.equal(truth.dropped, 0, 'five logouts are nowhere near the cap')
+  // A zero-length or inverted gap is not evidence of anything and is never stored.
+  mod.onEvent({ kind: 'offlineGap', seq: seq++, ts: base, raw: '', fromTs: base, toTs: base, camped: false }, false)
+  assert.equal(mod.snapshot().state.offlineStart.length, 5)
+})
+
 // ─────────────────────────────────────────────────────────────────────────────
 // FULL-LOG TRIPWIRE — FLOORS AND IDENTITIES ONLY (the log is live and grows). Skipped in CI.
 test('full-log: the join holds at scale and the ring never disagrees with the kill column', {

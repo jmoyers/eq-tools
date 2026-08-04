@@ -101,6 +101,32 @@ export interface ProgressionSnap {
   /** RAW display name (law 2: canonicalize at boundaries, display raw). */
   zoneName: string[]
 
+  // --- OFFLINE intervals: time the log SAYS you were logged out ---
+  //
+  // Ascending, DISJOINT, half-open [start, end), and — unlike zones — never contiguous and
+  // never open-ended: each row is a `offlineGap` derived event, which the bus emits only AFTER
+  // the `sessionStart` (the "Welcome to EverQuest Legends!" line) that ENDED the absence. So a
+  // row exists only once the log has stated both edges of it.
+  //
+  // THAT ASYMMETRY IS THE HONESTY RULE (laws 1/6). A logout is knowable only in hindsight: the
+  // user may be logged out RIGHT NOW and this app cannot know it, because the only evidence is
+  // the login line that has not been written yet. Silence at the live edge therefore stays
+  // IDLE — no surface may call it offline without the line. `rangeStats` keeps the two
+  // quantities in separate fields for exactly this reason: idle is present-but-unproductive,
+  // offline is absent, and they are different claims about the world.
+  //
+  // Capped like the zone band column (OFFLINE_CAP), which is why it participates in
+  // `ProgressionDropFront` / `windowStart` at all — a logout is rarer than a zone line by
+  // orders of magnitude, so in practice it never bites.
+  offlineStart: number[]
+  offlineEnd: number[]
+  /**
+   * 1 when a camp line preceded the logout, 0 when none did (a crash, a kick, or a client
+   * closed without camping). EVIDENCE, not inference: the gap itself is derived from the
+   * login line either way, and this only records whether the log also said how it started.
+   */
+  offlineCamped: number[]
+
   // --- tiny uncapped series, mirrored so rangeStats has one input ---
   levelTs: number[]
   levelValue: number[]
@@ -133,6 +159,7 @@ export interface ProgressionDropFront {
   witness: number
   loot: number
   zone: number
+  offline: number
 }
 
 /**
@@ -165,6 +192,11 @@ export interface ProgressionDelta {
   zoneName: string[]
   /** new end for the previously-open zone interval, when one closed this flush. */
   zoneCloseEnd?: number
+  /** Offline intervals appended this flush. A PLAIN append — an offline row arrives already
+   *  closed (both edges stated), so there is no `offlineCloseEnd` twin of `zoneCloseEnd`. */
+  offlineStart: number[]
+  offlineEnd: number[]
+  offlineCamped: number[]
   levelTs: number[]
   levelValue: number[]
   aaGainTs: number[]

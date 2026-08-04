@@ -22,6 +22,13 @@
 //      No surface in this file may say xp, exp points, or experience points.
 //   3. A row with unstated samples SAYS SO. `expUnstated > 0` is a real state of the world
 //      (the game prints a percentage only while a level bar exists), not a rounding artifact.
+//   4. "OFFLINE" IS SAID ONLY WHERE THE LOG SAID IT. Every offline string here is null unless
+//      `offlineMs > 0` — i.e. unless a camp/login line actually derived a logout. Silence with
+//      no login line yet is still "idle" with its existing caption, because the user may be
+//      logged out RIGHT NOW and the log cannot say so until they come back. That is why the
+//      idle caption below is untouched by this feature: it must not learn a word it cannot
+//      justify, and with no offline interval in range every string in this file is byte
+//      identical to what it was before offline existed.
 
 import type { ComboInterval, RangeStats, ZoneRangeRow } from '@shared/progressionStats'
 import { formatKillRate, formatLevelRate } from '../../lib/formatRate'
@@ -45,6 +52,7 @@ export interface ZoneStatRow {
   spanMs: number
   activeMs: number
   idleMs: number
+  offlineMs: number
   visits: number
   kills: number
   /** wall time in the zone, e.g. '2h 41m'. */
@@ -53,6 +61,15 @@ export interface ZoneStatRow {
   active: string
   /** the idle half, or null when the zone had no qualifying silence at all. */
   idle: string | null
+  /** the logged-out half, or null when the log derived no logout in this zone. */
+  offline: string | null
+  /**
+   * The parenthetical the table prints after `time`: '2h 03m active', or
+   * '2h 03m active · 8h 12m offline' when the camp is one you logged out of. Null when the
+   * zone was pure activity, so a row that needs no qualifier carries none — and a row with no
+   * offline reads exactly as it always did.
+   */
+  detail: string | null
   /** Σ levels of progress, or an em-dash when every sample here was unstated. */
   levels: string
   levelsPerHour: string
@@ -100,6 +117,13 @@ function byTime(a: ZoneRangeRow, b: ZoneRangeRow): number {
   return b.spanMs - a.spanMs || byLevels(a, b)
 }
 
+/** '2h 03m active' (+ ' · 8h 12m offline' when a logout landed in this camp), or null. */
+function zoneDetail(z: ZoneRangeRow): string | null {
+  if (z.idleMs <= 0 && z.offlineMs <= 0) return null
+  const active = `${fmtDuration(z.activeMs)} active`
+  return z.offlineMs > 0 ? `${active} · ${fmtDuration(z.offlineMs)} offline` : active
+}
+
 function shapeZone(z: ZoneRangeRow): ZoneStatRow {
   return {
     key: z.zone,
@@ -108,11 +132,14 @@ function shapeZone(z: ZoneRangeRow): ZoneStatRow {
     spanMs: z.spanMs,
     activeMs: z.activeMs,
     idleMs: z.idleMs,
+    offlineMs: z.offlineMs,
     visits: z.visits,
     kills: z.kills,
     time: fmtDuration(z.spanMs),
     active: fmtDuration(z.activeMs),
     idle: z.idleMs > 0 ? fmtDuration(z.idleMs) : null,
+    offline: z.offlineMs > 0 ? fmtDuration(z.offlineMs) : null,
+    detail: zoneDetail(z),
     levels: levelsText(z.levelEquiv, z.expSamples, z.expUnstated),
     levelsPerHour: rate(z.levelsPerHourActive, formatLevelRate),
     killsPerHour: rate(z.killsPerHourActive, formatKillRate),
@@ -197,13 +224,44 @@ export function activeIdleText(stats: RangeStats): string {
  * CHOICE, not a fact, so it is always shown beside the value it produced — and it is read
  * from the stats object (`IDLE_GAP_MS`), never typed in as a number here.
  *
- * The wording is deliberate: "idle", never "AFK" and never "offline". The log records EVENTS,
- * not PRESENCE — there is no login/logout/camp line in this family — so medding, banking,
- * crafting, travelling, being away and having the game closed are all the same silence.
+ * The wording is deliberate: "idle", never "AFK" and never "offline". Within a session the log
+ * records EVENTS, not PRESENCE, so medding, banking, crafting, travelling and being away from
+ * the keyboard are all the same silence — and so is a logout the log has not yet CLOSED with a
+ * login line. This string is therefore left exactly as it was when offline landed: it covers
+ * every silence the app cannot attribute, which is precisely the set that must not be called
+ * offline. `OFFLINE_TITLE` states that limit where the offline number itself is shown.
  */
 export function idleRuleCaption(idleThresholdMs: number): string {
   const mins = idleThresholdMs / MS_PER_MIN
   return `idle = no experience, kill, or loot event for over ${mins} minutes`
+}
+
+/**
+ * Time the log SAYS you were logged out, or null when it said nothing of the kind. Null is the
+ * common case and the important one: no derived offline interval ⇒ no offline word anywhere
+ * (rule 4 in the header).
+ */
+export function offlineText(stats: RangeStats): string | null {
+  return stats.offlineMs > 0 ? `${fmtDuration(stats.offlineMs)} offline` : null
+}
+
+/** The offline chip's caption — WHERE the number came from, in the log's own terms. */
+export const OFFLINE_CAPTION = 'logged out — from the camp/login lines'
+
+/**
+ * The offline chip's tooltip: the source, and the limit that comes with it. A logout is
+ * knowable only in hindsight — the evidence is the login line that ENDED it — so an absence
+ * still in progress cannot be seen at all, and its silence is counted as idle. Stating that
+ * beside the number is the difference between a measurement and a claim (laws 1/6).
+ */
+export const OFFLINE_TITLE =
+  'Time the log says you were logged out: a login line closed the gap, and a camp line often opened it. ' +
+  'A logout is only known once you log back in, so silence at the end of the log is still counted as idle.'
+
+/** How many separate logouts produced that total — a title-attribute detail, null when none. */
+export function offlineGapsText(stats: RangeStats): string | null {
+  if (stats.offlineGaps === 0) return null
+  return `${stats.offlineGaps} logout${stats.offlineGaps === 1 ? '' : 's'}`
 }
 
 /** How many separate silences produced that idle total — a title-attribute detail. */

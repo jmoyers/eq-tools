@@ -51,6 +51,7 @@ function blankSnap(): ProgressionSnap {
     recentKills: [],
     lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
+    offlineStart: [], offlineEnd: [], offlineCamped: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
     lastTs: 0, windowStart: 0, dropped: 0
   }

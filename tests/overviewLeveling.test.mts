@@ -26,12 +26,20 @@
 //      loadout and swapping a class in drops it with NO log line at all, so the span across
 //      that drop covers time the log cannot account for. The walk stops at the boundary; it
 //      never reaches back into an older run to fill its quota.
+//   7. OFFLINE TIME LEAVES THE DENOMINATOR, IT DOES NOT DRAG IT DOWN. An hour of LOG time can
+//      contain a logout, and the log states one (in hindsight, from the login line that ended
+//      it). Every rate here divides by the ONLINE part of the window, the projection refuses
+//      itself when too little online play is left, and the per-level comparison subtracts the
+//      same intervals from both sides. A window with no derived logout answers exactly what it
+//      always did — pinned byte-for-byte, because silence the log has not explained is still
+//      idle and must never be quietly promoted to "offline".
 //
 // Imported RELATIVELY: node tests run through tsx with no `@shared` / `@renderer` aliases.
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import {
+  ETA_MIN_ONLINE_MS,
   HEADLINE_WINDOW_MS,
   HISTORY_MAX,
   currentLevel,
@@ -39,7 +47,8 @@ import {
   levelingWindows,
   overviewLeveling,
   paceVerdict,
-  recentLevelSpans
+  recentLevelSpans,
+  type LevelSpan
 } from '../src/renderer/src/features/overview/overviewLevelingData'
 import { rangeStats } from '../src/shared/progressionStats'
 import { NONE } from '../src/renderer/src/features/leveling/rangeStatsRows'
@@ -58,9 +67,17 @@ function emptySnap(): ProgressionSnap {
     killTs: [], killZone: [], killCredit: [],
     witnessTs: [], recentKills: [], lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
+    offlineStart: [], offlineEnd: [], offlineCamped: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
     lastTs: 0, windowStart: 0, dropped: 0
   }
+}
+
+/** A derived logout: the interval sessionDetector states when the login line closes it. */
+function offline(snap: ProgressionSnap, fromTs: number, toTs: number, camped = true): void {
+  snap.offlineStart.push(fromTs)
+  snap.offlineEnd.push(toTs)
+  snap.offlineCamped.push(camped ? 1 : 0)
 }
 
 /**
@@ -354,8 +371,8 @@ test(`level history keeps at most ${HISTORY_MAX} levels, the most recent ones`, 
 })
 
 /** `n` identical spans of `ms`, ascending from level 40 — a fixture for the verdict bands. */
-function evenSpans(msList: readonly number[]): { fromLevel: number; toLevel: number; ms: number }[] {
-  return msList.map((ms, i) => ({ fromLevel: 40 + i, toLevel: 41 + i, ms }))
+function evenSpans(msList: readonly number[]): LevelSpan[] {
+  return msList.map((ms, i) => ({ fromLevel: 40 + i, toLevel: 41 + i, ms, offlineMs: 0 }))
 }
 
 /** The wall levels/hour rate that corresponds to exactly `ms` of wall time per level. */
@@ -394,6 +411,127 @@ test('the card wires the estimate, the history and the verdict together', () => 
   assert.ok(state.historyTitle.includes('Median 4h 0m per level'), state.historyTitle)
   assert.ok(state.historyTitle.includes('class swap'), state.historyTitle)
   assert.equal(state.eta, '~41m to level 41')
+})
+
+// ---------------------------------------------------------------------------------------
+// OFFLINE: the hour can contain a LOGOUT (rule 7)
+//
+// Window A is an hour of LOG time, so playing until 02:52 and coming back at 13:00 puts most
+// of an empty chair inside it. What is pinned here: the hours the log says you were logged out
+// leave the denominators rather than dragging every rate toward zero, the projection refuses
+// itself when too little online play is left to project from, the per-level comparison
+// subtracts the same intervals from BOTH sides — and a window with no derived logout in it
+// answers exactly what it always did.
+// ---------------------------------------------------------------------------------------
+
+/**
+ * A snapshot whose last hour contains a logout: one open zone, one derived offline interval,
+ * and a stated 1% exp + credited kill every minute from `firstSampleMin` minutes before the
+ * end down to one. The kill three hours back is there so the idle walk has a bracketing sample
+ * on the left, exactly as a real log would.
+ */
+function campedHour(o: { offFrom: number; offTo: number; first: number; ding?: number }): ProgressionSnap {
+  const s: ProgressionSnap = { ...emptySnap(), zoneStart: [T0 - 3 * HOUR], zoneEnd: [0], zoneName: ['Plane of Sky'] }
+  const kill = (ts: number): void => {
+    s.killTs.push(ts)
+    s.killZone.push(0)
+    s.killCredit.push(0)
+  }
+  kill(T0 - 3 * HOUR)
+  offline(s, T0 - o.offFrom * MIN, T0 - o.offTo * MIN)
+  for (let m = o.first; m >= 1; m--) {
+    s.expTs.push(T0 - m * MIN)
+    s.expPct.push(1)
+    s.expFlag.push(0)
+    kill(T0 - m * MIN)
+  }
+  if (o.ding !== undefined) ding(s, T0 - o.ding * MIN, 43)
+  s.lastTs = T0
+  return s
+}
+
+test('a logout inside the hour is offline, not idle — and the rates divide by ONLINE wall', () => {
+  // Camped 55 minutes ago, back 25 minutes ago, farming a kill a minute since.
+  const snap = campedHour({ offFrom: 55, offTo: 25, first: 24, ding: 20 })
+  const a = hourStats(snap)
+  assert.equal(a.offlineMs, 30 * MIN)
+  assert.equal(a.offlineGaps, 1)
+  assert.equal(a.activeMs + a.idleMs + a.offlineMs, a.durationMs, 'the Σ identity, on the card’s own window')
+  // 0.24 levels over the 30 ONLINE minutes, not over the hour the clock advanced.
+  assert.ok(Math.abs((a.levelsPerHourWall ?? 0) - 0.48) < 1e-9, String(a.levelsPerHourWall))
+
+  const state = overviewLeveling(snap)
+  assert.equal(state.rate, '0.60 lvl/hr', 'the headline was always over ACTIVE time and is unchanged')
+  // 5m before camping + 1m after logging back in — the 30m absence is nobody's idle time.
+  assert.equal(state.activity, '24m active · 6m idle')
+  assert.equal(state.offline, '30m offline')
+  assert.equal(state.eta, '~1h 41m to level 44')
+  assert.ok(state.etaTitle.includes('logged out is excluded'), state.etaTitle)
+  assert.ok(state.etaTitle.includes('assumes you keep playing'), state.etaTitle)
+})
+
+test('an hour that is mostly an empty chair states no ETA, and says which hole caused it', () => {
+  // Back only five minutes ago: 10 online minutes is a rate, but it is not an hour of evidence.
+  const snap = campedHour({ offFrom: 55, offTo: 5, first: 4, ding: 6 })
+  assert.equal(levelEta(snap, hourStats(snap)).blocked, 'offline')
+  const state = overviewLeveling(snap)
+  assert.equal(state.eta, null)
+  assert.ok(state.etaTitle.includes('logged out'), state.etaTitle)
+  assert.notEqual(state.rate, NONE, 'the measured rate still stands — only the PROJECTION is refused')
+})
+
+test(`the ETA gate is exactly ${ETA_MIN_ONLINE_MS / MIN} online minutes, and only offline can trip it`, () => {
+  // 45m out, 15m online: the floor is inclusive, so this one still projects.
+  const ok = campedHour({ offFrom: 55, offTo: 10, first: 9, ding: 9 })
+  assert.equal(hourStats(ok).durationMs - hourStats(ok).offlineMs, ETA_MIN_ONLINE_MS)
+  assert.equal(levelEta(ok, hourStats(ok)).blocked, null, 'exactly at the floor is fine')
+
+  // A window with NO derived logout is never gated, however idle it was — silence the log has
+  // not explained is not evidence of an empty chair (the live-edge limit).
+  const idle = farming({ everyMs: MIN, pct: 1 })
+  // Keep the first five minutes of the hour and let the other 55 be pure silence.
+  for (const col of [idle.expTs, idle.expPct, idle.expFlag, idle.killTs, idle.killZone, idle.killCredit]) {
+    col.length = 5
+  }
+  ding(idle, idle.expTs[0] - MIN, 43)
+  const stats = hourStats(idle)
+  assert.equal(stats.offlineMs, 0)
+  assert.ok(stats.idleMs > 45 * MIN, 'nearly the whole hour is unexplained silence')
+  assert.equal(levelEta(idle, stats).blocked, null, 'idle alone never blocks the estimate')
+})
+
+test('the per-level history subtracts logouts from BOTH sides of the comparison', () => {
+  const snap = farming({ everyMs: MIN, pct: 1 })
+  ding(snap, T0 - 10 * HOUR, 38)
+  ding(snap, T0 - 8 * HOUR, 39)
+  ding(snap, T0 - 2 * HOUR, 40)
+  // Four of the six hours between 39 and 40 were a logout: that level took two hours of play.
+  offline(snap, T0 - 7 * HOUR, T0 - 3 * HOUR)
+
+  const spans = recentLevelSpans(snap)
+  assert.deepEqual(spans.map((s) => [s.ms, s.offlineMs]), [[2 * HOUR, 0], [2 * HOUR, 4 * HOUR]])
+  const state = overviewLeveling(snap)
+  assert.equal(state.history, 'lvl 38→39 2.0h · 39→40 2.0h')
+  // Median 2h of PLAY per level against the last hour's ~1.7h/level: the same pace. Counting
+  // the sleep would have made the median 4h and declared you 'ahead' every single morning.
+  assert.equal(state.verdict, 'about your recent pace')
+  assert.ok(state.historyTitle.includes('Median 2h 0m per level'), state.historyTitle)
+  assert.ok(state.historyTitle.includes('online time'), state.historyTitle)
+  assert.ok(!state.historyTitle.includes(', wall time'), state.historyTitle)
+})
+
+test('REGRESSION: a logout outside the hour changes nothing the card says', () => {
+  const bare = farming({ everyMs: MIN, pct: 1 })
+  ding(bare, T0 - 30 * MIN, 43)
+  const withLogout = farming({ everyMs: MIN, pct: 1 })
+  ding(withLogout, T0 - 30 * MIN, 43)
+  offline(withLogout, T0 - 20 * HOUR, T0 - 12 * HOUR)
+
+  assert.deepEqual(overviewLeveling(withLogout), overviewLeveling(bare), 'byte-for-byte identical')
+  const state = overviewLeveling(bare)
+  assert.equal(state.offline, null, 'no derived logout ⇒ the card says nothing about being offline')
+  assert.equal(state.eta, '~1h 12m to level 44')
+  assert.ok(!state.etaTitle.includes('logged out'), 'and the tooltip claims no assumption it did not make')
 })
 
 test('zone comparison: only when the hour actually spans two named camps', () => {

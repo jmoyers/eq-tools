@@ -18,7 +18,12 @@
 // string on this card is computed in the pure module beside it — the component adds no
 // arithmetic of its own, which is what keeps those rules testable.
 //
-// The words are the feature's words: "levels of progress", never xp; "idle", never AFK.
+// The words are the feature's words: "levels of progress", never xp; "idle", never AFK. And
+// "offline" ONLY when the log said so: the hour can contain a logout (the card's window is an
+// hour of LOG time, so coming back at 13:00 after camping at 02:52 puts most of an empty chair
+// inside it), and when a login line closes one, a chip states it and every rate on the card
+// divides by the ONLINE part of the hour. A logout still in progress has no login line yet, so
+// it cannot be seen at all and its silence stays idle — the chip's tooltip says that too.
 //
 // THE PROJECTION LINE IS ALWAYS THERE, and it is an em-dash when it has to be. "~2h 10m to
 // level 44" is the answer this card was asked for, so its absence must be visible and
@@ -35,6 +40,7 @@ import type { JSX } from 'react'
 import { Button, Chip, Stack, Tooltip, Typography } from '@mui/material'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { DashCard, QuietNote } from '../combat/combatShared'
+import { OFFLINE_TITLE } from '../leveling/rangeStatsRows'
 import type { OverviewLevelingState } from './overviewLevelingData'
 
 export interface LevelingCardProps {
@@ -84,6 +90,13 @@ function LevelingChips({ state }: { state: OverviewLevelingState }): JSX.Element
       {state.clipped && (
         <Tooltip title={CLIPPED_TITLE}>
           <Chip size="small" variant="outlined" label="partial record" sx={{ height: 20 }} />
+        </Tooltip>
+      )}
+      {/* Only ever present when a login line CLOSED a logout inside the hour. Silence the log
+          has not explained is idle, not offline, and carries no chip at all. */}
+      {state.offline && (
+        <Tooltip title={OFFLINE_TITLE}>
+          <Chip size="small" variant="outlined" label={state.offline} sx={{ height: 20 }} />
         </Tooltip>
       )}
     </Stack>

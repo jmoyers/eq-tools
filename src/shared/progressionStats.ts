@@ -20,11 +20,25 @@
 //   • `kills` counts CREDITED kills only (your killing blow + a bound pet's). Kills you
 //     merely witnessed are `killsWitnessed` and enter no rate, so a busy zone full of other
 //     players cannot inflate your farming numbers.
-//   • IDLE is the ABSENCE of evidence, not the absence of a player. The log records EVENTS,
-//     not PRESENCE: there is no login/logout/camp/AFK line in this family, so medding,
-//     banking, crafting, travelling, being AFK and having the game closed are all the same
-//     silence. Call it "idle" — never "AFK", never "offline". A 40-minute tradeskill session
-//     reads as pure idle, and the log cannot say otherwise.
+//   • IDLE is PRESENT-BUT-UNPRODUCTIVE; OFFLINE is ABSENT. These are two different claims and
+//     this file keeps them in two different fields.
+//
+//     Within a session the log records EVENTS, not PRESENCE — medding, banking, crafting,
+//     travelling and being AFK at the keyboard are all the same silence, and `idleMs` is that
+//     silence. Call it "idle": never "AFK" (the log cannot see a chair) and never "offline"
+//     (see below).
+//
+//     What the log CAN state is a logout, and only in hindsight: the `offlineGap` derived
+//     event is emitted after the login line ("Welcome to EverQuest Legends!") that ENDED the
+//     absence, carrying the camp line's evidence when there was one. Those intervals are
+//     `offlineMs`, they are SUBTRACTED out of `idleMs` (a logout is not medding), and they are
+//     the reason a 13.7-hour overnight no longer reads as the largest idle gap of the week.
+//
+//     THE LIMIT, STATED (laws 1/6): the user may be logged out RIGHT NOW and this app cannot
+//     know it — the only evidence would be a login line that has not been written yet. So
+//     silence at the LIVE EDGE is still idle, and no surface may call it offline. When the
+//     snapshot carries no offline interval at all, every number here is byte-identical to what
+//     it was before offline existed.
 
 // Imported from the transport module directly (types.ts re-exports the same names) — a shared
 // file importing the barrel it is part of would be a needless cycle.
@@ -53,9 +67,19 @@ export interface ZoneRangeRow {
   zone: string
   /** ms of the selection spent in this zone (Σ over every visit inside the range). */
   spanMs: number
-  /** spanMs minus idleMs. */
+  /** spanMs minus idleMs minus offlineMs. */
   activeMs: number
+  /** present-but-unproductive silence. EXCLUDES `offlineMs` — a logout is not medding. */
   idleMs: number
+  /**
+   * ms of this zone's span the log says you were LOGGED OUT.
+   *
+   * A logout lands INSIDE the zone interval you logged out in — the login writes a fresh zone
+   * line, so the old interval stays open until then — which is why this is the zone row's own
+   * column rather than a share of its idle. The overnight belongs to the camp you left, and
+   * the camp's `activeMs` / rates must not be judged by it.
+   */
+  offlineMs: number
   visits: number
   kills: number
   killsSelf: number
@@ -67,6 +91,7 @@ export interface ZoneRangeRow {
   expSamples: number
   /** null when activeMs is 0, or when every exp sample here was unstated. */
   levelsPerHourActive: number | null
+  /** per hour of ONLINE wall (`spanMs - offlineMs`) — see `RangeStats.levelsPerHourWall`. */
   levelsPerHourWall: number | null
   killsPerHourActive: number | null
 }
@@ -99,11 +124,34 @@ export interface RangeStats {
   t0: number
   t1: number
   durationMs: number
+  /**
+   * THE Σ IDENTITY, pinned by the tests: `activeMs + idleMs + offlineMs === durationMs`.
+   * Every instant of the selection is exactly one of playing, present-but-silent, and gone.
+   */
   activeMs: number
+  /**
+   * Present-but-unproductive silence, with any derived offline interval CARVED OUT of it. So
+   * an overnight logout adds to `offlineMs`, not here — while the four minutes you spent
+   * finding your corpse after logging back in are still idle, because they are.
+   */
   idleMs: number
-  /** number of idle gaps > IDLE_GAP_MS that intersect the range. */
+  /**
+   * Number of idle spans in the range. Counted AFTER offline is carved out, so one overnight
+   * silence can leave a short present-but-idle remainder at either end of it and those
+   * remainders are counted (they are real time you were logged in and quiet). With no offline
+   * interval in range this is exactly what it always was: the gaps over IDLE_GAP_MS.
+   */
   idleGaps: number
   idleThresholdMs: number
+
+  /**
+   * ms of the range the log says you were LOGGED OUT — Σ of the derived `offlineGap` intervals
+   * clipped to the selection. 0 when the log stated no logout, which is not the same fact as
+   * "you were online" (see the file header's live-edge limit) and must never be worded as one.
+   */
+  offlineMs: number
+  /** how many derived offline intervals intersect the range. 0 ⇒ say nothing about offline. */
+  offlineGaps: number
 
   kills: number
   killsSelf: number
@@ -116,6 +164,21 @@ export interface RangeStats {
   /** Σ stated percent / 100 — "levels of progress", NOT experience points. */
   levelEquiv: number
   levelsPerHourActive: number | null
+  /**
+   * Levels of progress per hour of ONLINE WALL time — `durationMs - offlineMs`, NOT the
+   * selection's raw wall clock.
+   *
+   * The name is kept for its callers; the honest reading is "per online hour". A rate whose
+   * denominator counted a logout would be arithmetic about an empty chair: an overnight in the
+   * window drove this toward zero and made every ETA built on it meaningless, which is the
+   * whole reason offline exists. WALL still means "including the idle time you actually spent
+   * in the game" — medding and looting stay in the denominator, deliberately, because you will
+   * experience the projection in that same wall time. Null when the online wall is 0 (a range
+   * that is entirely offline), or when every exp sample in range was unstated.
+   *
+   * With no offline interval in range this is EXACTLY the old wall rate — same denominator,
+   * same number, byte for byte.
+   */
   levelsPerHourWall: number | null
   killsPerHourActive: number | null
 
@@ -250,7 +313,7 @@ function segAt(segs: readonly ZoneSeg[], ts: number): number {
  * activity. When no bracketing sample exists the edge itself anchors the walk — silence with
  * nothing before it is still silence.
  */
-function idleSpans(snap: ProgressionSnap, t0: number, t1: number): { spans: Span[]; gaps: number } {
+function idleSpans(snap: ProgressionSnap, t0: number, t1: number): Span[] {
   const cols = [snap.expTs, snap.killTs, snap.lootTs]
   const stream: number[] = []
   for (const col of cols) for (let i = lowerBound(col, t0); i < lowerBound(col, t1); i++) stream.push(col[i])
@@ -265,7 +328,68 @@ function idleSpans(snap: ProgressionSnap, t0: number, t1: number): { spans: Span
     const end = Math.min(walk[i], t1)
     if (end > start) spans.push({ start, end })
   }
-  return { spans, gaps: spans.length }
+  return spans
+}
+
+/**
+ * The offline intervals overlapping [t0,t1), clipped to it. Ascending and disjoint by
+ * construction (each row is one `offlineGap`, and a gap ends where the session that ended it
+ * begins), so no merging is needed — and none is invented: an interval is quoted exactly as
+ * the log's two lines stated it.
+ */
+function offlineSpansIn(snap: ProgressionSnap, t0: number, t1: number): Span[] {
+  const out: Span[] = []
+  const n = snap.offlineStart.length
+  for (let i = Math.max(0, upperBound(snap.offlineStart, t0) - 1); i < n && snap.offlineStart[i] < t1; i++) {
+    const start = Math.max(snap.offlineStart[i], t0)
+    const end = Math.min(snap.offlineEnd[i], t1)
+    if (end > start) out.push({ start, end })
+  }
+  return out
+}
+
+/**
+ * How much of [t0,t1) the log says you were logged out. Exported because the Overview card's
+ * per-level history needs the same subtraction over spans this file never sees (a level took
+ * 13.9 hours only if you were there for them).
+ */
+export function offlineMsIn(snap: ProgressionSnap, t0: number, t1: number): number {
+  return offlineSpansIn(snap, t0, t1).reduce((n, s) => n + (s.end - s.start), 0)
+}
+
+/**
+ * `spans` minus `cuts` — both ascending and disjoint. This is what makes idle and offline
+ * DISJOINT rather than double-counted: an offline interval always sits inside a silence (you
+ * killed nothing while logged out), so without the subtraction the same hours would be both,
+ * and `active + idle + offline == duration` could not hold.
+ *
+ * A cut through the middle of a silence SPLITS it, which is honest: the minutes before you
+ * camped and the minutes after you logged back in are separate stretches of being present and
+ * quiet, and neither is the logout.
+ */
+function subtractSpans(spans: readonly Span[], cuts: readonly Span[]): Span[] {
+  if (cuts.length === 0) return [...spans]
+  const out: Span[] = []
+  for (const s of spans) {
+    let start = s.start
+    for (const c of cuts) {
+      if (c.end <= start || c.start >= s.end) continue
+      if (c.start > start) out.push({ start, end: c.start })
+      start = c.end
+    }
+    if (start < s.end) out.push({ start, end: s.end })
+  }
+  return out
+}
+
+/** How much of `spans` falls inside [start,end). Spans are disjoint, so this is a plain Σ. */
+function overlapMs(spans: readonly Span[], start: number, end: number): number {
+  let total = 0
+  for (const s of spans) {
+    const overlap = Math.min(s.end, end) - Math.max(s.start, start)
+    if (overlap > 0) total += overlap
+  }
+  return total
 }
 
 function newRow(zone: string): ZoneRangeRow {
@@ -274,6 +398,7 @@ function newRow(zone: string): ZoneRangeRow {
     spanMs: 0,
     activeMs: 0,
     idleMs: 0,
+    offlineMs: 0,
     visits: 0,
     kills: 0,
     killsSelf: 0,
@@ -301,8 +426,12 @@ function levelsUnknown(expSamples: number, expUnstated: number): boolean {
   return expSamples > 0 && expSamples === expUnstated
 }
 
-/** Rows in segment order, one per distinct zone key, with spanMs/visits/idleMs folded in. */
-function buildRows(segs: readonly ZoneSeg[], spans: readonly Span[]): { rows: ZoneRangeRow[]; of: number[] } {
+/** Rows in segment order, one per distinct zone key, with spanMs/visits/idle/offline folded in. */
+function buildRows(
+  segs: readonly ZoneSeg[],
+  idle: readonly Span[],
+  offline: readonly Span[]
+): { rows: ZoneRangeRow[]; of: number[] } {
   const index = new Map<string, number>()
   const rows: ZoneRangeRow[] = []
   const of: number[] = []
@@ -316,13 +445,13 @@ function buildRows(segs: readonly ZoneSeg[], spans: readonly Span[]): { rows: Zo
     of.push(at)
     rows[at].spanMs += seg.end - seg.start
     rows[at].visits += 1
-    // Split every idle span at the zone boundaries it crosses, so per-zone idle sums to the
-    // range's idle EXACTLY (the attribution is exact — a zone line is a real event — even
-    // though WHY you were idle there is not in the log at all).
-    for (const s of spans) {
-      const overlap = Math.min(s.end, seg.end) - Math.max(s.start, seg.start)
-      if (overlap > 0) rows[at].idleMs += overlap
-    }
+    // Split every idle AND offline span at the zone boundaries it crosses, so per-zone idle
+    // and offline each sum to the range's own total EXACTLY (the attribution is exact — a zone
+    // line is a real event — even though WHY you were idle there is not in the log at all).
+    // In practice an offline span never crosses one: the login writes a fresh zone line, so
+    // the whole absence belongs to the camp you left.
+    rows[at].idleMs += overlapMs(idle, seg.start, seg.end)
+    rows[at].offlineMs += overlapMs(offline, seg.start, seg.end)
   }
   return { rows, of }
 }
@@ -409,10 +538,11 @@ function levelSeriesIn(snap: ProgressionSnap, t0: number, t1: number): Pick<Rang
 /** Fill in each row's derived activeMs + rates. Mutates in place. */
 function finishRows(rows: ZoneRangeRow[]): void {
   for (const row of rows) {
-    row.activeMs = Math.max(0, row.spanMs - row.idleMs)
+    row.activeMs = Math.max(0, row.spanMs - row.idleMs - row.offlineMs)
     const unknown = levelsUnknown(row.expSamples, row.expUnstated)
     row.levelsPerHourActive = unknown ? null : perHour(row.levelEquiv, row.activeMs)
-    row.levelsPerHourWall = unknown ? null : perHour(row.levelEquiv, row.spanMs)
+    // ONLINE wall: the hours you were logged out of this camp are not hours it paid badly in.
+    row.levelsPerHourWall = unknown ? null : perHour(row.levelEquiv, row.spanMs - row.offlineMs)
     row.killsPerHourActive = perHour(row.kills, row.activeMs)
   }
 }
@@ -428,10 +558,14 @@ export function rangeStats(args: RangeStatsArgs): RangeStats {
   const t1 = Math.max(range.t0, range.t1)
   const durationMs = t1 - t0
   const segs = zoneSegments(snap, t0, t1)
-  const { spans, gaps } = durationMs > 0 ? idleSpans(snap, t0, t1) : { spans: [], gaps: 0 }
-  const { rows, of } = buildRows(segs, spans)
+  const offline = durationMs > 0 ? offlineSpansIn(snap, t0, t1) : []
+  // Offline is carved OUT of the silence it sits in — see `subtractSpans`. Do it before the
+  // rows are built so a zone row's idle and its offline can never claim the same instant.
+  const spans = subtractSpans(durationMs > 0 ? idleSpans(snap, t0, t1) : [], offline)
+  const { rows, of } = buildRows(segs, spans, offline)
   const idleMs = spans.reduce((n, s) => n + (s.end - s.start), 0)
-  const activeMs = Math.max(0, durationMs - idleMs)
+  const offlineMs = offline.reduce((n, s) => n + (s.end - s.start), 0)
+  const activeMs = Math.max(0, durationMs - idleMs - offlineMs)
   const ctx: FoldCtx = { segs, rows, of, t0, t1 }
   const kills = foldKills(snap, ctx)
   const exp = foldExp(snap, ctx)
@@ -447,13 +581,17 @@ export function rangeStats(args: RangeStatsArgs): RangeStats {
     durationMs,
     activeMs,
     idleMs,
-    idleGaps: gaps,
+    idleGaps: spans.length,
     idleThresholdMs: IDLE_GAP_MS,
+    offlineMs,
+    offlineGaps: offline.length,
     ...kills,
     killsWitnessed: lowerBound(snap.witnessTs, t1) - lowerBound(snap.witnessTs, t0),
     ...exp,
     levelsPerHourActive: unknown ? null : perHour(exp.levelEquiv, activeMs),
-    levelsPerHourWall: unknown ? null : perHour(exp.levelEquiv, durationMs),
+    // ONLINE wall (duration - offline): a rate whose denominator counted a logout is a
+    // statement about an empty chair. See the field's doc.
+    levelsPerHourWall: unknown ? null : perHour(exp.levelEquiv, durationMs - offlineMs),
     killsPerHourActive: perHour(kills.kills, activeMs),
     ...levelSeriesIn(snap, t0, t1),
     aaGained,

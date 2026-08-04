@@ -27,9 +27,18 @@ function emptySnap(): ProgressionSnap {
     killTs: [], killZone: [], killCredit: [],
     witnessTs: [], recentKills: [], lootTs: [],
     zoneStart: [], zoneEnd: [], zoneName: [],
+    offlineStart: [], offlineEnd: [], offlineCamped: [],
     levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
     lastTs: 0, windowStart: 0, dropped: 0
   }
+}
+
+/** Record a derived logout — the interval sessionDetector states from the login line. */
+function addOffline(snap: ProgressionSnap, fromTs: number, toTs: number, camped = true): void {
+  snap.offlineStart.push(fromTs)
+  snap.offlineEnd.push(toTs)
+  snap.offlineCamped.push(camped ? 1 : 0)
+  snap.lastTs = Math.max(snap.lastTs, toTs)
 }
 
 /** Add a stated exp sample (pct as a percentage, e.g. 2.5) at `ts`. */
@@ -309,6 +318,157 @@ test('the Σ-identities hold across a busy multi-zone range with pets, party exp
   assert.equal(r.aaGainEvents, 1)
   // Befallen's row keeps only its own five kills; The Feerrott's three land in its own row.
   assert.deepEqual(r.zones.map((z) => [z.zone, z.kills]), [['Befallen', 5], ['The Feerrott', 3]])
+})
+
+// ---------------------------------------------------------------------------------------
+// OFFLINE — the log SAYS you were logged out (derived `offlineGap` intervals)
+//
+// The rule these pin: idle is present-but-unproductive, offline is ABSENT, and the two never
+// claim the same instant. `activeMs + idleMs + offlineMs === durationMs` is the identity that
+// makes that structural rather than a convention.
+// ---------------------------------------------------------------------------------------
+
+test('a logout is the zone row’s OWN column, never a share of its idle', () => {
+  const snap = emptySnap()
+  addZone(snap, T0, 'Befallen')
+  addKill(snap, T0)
+  // Camp a minute in, come back nine hours later, kill something at the ten-hour mark.
+  addOffline(snap, T0 + MIN, T0 + 9 * HOUR)
+  addKill(snap, T0 + 10 * HOUR)
+
+  const r = rangeStats({ snap, range: { t0: T0, t1: T0 + 10 * HOUR } })
+  assert.equal(r.offlineMs, 9 * HOUR - MIN)
+  assert.equal(r.offlineGaps, 1)
+  // What is left of the silence is the minute before camping and the hour after logging back
+  // in — real time spent present and quiet, and still idle.
+  assert.equal(r.idleMs, MIN + HOUR)
+  assert.equal(r.activeMs, 0, 'two instantaneous kills ten hours apart is no active time')
+  assert.equal(r.activeMs + r.idleMs + r.offlineMs, r.durationMs, 'the Σ identity')
+  assert.equal(r.idleGaps, 2, 'the logout SPLIT one silence into the two present halves of it')
+
+  const [row] = r.zones
+  assert.equal(row.zone, 'Befallen', 'you logged out of Befallen, so the absence is Befallen’s')
+  assert.equal(row.offlineMs, 9 * HOUR - MIN)
+  assert.equal(row.idleMs, MIN + HOUR, 'and none of it landed in the row’s idle')
+  assert.equal(row.activeMs + row.idleMs + row.offlineMs, row.spanMs)
+})
+
+test('the WALL rate divides by ONLINE wall — a logout is not an hour that paid badly', () => {
+  const snap = emptySnap()
+  addZone(snap, T0, 'Befallen')
+  addKill(snap, T0)
+  addOffline(snap, T0 + MIN, T0 + 61 * MIN)
+  for (const at of [70, 75, 80, 85]) {
+    addKill(snap, T0 + at * MIN)
+    addExp(snap, T0 + at * MIN, 1)
+  }
+
+  const r = rangeStats({ snap, range: { t0: T0, t1: T0 + 2 * HOUR } })
+  assert.equal(r.levelEquiv, 0.04)
+  assert.equal(r.offlineMs, HOUR)
+  assert.equal(r.idleMs, 45 * MIN, '1m before the camp + 9m after the login + the 35m tail')
+  assert.equal(r.activeMs, 15 * MIN)
+  assert.equal(r.activeMs + r.idleMs + r.offlineMs, r.durationMs)
+  // 0.04 levels over ONE online hour, not over the two hours the clock advanced.
+  assert.equal(r.levelsPerHourWall, 0.04)
+  assert.equal(r.levelsPerHourActive, 0.04 / (15 / 60))
+  assert.equal(r.zones[0].levelsPerHourWall, 0.04, 'and the zone row uses its own online span')
+})
+
+test('an offline interval STRADDLING a range edge is clipped, never counted whole', () => {
+  const snap = emptySnap()
+  addZone(snap, T0 - 2 * HOUR, 'Befallen')
+  addKill(snap, T0 - 2 * HOUR)
+  addOffline(snap, T0 - HOUR, T0 + HOUR)
+  addKill(snap, T0 + 2 * HOUR)
+
+  const r = rangeStats({ snap, range: { t0: T0, t1: T0 + 2 * HOUR } })
+  assert.equal(r.offlineMs, HOUR, 'only the half inside the selection')
+  assert.equal(r.offlineGaps, 1)
+  assert.equal(r.idleMs, HOUR, 'the hour between logging back in and the next kill')
+  assert.equal(r.activeMs, 0)
+  assert.equal(r.activeMs + r.idleMs + r.offlineMs, r.durationMs)
+  assert.equal(r.zones.reduce((n, z) => n + z.offlineMs, 0), r.offlineMs)
+})
+
+test('a range that is ENTIRELY offline: no active time, no idle, and no fabricated rate', () => {
+  const snap = emptySnap()
+  addZone(snap, T0 - HOUR, 'Befallen')
+  addKill(snap, T0 - HOUR)
+  addOffline(snap, T0 - MIN, T0 + HOUR + MIN)
+
+  const r = rangeStats({ snap, range: { t0: T0, t1: T0 + HOUR } })
+  assert.equal(r.offlineMs, HOUR)
+  assert.equal(r.idleMs, 0, 'you were not present to be idle')
+  assert.equal(r.idleGaps, 0)
+  assert.equal(r.activeMs, 0)
+  assert.equal(r.activeMs + r.idleMs + r.offlineMs, r.durationMs)
+  assert.equal(r.levelsPerHourActive, null)
+  assert.equal(r.levelsPerHourWall, null, 'zero online wall ⇒ no rate at all, never a division by 0')
+  assert.equal(r.killsPerHourActive, null)
+  const [row] = r.zones
+  assert.equal(row.spanMs, HOUR)
+  assert.equal(row.offlineMs, HOUR)
+  assert.equal(row.idleMs, 0)
+  assert.equal(row.activeMs, 0)
+})
+
+test('the Σ identities extend to offline across a busy multi-zone range', () => {
+  const snap = emptySnap()
+  addZone(snap, T0, 'Befallen')
+  for (let i = 0; i < 5; i++) {
+    addKill(snap, T0 + i * MIN)
+    addExp(snap, T0 + i * MIN, 1.5)
+  }
+  // Camp in Befallen, come back eight hours later and zone straight into The Feerrott — the
+  // login writes its own zone line, which is why the absence belongs to the camp you left.
+  addOffline(snap, T0 + 5 * MIN, T0 + 8 * HOUR)
+  addZone(snap, T0 + 8 * HOUR, 'The Feerrott')
+  for (let i = 0; i < 3; i++) {
+    addKill(snap, T0 + 8 * HOUR + i * MIN)
+    addExp(snap, T0 + 8 * HOUR + i * MIN, 1)
+  }
+
+  const r = rangeStats({ snap, range: { t0: T0, t1: T0 + 9 * HOUR } })
+  assert.equal(r.activeMs + r.idleMs + r.offlineMs, r.durationMs)
+  assert.equal(r.zones.reduce((n, z) => n + z.spanMs, 0), r.durationMs)
+  assert.equal(r.zones.reduce((n, z) => n + z.idleMs, 0), r.idleMs)
+  assert.equal(r.zones.reduce((n, z) => n + z.offlineMs, 0), r.offlineMs)
+  assert.equal(r.zones.reduce((n, z) => n + z.activeMs, 0), r.activeMs)
+  assert.deepEqual(
+    r.zones.map((z) => [z.zone, z.offlineMs]),
+    [['Befallen', 8 * HOUR - 5 * MIN], ['The Feerrott', 0]],
+    'the absence is attributed to the camp it started in, and never to the one you arrived in'
+  )
+  assert.equal(r.kills, 8)
+})
+
+test('REGRESSION: with no offline interval in range, every number is what it always was', () => {
+  const build = (): ProgressionSnap => {
+    const snap = emptySnap()
+    addZone(snap, T0, 'Befallen')
+    for (let i = 0; i < 5; i++) {
+      addKill(snap, T0 + i * MIN, i % 2 === 1)
+      addExp(snap, T0 + i * MIN, 1.5)
+    }
+    addZone(snap, T0 + 30 * MIN, 'The Feerrott')
+    addKill(snap, T0 + 31 * MIN)
+    return snap
+  }
+  const range = { t0: T0, t1: T0 + 40 * MIN }
+  const bare = rangeStats({ snap: build(), range })
+
+  // A snapshot that HAS logouts, just none inside the selection: the query must not notice.
+  const elsewhere = build()
+  addOffline(elsewhere, T0 - 10 * HOUR, T0 - 9 * HOUR)
+  addOffline(elsewhere, T0 + 2 * HOUR, T0 + 5 * HOUR)
+  const away = rangeStats({ snap: elsewhere, range })
+
+  assert.deepEqual(away, bare, 'byte-for-byte the same answer, offline column or not')
+  assert.equal(bare.offlineMs, 0)
+  assert.equal(bare.offlineGaps, 0)
+  assert.equal(bare.activeMs + bare.idleMs, bare.durationMs, 'the OLD identity is the same identity')
+  for (const z of bare.zones) assert.equal(z.offlineMs, 0)
 })
 
 test('zone rows are keyed case-INSENSITIVELY but display the first-seen RAW name', () => {

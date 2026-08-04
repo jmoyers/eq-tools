@@ -38,6 +38,7 @@ export const EMPTY_PROGRESSION: ProgressionSnap = {
   recentKills: [],
   lootTs: [],
   zoneStart: [], zoneEnd: [], zoneName: [],
+  offlineStart: [], offlineEnd: [], offlineCamped: [],
   levelTs: [], levelValue: [], aaGainTs: [], aaGainAmount: [],
   lastTs: 0, windowStart: 0, dropped: 0
 }
@@ -79,6 +80,12 @@ export function applyProgressionDelta(s: ProgressionSnap, d: ProgressionDelta): 
     zoneStart: cat(s.zoneStart, d.zoneStart, drop.zone),
     zoneEnd: cat(zoneEnd, d.zoneEnd, drop.zone),
     zoneName: cat(s.zoneName, d.zoneName, drop.zone),
+    // Offline intervals are the SIMPLEST capped group here: a row arrives with both edges
+    // already stated (the gap is derived from the login line that ended it), so there is no
+    // in-place close to apply first — plain append-then-front-drop, step 2 and step 3.
+    offlineStart: cat(s.offlineStart, d.offlineStart, drop.offline),
+    offlineEnd: cat(s.offlineEnd, d.offlineEnd, drop.offline),
+    offlineCamped: cat(s.offlineCamped, d.offlineCamped, drop.offline),
     levelTs: [...s.levelTs, ...d.levelTs],
     levelValue: [...s.levelValue, ...d.levelValue],
     aaGainTs: [...s.aaGainTs, ...d.aaGainTs],
