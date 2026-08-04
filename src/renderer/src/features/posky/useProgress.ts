@@ -16,6 +16,7 @@ import { useModule } from '../../lib/useModule'
 import { reconcile, type InventoryRow } from '../inventory/reconcile'
 import { questKey } from './keys'
 import { ambiguousQuestNames, computeSharedItems, type SharedItemsMap } from './sharedItems'
+import { skyDroppersFor, type DropperMob } from './poskyDroppers'
 import { matchTurnIns, newlyCompletedTurnIns } from './turnInCelebration'
 
 const applyLootDelta = (s: LootSnap, d: LootDelta): LootSnap => [...s, ...d.appended]
@@ -62,8 +63,16 @@ function deriveLootNames(lootHistory: LootEvent[]): Record<string, string> {
 
 export interface ItemProgress {
   name: string
+  /** the posky scrape's RAW source strings (site abbreviations — see poskyDroppers.ts) */
   who: string[]
   where: string
+  /**
+   * The kill target: every Plane of Sky mob the committed data says drops this item, resolved
+   * from the scrape's own naming first and the mob catalog's inverted loot lists second
+   * (poskyDroppers.ts). EMPTY when nothing is known — the UI then shows `who` verbatim or
+   * nothing at all, never a guess.
+   */
+  droppers: DropperMob[]
   need: number
   have: number
   stats?: string
@@ -95,7 +104,18 @@ export function computeQuestProgress(
   const items: ItemProgress[] = quest.items.map((it) => {
     const need = it.count > 0 ? it.count : 1
     const have = Math.min(need, held[itemCountKey(it.name)] ?? 0)
-    return { name: it.name, who: it.who, where: it.where, need, have, stats: it.stats, page: it.page }
+    return {
+      name: it.name,
+      who: it.who,
+      where: it.where,
+      // Committed data, so this is a couple of Map lookups against a lazily-built index — no
+      // reason to memoize it per item on top of the memo this whole list already sits behind.
+      droppers: skyDroppersFor(it.name, it.who),
+      need,
+      have,
+      stats: it.stats,
+      page: it.page
+    }
   })
   const needCount = items.reduce((s, i) => s + i.need, 0)
   const haveCount = items.reduce((s, i) => s + i.have, 0)

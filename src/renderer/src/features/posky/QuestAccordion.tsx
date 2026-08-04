@@ -33,6 +33,7 @@ import LinkIcon from '@mui/icons-material/Link'
 import { skyQuestPage, wikiPageUrl } from '@shared/wiki'
 import type { QuestProgress } from './useProgress'
 import { ItemTooltip } from './ItemTooltip'
+import { DropperCell } from './DropperCell'
 import { sharingQuestLabel, type SharedItem } from './sharedItems'
 import { FavoriteStar } from '../favorites/FavoriteStar'
 import { QuestIgnoreButton, QuestStarButton } from '../favorites/QuestFlagButtons'
@@ -195,7 +196,14 @@ function QuestItemChips({
           const done = it.have >= it.need || q.completed
           const fav = isFavorite(it.name)
           return (
-            <ItemTooltip key={it.name} name={it.name} stats={it.stats} who={it.who} where={it.where}>
+            <ItemTooltip
+              key={it.name}
+              name={it.name}
+              stats={it.stats}
+              who={it.who}
+              where={it.where}
+              droppers={it.droppers}
+            >
               <Chip
                 size="small"
                 variant={fav ? 'filled' : 'outlined'}
@@ -281,14 +289,22 @@ function QuestItemsTable({
                 <FavoriteStar name={it.name} favorited={isFavorite(it.name)} onToggle={toggleFavorite} />
               </TableCell>
               <TableCell sx={{ color: done ? 'success.main' : 'text.primary' }}>
-                <ItemTooltip name={it.name} stats={it.stats} who={it.who} where={it.where}>
+                <ItemTooltip
+                  name={it.name}
+                  stats={it.stats}
+                  who={it.who}
+                  where={it.where}
+                  droppers={it.droppers}
+                >
                   <span style={{ cursor: 'help' }}>{it.name}</span>
                 </ItemTooltip>
               </TableCell>
               <TableCell>
                 {it.have}/{it.need}
               </TableCell>
-              <TableCell sx={{ color: 'text.secondary' }}>{it.who.join(', ')}</TableCell>
+              <TableCell sx={{ color: 'text.secondary' }}>
+                <DropperCell droppers={it.droppers} who={it.who} />
+              </TableCell>
               <TableCell sx={{ color: 'text.secondary' }}>{it.where}</TableCell>
             </TableRow>
           )

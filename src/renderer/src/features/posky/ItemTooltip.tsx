@@ -2,6 +2,7 @@ import type { JSX, ReactElement } from 'react'
 import { Box, Tooltip, Typography } from '@mui/material'
 import { EQ_ITEM_COLORS } from '../../lib/ItemWindow'
 import { ObservedItemWindow } from '../../lib/ObservedItemWindow'
+import { dropperLabel, type DropperMob } from './poskyDroppers'
 
 export interface ItemTooltipProps {
   name: string
@@ -9,6 +10,9 @@ export interface ItemTooltipProps {
   stats?: string
   who?: string[]
   where?: string
+  /** resolved kill targets (poskyDroppers.ts) — they REPLACE `who` when we have them, because
+   *  `who` is the wiki's site abbreviations ("SL", "BZ") and these are mob names. */
+  droppers?: readonly DropperMob[]
   children: ReactElement
 }
 
@@ -21,8 +25,9 @@ export interface ItemTooltipProps {
  * hairline, visually separate from the game-style block. Items with no stat text degrade
  * to just that lower block — never a fabricated stat window.
  */
-export function ItemTooltip({ name, stats, who, where, children }: ItemTooltipProps): JSX.Element {
-  const extra = (where ? 1 : 0) + (who && who.length > 0 ? 1 : 0)
+export function ItemTooltip({ name, stats, who, where, droppers, children }: ItemTooltipProps): JSX.Element {
+  const drops = droppers && droppers.length > 0 ? dropperLabel(droppers) : (who ?? []).join(', ')
+  const extra = (where ? 1 : 0) + (drops === '' ? 0 : 1)
   const body = (
     <Box sx={{ p: 0.25, minWidth: 180 }}>
       {/* Inside the tooltip BODY, so the module subscription exists only while open. */}
@@ -32,9 +37,12 @@ export function ItemTooltip({ name, stats, who, where, children }: ItemTooltipPr
           {where && (
             <Typography sx={{ color: EQ_ITEM_COLORS.label, fontSize: 11, lineHeight: 1.4 }}>{where}</Typography>
           )}
-          {who && who.length > 0 && (
-            <Typography sx={{ color: EQ_ITEM_COLORS.label, fontSize: 11, lineHeight: 1.4 }}>
-              Drops: {who.join(', ')}
+          {drops !== '' && (
+            <Typography
+              sx={{ color: EQ_ITEM_COLORS.label, fontSize: 11, lineHeight: 1.4 }}
+              data-testid="posky-dropper"
+            >
+              Drops: {drops}
             </Typography>
           )}
         </Box>
