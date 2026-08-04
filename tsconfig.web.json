@@ -18,7 +18,12 @@
       "@renderer/*": ["src/renderer/src/*"],
       "@shared/*": ["src/shared/*"]
     },
-    "types": ["node"]
+    // `vite/client` is here for ONE symbol: `import.meta.env.DEV`, the anchor of
+    // src/renderer/src/devFlags.ts. It is vite's own builtin (true on any dev server, a literal
+    // `false` in a build) and needs no `define`, which is exactly why the dev-tools flag leans on
+    // it instead of on a config value a stale server may never have seen. It also brings the
+    // asset-module declarations (`*.css`, `*.svg`, …) — harmless, and correct for this project.
+    "types": ["node", "vite/client"]
   },
   "include": [
     "src/renderer/src/**/*",

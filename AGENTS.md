@@ -191,6 +191,14 @@ floating overlay meters. Committed knowledge DBs: mobs (7.9k), items
   it; a stale server degrades to feature-hidden. Config changes (defines,
   entries, externals) require the OWNER to restart `npm run dev` — say so
   in the report.
+- **…and anchor a dev-only flag on `import.meta.env.DEV`, not on the
+  `define`.** Feature-hidden is still a SILENT wrong answer — the Triage
+  tab went missing with no error to grep (2026-08-03). Vite's builtin
+  needs no config, is true on any dev server however old, and is a
+  literal `false` in a build, so the strip guarantee is unchanged:
+  `import.meta.env.DEV && (typeof __X__ === 'undefined' || __X__)` —
+  absent define means STALE SERVER, degrade upward — and log the resolved
+  value once at renderer boot behind the same `DEV` guard.
 - MediaWiki: anonymous `eilimit` caps at 500; >50 pageids per revisions
   batch returns HTTP 200 with ZERO pages and no warning — BATCH=50 is
   measured, not tunable.
