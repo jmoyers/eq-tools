@@ -301,7 +301,12 @@ export function allowedUploadUrlFor(
   const u = parseBoundedUrl(raw)
   if (u === null) return null
   if (devOrigin !== '' && isDevUpload(u, devOrigin)) return u.toString()
-  // A dark build (empty bucket) can never match anything — no upload is possible at all.
+  return s3UploadUrl(u, bucket, region)
+}
+
+/** The S3 half of the check above, unchanged in every particular. */
+function s3UploadUrl(u: URL, bucket: string, region: string): string | null {
+  // An empty bucket (a dark build) can never match anything — no upload is possible at all.
   if (!looksLikeBucket(bucket) || !looksLikeRegion(region)) return null
   if (!isPlainHttps(u)) return null
   const { virtualHost, pathHost } = uploadEndpoints(bucket, region)

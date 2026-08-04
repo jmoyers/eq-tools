@@ -62,6 +62,12 @@ crash.*.log
 *.auto.tfvars
 !*.tfvars.example
 
+# LOCAL FEEDBACK STACK working dir (`npm run dev:stack`, scripts/dev-feedback-server.mts):
+# the reports.jsonl ledger and the log slices it accepted. Those slices are a real game log —
+# they are exactly the artifact the scrub law and the 90-day S3 lifecycle exist for, so they
+# never enter git. Delete the folder any time; the server recreates it.
+.devstack/
+
 # TRIAGE CLI working dir: the cached `terraform output -json` (physical names) and
 # any log slice `triage-feedback show` downloads. Those slices are a user's own
 # game log; they are read locally and never enter git or a public issue.

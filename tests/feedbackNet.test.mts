@@ -12,6 +12,7 @@
 
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
+import { execFileSync } from 'node:child_process'
 import * as net from '../src/main/feedback/net'
 import { allowedUploadUrl, allowedUploadUrlFor, feedbackEndpointConfigured, uploadEndpoints } from '../src/main/feedback/net'
 
@@ -146,18 +147,38 @@ test('a malformed bucket or region can never produce a match', () => {
   assert.equal(allowedUploadUrlFor('https://ok-bucket.s3..amazonaws.com/', 'ok-bucket', ''), null)
 })
 
-// ---- THE DARK-BUILD PINS -----------------------------------------------------------------
+// ---- THE SHIPPED CONSTANTS ---------------------------------------------------------------
+//
+// This build is LIT (wave F2 filled the three constants in from `terraform output`), so the
+// old "ships dark" pins are gone. What replaces them is the property that actually matters and
+// that survives a redeploy: the compiled endpoint is https, on OUR api and OUR region, and the
+// bound `allowedUploadUrl` accepts our bucket and NOTHING else. The api id is deliberately not
+// pinned literally — re-applying the root mints a new one, and a test that fails on a redeploy
+// teaches people to edit tests.
 
-test('this build ships DARK: no endpoint, and no upload is possible at all', () => {
-  // F1 is independently shippable precisely because these are empty. Wave F2 fills them in
-  // from `terraform output`; until then the dialog reports "not available in this build".
-  assert.equal(net.FEEDBACK_API_URL, '')
-  assert.equal(net.FEEDBACK_S3_BUCKET, '')
-  assert.equal(feedbackEndpointConfigured(), false)
-  // With an empty bucket, even a perfectly-shaped S3 URL is refused — a dark build cannot be
-  // talked into uploading a log by any server response, because there is no server.
+test('the compiled endpoint is https on our own API, in our own region', () => {
+  assert.equal(feedbackEndpointConfigured(), true)
+  const u = new URL(net.FEEDBACK_API_URL)
+  assert.equal(u.protocol, 'https:')
+  assert.match(u.hostname, /^[a-z0-9]+\.execute-api\.us-east-1\.amazonaws\.com$/)
+  assert.equal(u.pathname, '/v1/feedback')
+  assert.equal(u.username, '')
+  assert.equal(u.search, '')
+  assert.equal(net.FEEDBACK_S3_REGION, 'us-east-1')
+  assert.match(net.FEEDBACK_S3_BUCKET, /^eqcompanion-logs-[0-9a-f]+$/)
+})
+
+test('the BOUND allowedUploadUrl accepts our bucket and refuses every other host', () => {
+  const { virtualHost, pathHost } = uploadEndpoints(net.FEEDBACK_S3_BUCKET, net.FEEDBACK_S3_REGION)
+  assert.equal(allowedUploadUrl(`https://${virtualHost}/`), `https://${virtualHost}/`)
+  assert.equal(
+    allowedUploadUrl(`https://${pathHost}/${net.FEEDBACK_S3_BUCKET}`),
+    `https://${pathHost}/${net.FEEDBACK_S3_BUCKET}`
+  )
+  // The suffix attack, against the REAL name this build ships with.
+  assert.equal(allowedUploadUrl(`https://${virtualHost}.evil.com/`), null)
   assert.equal(allowedUploadUrl('https://eqcompanion-logs-9f3a2c17.s3.us-east-1.amazonaws.com/'), null)
-  assert.equal(allowedUploadUrl('https://s3.us-east-1.amazonaws.com/eqcompanion-logs-9f3a2c17'), null)
+  assert.equal(allowedUploadUrl('http://127.0.0.1:8477/devstack/upload/x'), null)
 })
 
 test('net.ts exposes NO endpoint override — an overridable ingest URL is an exfil primitive', () => {
@@ -168,4 +189,121 @@ test('net.ts exposes NO endpoint override — an overridable ingest URL is an ex
   // And the constants are constants: the module exports no mutable binding for them.
   assert.equal(typeof net.FEEDBACK_API_URL, 'string')
   assert.equal(net.FEEDBACK_S3_REGION, 'us-east-1')
+})
+
+// ---- THE DEV GATE (scripts/dev-feedback-server.mts) --------------------------------------
+//
+// `EQ_FEEDBACK_URL` lets an UNPACKAGED, non-e2e Electron process point the whole feedback path
+// at a LOOPBACK server, so the dialog, the quota, the idempotent replay and the presign leg
+// are all rehearsable with no cloud. That is one env var away from being the exfiltration
+// primitive §6.2 rejects, so the gate is pinned here from both sides:
+//
+//   * OPEN only for the exact fact set that means "a developer's own checkout", and only for
+//     a url naming the machine the log is already on.
+//   * CLOSED — byte-identically closed — for a PACKAGED build, for e2e, and for any process
+//     that is not Electron at all. The last one is what this suite itself runs under, which is
+//     why the module-level pins above still describe the compiled build.
+
+const DEV_URL = 'http://127.0.0.1:8477/v1/feedback'
+const facts = (over: Partial<net.RuntimeFacts> = {}): net.RuntimeFacts => ({
+  execPath: 'C:\\repo\\node_modules\\electron\\dist\\electron.exe',
+  platform: 'win32',
+  electron: '33.2.0',
+  e2e: false,
+  url: DEV_URL,
+  ...over,
+})
+
+test('the dev gate opens for an unpackaged Electron process with a loopback url', () => {
+  assert.equal(net.devUnlocked(facts()), true)
+  assert.equal(net.devEndpointFor(facts()), DEV_URL)
+  // Electron's own isPackaged definition is per-platform: bare `electron` off win32.
+  assert.equal(
+    net.devEndpointFor(facts({ platform: 'linux', execPath: '/repo/node_modules/electron/dist/electron' })),
+    DEV_URL
+  )
+  assert.equal(net.devEndpointFor(facts({ url: 'http://[::1]:8477/v1/feedback' })), 'http://[::1]:8477/v1/feedback')
+})
+
+test('THE PACKAGED PROOF: the gate is shut, and the env var does nothing at all', () => {
+  // The packaged case as a VALUE — a real installed build's exe, everything else identical.
+  const packaged = facts({ execPath: 'C:\\Users\\me\\AppData\\Local\\Programs\\everquest-companion\\EQ Legends Companion.exe' })
+  assert.equal(net.devUnlocked(packaged), false)
+  assert.equal(net.devEndpointFor(packaged), '')
+  // ...and with the gate shut, `allowedUploadUrlFor` is the function it was before the dev
+  // parameter existed: same answers, on the shipped bucket, for every shape.
+  const { virtualHost } = uploadEndpoints(BUCKET, REGION)
+  assert.equal(allowedUploadUrlFor(DEV_URL, BUCKET, REGION, net.devEndpointFor(packaged)), null)
+  assert.equal(allowedUploadUrlFor('http://127.0.0.1:8477/devstack/upload/x', BUCKET, REGION, ''), null)
+  assert.equal(allowedUploadUrlFor(`https://${virtualHost}/`, BUCKET, REGION, ''), `https://${virtualHost}/`)
+  // Not Electron at all (a script, the Lambda, this test runner): shut.
+  assert.equal(net.devEndpointFor(facts({ electron: undefined })), '')
+  assert.equal(net.devEndpointFor(facts({ electron: '' })), '')
+  // e2e: shut, so the headless harness can never be pointed at a server either.
+  assert.equal(net.devEndpointFor(facts({ e2e: true })), '')
+  // An unrecognized exe name reads as PACKAGED — the gate fails closed.
+  assert.equal(net.devEndpointFor(facts({ execPath: 'C:\\weird\\thing.exe' })), '')
+  assert.equal(net.devEndpointFor(facts({ execPath: '' })), '')
+})
+
+test('the dev endpoint is LOOPBACK-ONLY — that is what makes it not an exfil primitive', () => {
+  // The whole safety argument: a value that can only name this machine cannot send a log
+  // anywhere. Every one of these is refused even with the gate otherwise open.
+  for (const bad of [
+    'https://evil.com/v1/feedback',
+    'http://evil.com/v1/feedback',
+    'http://127.0.0.1.evil.com/v1/feedback',
+    'http://localhost:8477/v1/feedback', // a NAME resolves through the machine's resolver
+    'http://127.0.0.1:8477/v1/feedback?x=1',
+    'http://127.0.0.1:8477/v1/feedback#f',
+    'http://user:pw@127.0.0.1:8477/v1/feedback',
+    'file:///C:/Windows/Temp/x',
+    'ftp://127.0.0.1/x',
+    'not a url',
+    '',
+  ]) {
+    assert.equal(net.devEndpointFor(facts({ url: bad })), '', bad)
+  }
+  assert.equal(net.devEndpointFor(facts({ url: undefined })), '')
+})
+
+test('under the OPEN gate the extra accepted origin is exactly the dev endpoint, nothing else', () => {
+  const origin = new URL(DEV_URL).origin
+  const ok = (raw: string): string | null => allowedUploadUrlFor(raw, BUCKET, REGION, origin)
+  assert.equal(ok('http://127.0.0.1:8477/devstack/upload/01J8ZQ'), 'http://127.0.0.1:8477/devstack/upload/01J8ZQ')
+  // A different port, a different host, or anything clever attached is still refused.
+  assert.equal(ok('http://127.0.0.1:9999/devstack/upload/x'), null)
+  assert.equal(ok('http://[::1]:8477/devstack/upload/x'), null)
+  assert.equal(ok('https://evil.com/devstack/upload/x'), null)
+  assert.equal(ok('http://127.0.0.1:8477/x?y=1'), null)
+  assert.equal(ok('http://user@127.0.0.1:8477/x'), null)
+  // And the S3 rules are untouched by the dev origin being present.
+  const { virtualHost } = uploadEndpoints(BUCKET, REGION)
+  assert.equal(ok(`https://${virtualHost}/`), `https://${virtualHost}/`)
+  assert.equal(ok(`https://${virtualHost}.evil.com/`), null)
+})
+
+test('IN A REAL PROCESS: setting EQ_FEEDBACK_URL changes nothing when the gate is shut', () => {
+  // The pure tests above pin the predicate; this one pins the MODULE. Two child processes
+  // import net.ts for real — one with the env var set, one without — and the resolved endpoint,
+  // the dev origin and the upload verdict must come back byte-identical. This runner is not
+  // Electron, which is exactly the "gate shut" case a packaged build is in.
+  const netUrl = new URL('../src/main/feedback/net.ts', import.meta.url).href
+  const code =
+    `const n = await import(${JSON.stringify(netUrl)});` +
+    `process.stdout.write(JSON.stringify([n.FEEDBACK_API_URL, n.DEV_UPLOAD_ORIGIN,` +
+    ` n.allowedUploadUrl('http://127.0.0.1:8477/devstack/upload/x')]))`
+  const run = (env: NodeJS.ProcessEnv): string =>
+    execFileSync(process.execPath, ['--import', 'tsx', '--input-type=module', '-e', code], {
+      encoding: 'utf8',
+      env,
+    })
+
+  const bare = { ...process.env }
+  delete bare.EQ_FEEDBACK_URL
+  const withEnv = run({ ...bare, EQ_FEEDBACK_URL: DEV_URL })
+  const without = run(bare)
+  assert.equal(withEnv, without)
+  assert.equal(JSON.parse(withEnv)[1], '')
+  assert.equal(JSON.parse(withEnv)[2], null)
 })
