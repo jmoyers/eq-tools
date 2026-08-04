@@ -12,6 +12,16 @@
 // panel used to push the page taller — Task #56). The view owns exactly the height it is given
 // and scrolls INSIDE the grid, so the app's content area never gains a page-level scrollbar.
 //
+// THREE REGIONS, NOT SEVEN CARDS (symmetry pass, 2026-08-03). The page is NOW (four peer cards),
+// then the curve, then HISTORY (two twin feeds) — so it is built as three region grids rather than
+// one flat grid the cards fall into in DOM order. That is what buys the two things a flat grid
+// cannot express: the NOW rank can carry its own column rule (1 → 2 → 4 across) and its own row
+// FLOOR, so its four cards are one height at every width; and the twin feeds keep a symmetric pair
+// of tracks no matter what the rank above them is doing. The regions are plain Boxes — the cards
+// still own the ONLY borders on the page (the de-nesting rule), and the two gap scales are the
+// whole visual hierarchy: 1.5 WITHIN a region, 2 BETWEEN them, which is what makes the full-width
+// curve read as the deliberate divider between "now" and "what already happened".
+//
 // HYDRATION IS A STATE (§4). During the startup replay every combat snapshot describes the PAST:
 // an hours-old fight is `current` and a mob you killed at lunch is `currentTarget`. So the NOW
 // row — zone, damage, target — renders a quiet placeholder until `hydrating` clears. `snap === null`
@@ -50,17 +60,33 @@ export interface OverviewViewProps {
 }
 
 /**
+ * The NOW rank's height FLOOR, and the reason its four cards read as peers.
+ *
+ * MEASURED, never guessed (the e2e harness dumps every card's box): the tallest natural card in
+ * the rank is the DPS card at 303px — label, headline, supporting line, drill strip, five bars and
+ * the "+N more" tail. A floor a hair above that lands every row of the rank on ONE height, so md's
+ * 2x2 is a rectangle and xl's four-across is a single band, instead of the ragged 303/198 pair the
+ * cards' natural heights produce on their own.
+ *
+ * It is a FLOOR and not a cap on purpose (`minmax(N, auto)`, never `minmax(N, min-content)`): a
+ * card whose content legitimately outgrows it pushes its whole row taller rather than being
+ * clipped, and its row-mates follow. Nothing here has to bound a growing list — every card holding
+ * one already bounds it internally (AGENTS.md's fixed-height law), which is precisely what lets
+ * this be a floor at all.
+ *
+ * xs is exempt: stacked in one column, four 304px cards would be 1.2k of scrolling before the
+ * feeds even start.
+ */
+const NOW_ROW_MIN_PX = 304
+
+/**
  * The NOW row while the engine is still folding history. Same visual language as CombatView's
  * `HydratingPanel` — state ("Reading log…"), never process — with its own testid so the e2e can
  * tell the two surfaces apart.
  */
 function OverviewHydrating(): JSX.Element {
   return (
-    <Paper
-      variant="outlined"
-      data-testid="overview-hydrating"
-      sx={{ p: 1.5, gridColumn: { md: '1 / -1' }, minWidth: 0 }}
-    >
+    <Paper variant="outlined" data-testid="overview-hydrating" sx={{ p: 1.5, minWidth: 0 }}>
       <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
         <CircularProgress size={13} thickness={5} />
         <Typography variant="caption" color="text.secondary">
@@ -99,15 +125,18 @@ export default function OverviewView({
         data-testid="overview-grid"
         sx={{
           display: 'grid',
-          gap: 1.5,
+          // BETWEEN regions. The regions set their own, tighter gap between the cards inside
+          // them, and that difference is the only thing marking the three bands apart — no rule,
+          // no second border level, just the spacing scale doing the sectioning.
+          gap: 2,
           flexGrow: 1,
           minHeight: 0,
           minWidth: 0,
           overflow: 'auto',
           alignContent: 'start',
-          gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' },
+          gridTemplateColumns: 'minmax(0, 1fr)',
           // Every card is internally bounded (a fixed-height scroll box around anything that
-          // grows), so `min-content` rows are safe here and keep the cards from being stretched
+          // grows), so `min-content` rows are safe here and keep the regions from being stretched
           // into tall empty boxes on a big window.
           gridAutoRows: 'min-content',
           '& > *': { minWidth: 0, minHeight: 0 }
@@ -117,27 +146,59 @@ export default function OverviewView({
           <OverviewHydrating />
         ) : (
           <>
-            <DpsCard snap={snap} onOpenCombat={onOpenCombat} />
-            <CurrentMobCard state={mob} onOpenMob={onOpenMob} />
-            {/* Gated with the NOW row for the same reason the others are: its window is "the last
-                hour of the log", and mid-replay that hour is an arbitrary point in your past. */}
-            <LevelingCard state={leveling} onOpenLeveling={onOpenLeveling} />
-            {/* Gated with the NOW row for the same reason: mid-replay the "current" interval is
-                wherever the fold has reached, which is an arbitrary point in your past. */}
-            <ComboCard snap={combo} />
-            {/* Full width, directly under the NOW row and gated with it: the curve describes the
+            {/* THE NOW RANK — four peers, one height. 1 → 2 → 4 across, and the pairing on md is
+                deliberate: each row carries one DENSE card (the DPS breakdown, the target's drop
+                list) and one LIGHTER one (the leveling readout, the loadout), so neither row is a
+                wall of rows beside a four-line card. Read across on xl it is the same rhythm —
+                the two rate headlines, then the two context cards. */}
+            <Box
+              data-testid="overview-now"
+              sx={{
+                display: 'grid',
+                gap: 1.5,
+                minWidth: 0,
+                gridTemplateColumns: {
+                  xs: 'minmax(0, 1fr)',
+                  md: 'repeat(2, minmax(0, 1fr))',
+                  xl: 'repeat(4, minmax(0, 1fr))'
+                },
+                gridAutoRows: { xs: 'min-content', md: `minmax(${String(NOW_ROW_MIN_PX)}px, auto)` },
+                '& > *': { minWidth: 0, minHeight: 0 }
+              }}
+            >
+              <DpsCard snap={snap} onOpenCombat={onOpenCombat} />
+              {/* Gated with the NOW row for the same reason the others are: its window is "the
+                  last hour of the log", and mid-replay that hour is an arbitrary point in your
+                  past. */}
+              <LevelingCard state={leveling} onOpenLeveling={onOpenLeveling} />
+              <CurrentMobCard state={mob} onOpenMob={onOpenMob} />
+              {/* Gated with the NOW row for the same reason: mid-replay the "current" interval is
+                  wherever the fold has reached, which is an arbitrary point in your past. */}
+              <ComboCard snap={combo} />
+            </Box>
+            {/* Full width, directly under the NOW rank and gated with it: the curve describes the
                 SAME fight the DPS card above names, so showing it while the replay still calls an
                 hours-old fight `current` would be the same lie the gate exists to prevent. */}
-            <Box sx={{ gridColumn: { md: '1 / -1' }, minWidth: 0 }}>
-              <DpsCurveCard snap={snap} />
-            </Box>
+            <DpsCurveCard snap={snap} />
           </>
         )}
-        {/* The two HISTORY feeds, side by side on md and stacked on xs. Neither is gated: both
-            describe the past, and the module snapshots behind them are complete during the
-            replay. They share one fixed body height so the pair reads as one band. */}
-        <RecentDropsCard rows={rows} onOpenLoot={onOpenLoot} />
-        <RecentKillsCard rows={kills} onOpenLeveling={onOpenLeveling} />
+        {/* THE HISTORY BAND — two twins, side by side on md and stacked on xs, in symmetric
+            tracks of their own so the pair can never inherit an odd column rule from the rank
+            above. Neither is gated: both describe the past, and the module snapshots behind them
+            are complete during the replay. They share one fixed body height, so the pair reads as
+            one band. */}
+        <Box
+          sx={{
+            display: 'grid',
+            gap: 1.5,
+            minWidth: 0,
+            gridTemplateColumns: { xs: 'minmax(0, 1fr)', md: 'repeat(2, minmax(0, 1fr))' },
+            '& > *': { minWidth: 0, minHeight: 0 }
+          }}
+        >
+          <RecentDropsCard rows={rows} onOpenLoot={onOpenLoot} />
+          <RecentKillsCard rows={kills} onOpenLeveling={onOpenLeveling} />
+        </Box>
       </Box>
     </Stack>
   )

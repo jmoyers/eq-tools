@@ -56,7 +56,10 @@ function OpenLeveling({ onOpenLeveling }: { onOpenLeveling: () => void }): JSX.E
       data-testid="overview-open-leveling"
       endIcon={<OpenInNewIcon sx={{ fontSize: 14 }} />}
       onClick={onOpenLeveling}
-      sx={{ minWidth: 0, py: 0, px: 0.75 }}
+      // Same line box as the DPS card's button, and for the same reason: a small Button's default
+      // 1.75 line-height makes a card WITH an action 3px taller in the header than one without,
+      // which would start the NOW rank's four bodies on different baselines.
+      sx={{ minWidth: 0, py: 0, px: 0.75, lineHeight: 1.4 }}
     >
       Open Leveling
     </Button>

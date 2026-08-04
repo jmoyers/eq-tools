@@ -66,7 +66,12 @@ function OpenInCombat({ onOpenCombat }: { onOpenCombat: (f: CombatFocus) => void
       data-testid="overview-open-combat"
       endIcon={<OpenInNewIcon sx={{ fontSize: 14 }} />}
       onClick={() => onOpenCombat({ scope: 'fight', selection: LIVE_SELECTION })}
-      sx={{ minWidth: 0, py: 0, px: 0.75 }}
+      // `lineHeight` is what keeps the RANK aligned, not decoration: a small Button's default
+      // 1.75 makes a card that HAS an action 23px tall in the header where a card without one is
+      // 20px, so the four peers of the NOW rank would start their bodies 3px apart. Fitting the
+      // button inside the title's own line box lands every card's first line on the same y
+      // (measured: all four headers 20px, all four bodies on one top edge).
+      sx={{ minWidth: 0, py: 0, px: 0.75, lineHeight: 1.4 }}
     >
       Open in Combat
     </Button>
