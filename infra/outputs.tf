@@ -23,9 +23,22 @@ output "region" {
   value       = var.region
 }
 
-output "table_name" {
-  description = "DynamoDB table the triage CLI queries."
-  value       = aws_dynamodb_table.feedback.name
+output "cluster_endpoint" {
+  description = "Aurora DSQL hostname the triage CLI and the Lambda connect to (postgres/5432, IAM token auth)."
+  value       = local.dsql_endpoint
+}
+
+output "cluster_identifier" {
+  description = "Aurora DSQL cluster id (dimension for the DPU + OCC alarms)."
+  value       = aws_dsql_cluster.feedback.identifier
+}
+
+# Consumed by `triage-feedback migrate`, which substitutes it into schema.sql's
+# `AWS IAM GRANT feedback_ingest TO '<arn>'`. It carries the account id, which is
+# exactly why the schema file holds a placeholder instead of the literal.
+output "lambda_role_arn" {
+  description = "Execution role ARN the DSQL ingest database role is mapped to."
+  value       = aws_iam_role.lambda.arn
 }
 
 output "bucket_name" {

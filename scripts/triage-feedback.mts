@@ -3,9 +3,10 @@
  *
  *   npx tsx scripts/triage-feedback.mts <command> [options]
  *
- * Reads DynamoDB and S3 DIRECTLY OVER IAM; there is no server-side read API to
- * secure. Physical names come from `terraform output -json`, cached in
- * .triage/stack.json (gitignored) — nothing about the account is committed.
+ * Reads Aurora DSQL and S3 DIRECTLY OVER IAM; there is no server-side read API to
+ * secure, and no database password to hold (DSQL authenticates with a signed IAM
+ * token minted locally). Physical names come from `terraform output -json`, cached
+ * in .triage/stack.json (gitignored) — nothing about the account is committed.
  *
  * TWO LAWS THIS FILE ENFORCES, not just documents:
  *
@@ -15,7 +16,7 @@
  *   2. THE SCRIPT NEVER TAKES INSTRUCTIONS FROM REPORT CONTENT. It is deterministic
  *      end to end. The agentic layer is a HUMAN reading `digest` output, asking
  *      Claude for an opinion, and running the `set`/`issue` commands it suggests.
- *      Nothing here calls a model, and no model writes to DynamoDB unattended.
+ *      Nothing here calls a model, and no model writes to the database unattended.
  *
  * AUTH: `--profile <name>` (the deploy profile already performs role assumption via
  * source_profile/role_arn) or `--role-arn <arn>` to assume the triage role directly.
@@ -33,6 +34,7 @@ import {
   type TriageReport,
 } from './triageCluster.mjs'
 import {
+  applySchema,
   deleteReportRow,
   deleteSlice,
   downloadSlice,
@@ -43,7 +45,8 @@ import {
   logObjectExists,
   makeClients,
   redactContact,
-  scanInstall,
+  reportsForInstall,
+  SCHEMA_FILE,
   setAccepting,
   setBlocked,
   setTriage,
@@ -60,11 +63,13 @@ import {
   type Severity,
 } from '../src/shared/feedback'
 
-/** DynamoDB hands back `unknown`; never let one reach a template literal untyped. */
+/** A row column is `unknown`; never let one reach a template literal untyped. */
 const text = (v: unknown, fallback = ''): string => (typeof v === 'string' ? v : fallback)
 
 const USAGE = `triage-feedback <command> [options]
 
+  migrate                             apply infra/schema.sql to the DSQL cluster
+                                      (idempotent; run once after every apply)
   list    [--status S] [--channel prod|dev|all] [--type bug|feature] [--since 7d]
           [--min-score N] [--limit 100] [--json]
   show    <reportId>                  full record; downloads + gunzips the slice
@@ -145,6 +150,38 @@ function shortDate(ms: number): string {
 }
 
 // ---- commands ------------------------------------------------------------------------
+
+/**
+ * `migrate` — apply infra/schema.sql (F2 step 2.5).
+ *
+ * WHY THIS IS A CLI COMMAND AND NOT TERRAFORM. DSQL DDL needs an IAM-signed
+ * postgres connection; Terraform has no resource that speaks the wire protocol and
+ * no way to mint the token, so the alternative would be a `null_resource` +
+ * `local-exec` shelling out to exactly this code with none of the reporting. The
+ * schema is a reviewable SQL file and this is the reviewable thing that applies it.
+ *
+ * It is IDEMPOTENT and safe to re-run: every statement that already landed is
+ * reported as `exists` rather than failing the run. `${LAMBDA_ROLE_ARN}` — the one
+ * value that carries the account id, which is why schema.sql holds a placeholder —
+ * is substituted from the terraform output.
+ */
+async function cmdMigrate(ctx: Ctx): Promise<void> {
+  const c = ctx.clients()
+  const sql = readFileSync(SCHEMA_FILE, 'utf8').replaceAll(
+    '${LAMBDA_ROLE_ARN}',
+    c.stack.lambda_role_arn,
+  )
+  const steps = await applySchema(c, sql)
+  for (const step of steps) {
+    const head = step.sql.replace(/\s+/g, ' ').slice(0, 96)
+    console.log(`${step.status === 'applied' ? 'applied ' : 'exists  '} ${head}`)
+  }
+  const applied = steps.filter((s) => s.status === 'applied').length
+  console.log(
+    `\n${String(applied)} applied, ${String(steps.length - applied)} already present.\n` +
+      'Indexes are built ASYNCHRONOUSLY — they are usable once DSQL finishes the job.',
+  )
+}
 
 async function cmdList(ctx: Ctx): Promise<void> {
   const rows = await reportsFor(ctx, '7d')
@@ -240,7 +277,7 @@ async function cmdSet(ctx: Ctx): Promise<void> {
 }
 
 function issueBody(row: Row, r: TriageReport): string {
-  const env = (row.env ?? {}) as Record<string, unknown>
+  const env = JSON.parse(text(row.env_json, '{}')) as Record<string, unknown>
   const facts = ['appVersion', 'channel', 'updateChannel', 'platform', 'osRelease', 'arch', 'electron']
     .map((k) => `- ${k}: ${text(env[k], '?')}`)
     .join('\n')
@@ -288,13 +325,17 @@ async function cmdForget(ctx: Ctx): Promise<void> {
 async function cmdWipe(ctx: Ctx): Promise<void> {
   const installId = typeof ctx.args.install === 'string' ? ctx.args.install : ''
   if (!installId) throw new Error('wipe: --install <installId> is required')
-  console.warn('WARNING: wipe uses a table SCAN (no install index by design). This costs read units.')
+  console.warn(
+    'WARNING: wipe reads every report row — there is deliberately no index on ' +
+      'installId, so this is an unindexed full-table query. It is billed by the ' +
+      'bytes it touches; run it for a deletion request, not out of curiosity.',
+  )
   const c = ctx.clients()
-  const rows = await scanInstall(c, installId)
+  const rows = await reportsForInstall(c, installId)
   for (const row of rows) {
     const key = logKeyOf(row)
     if (key) await deleteSlice(c, key)
-    await deleteReportRow(c, String(row.reportId))
+    await deleteReportRow(c, text(row.report_id))
   }
   console.log(`wiped ${rows.length} report(s) for install ${installId}.`)
 }
@@ -328,6 +369,7 @@ async function cmdClosed(ctx: Ctx): Promise<void> {
 }
 
 const COMMANDS: Record<string, (ctx: Ctx) => Promise<void>> = {
+  migrate: cmdMigrate,
   list: cmdList,
   show: cmdShow,
   digest: cmdDigest,
@@ -354,19 +396,27 @@ async function main(): Promise<void> {
     return
   }
 
-  let cached: Clients | null = null
+  // A box rather than a `let`: the finally below has to see what the closure
+  // assigned, and control-flow analysis narrows a captured `let` to `null` there.
+  const held: { clients: Clients | null } = { clients: null }
   const ctx: Ctx = {
     args: values,
     rest,
     clients: () => {
-      cached ??= makeClients(loadStack(values.refresh === true), {
+      held.clients ??= makeClients(loadStack(values.refresh === true), {
         ...(typeof values.profile === 'string' ? { profile: values.profile } : {}),
         ...(typeof values['role-arn'] === 'string' ? { roleArn: values['role-arn'] } : {}),
       })
-      return cached
+      return held.clients
     },
   }
-  await COMMANDS[command](ctx)
+  try {
+    await COMMANDS[command](ctx)
+  } finally {
+    // A live postgres socket holds the event loop open. Without this the CLI
+    // prints its answer and then hangs until DSQL's one-hour connection timeout.
+    await held.clients?.close()
+  }
 }
 
 await main().catch((err: unknown) => {

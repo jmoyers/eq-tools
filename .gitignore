@@ -54,6 +54,7 @@ infra/dist/
 *.tfstate
 *.tfstate.*
 *.tfplan
+infra/tfplan
 crash.log
 crash.*.log
 # Variable files carry the triage principal ARN, which contains the account id.

@@ -9,36 +9,35 @@
  * the contract, the client and the server together. infra/build.mjs bundles it
  * with esbuild; nothing here is transpiled by hand.
  *
+ * THE STORE IS AURORA DSQL (serverless postgres). The step order below is
+ * unchanged from the DynamoDB version — it was never about DynamoDB, it was
+ * about stopping as early as possible — but every step is now one SQL statement
+ * instead of one item operation, and connection/retry/retention live in ./db.ts.
+ *
  * STEPS ARE ORDERED CHEAPEST FIRST, and every one of them is a place to stop
  * before touching state:
  *
  *   1. size          -> 413 too_large        (before JSON.parse)
  *   2. shape         -> 400 invalid_payload  (the shared validator; {field})
- *   3. config+profile+idempotency, ONE BatchGet
+ *   3. config+profile+idempotency, ONE round trip
  *        kill switch -> 503 closed           (message rendered verbatim)
  *        blocked     -> 403 blocked          (client stops retrying)
  *        replay      -> 200 + original reportId, upload: null
- *   4. quota         -> 429 quota_exceeded   (conditional UpdateItem, {retryAfterSec})
+ *   4. quota         -> 429 quota_exceeded   (guarded UPSERT, {retryAfterSec})
  *   5. mint ULID + spam score (SCORED, NEVER REJECTED — §9.5)
- *   6. TransactWrite report + idempotency item (they cannot fork)
+ *   6. ONE TRANSACTION: report + idempotency row (they cannot fork)
  *   7. presigned POST, pinned to one key / 2 MB / 5 min / AES256
  *   8. 201
  *
- * WHAT THIS HANDLER CANNOT DO, by IAM (§8.5): read the corpus, list the bucket,
- * delete anything. It creates and it counts. A full compromise leaks nothing and
- * destroys nothing.
+ * WHAT THIS HANDLER CANNOT DO, by GRANT (§8.5): read the corpus, update or
+ * delete a report, list the bucket. It logs in as the `feedback_ingest` database
+ * role, which holds INSERT on `report` and nothing else. It creates and it
+ * counts. A full compromise leaks nothing and destroys nothing.
  *
  * The client is never told anything about internals: a thrown error is logged
  * and answered with a flat 500 `internal`.
  */
 
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
-import {
-  BatchGetCommand,
-  DynamoDBDocumentClient,
-  TransactWriteCommand,
-  UpdateCommand,
-} from '@aws-sdk/lib-dynamodb'
 import { S3Client } from '@aws-sdk/client-s3'
 import { createPresignedPost } from '@aws-sdk/s3-presigned-post'
 import { createHash } from 'node:crypto'
@@ -48,6 +47,17 @@ import { createHash } from 'node:crypto'
 import { Buffer } from 'node:buffer'
 import process from 'node:process'
 import {
+  errorMessage,
+  execute,
+  log,
+  query,
+  resetClient,
+  sqlState,
+  sweepExpired,
+  transaction,
+  withRetry,
+} from './db'
+import {
   MAX_BODY_BYTES,
   MAX_UPLOAD_BYTES,
   validateSubmit,
@@ -56,21 +66,21 @@ import {
   type Validated,
 } from '../../src/shared/feedback'
 
-const TABLE = process.env.TABLE_NAME ?? ''
 const BUCKET = process.env.BUCKET_NAME ?? ''
 const FALLBACK_MAX_PER_DAY = Number(process.env.MAX_PER_DAY ?? '10')
 
 /** How long a presigned POST stays valid. Short enough that a leak is near-worthless. */
 const UPLOAD_TTL_SEC = 300
-/** Warm invocations reuse the CONFIG item for this long instead of re-reading it. */
+/** Warm invocations reuse the CONFIG row for this long instead of re-reading it. */
 const CONFIG_CACHE_MS = 60_000
-const QUOTA_TTL_SEC = 3 * 24 * 60 * 60
-const IDEMP_TTL_SEC = 7 * 24 * 60 * 60
-const DEDUPE_TTL_SEC = 2 * 24 * 60 * 60
+/** Retention windows (§3.5). No TTL exists in DSQL — db.ts sweeps on these stamps. */
+const QUOTA_TTL_MS = 3 * 24 * 60 * 60 * 1000
+const IDEMP_TTL_MS = 7 * 24 * 60 * 60 * 1000
+const DEDUPE_TTL_MS = 2 * 24 * 60 * 60 * 1000
 
-const ddb = DynamoDBDocumentClient.from(new DynamoDBClient({}), {
-  marshallOptions: { removeUndefinedValues: true },
-})
+/** postgres unique_violation — here it can only be a dead-heat idempotent retry. */
+const UNIQUE_VIOLATION = '23505'
+
 const s3 = new S3Client({})
 
 // ---- the API Gateway payload-2.0 slice we actually use ------------------------------
@@ -94,11 +104,6 @@ interface FeedbackConfig {
   maxPerInstallPerDay: number
 }
 
-interface InstallProfile {
-  blocked?: boolean
-  blockedReason?: string
-}
-
 const DEFAULT_CONFIG: FeedbackConfig = {
   acceptingReports: true,
   closedMessage: 'Feedback is paused right now. Please try again later.',
@@ -107,15 +112,25 @@ const DEFAULT_CONFIG: FeedbackConfig = {
 
 let configCache: { at: number; value: FeedbackConfig } | null = null
 
+/** The shape of the one row step 3 reads. Every column is a scalar subquery, so all nullable. */
+interface ContextRow {
+  accepting?: boolean | null
+  closed_message?: string | null
+  max_per_day?: number | null
+  blocked: boolean | null
+  replay_report_id: string | null
+}
+
 /**
- * The CONFIG item is operator-written and therefore shaped by hand. Read it
- * FIELD BY FIELD with a typed fallback: a fat-fingered `acceptingReports: "false"`
- * must not silently become truthy and it must never crash ingest.
+ * The config row is operator-written and therefore shaped by hand. Read it
+ * FIELD BY FIELD with a typed fallback: a hand-edited `accepting` that came back
+ * NULL (or a row that does not exist yet) must not silently become truthy and it
+ * must never crash ingest.
  */
-function toConfig(item: Record<string, unknown> | undefined): FeedbackConfig {
-  const accepting = item?.acceptingReports
-  const closed = item?.closedMessage
-  const max = item?.maxPerInstallPerDay
+function toConfig(row: ContextRow | undefined): FeedbackConfig {
+  const accepting = row?.accepting
+  const closed = row?.closed_message
+  const max = row?.max_per_day
   return {
     acceptingReports:
       typeof accepting === 'boolean' ? accepting : DEFAULT_CONFIG.acceptingReports,
@@ -123,11 +138,6 @@ function toConfig(item: Record<string, unknown> | undefined): FeedbackConfig {
     maxPerInstallPerDay:
       typeof max === 'number' && max > 0 ? max : DEFAULT_CONFIG.maxPerInstallPerDay,
   }
-}
-
-/** CloudWatch gets structured lines; `no-console` is on repo-wide and stdout is the sink anyway. */
-function log(fields: Record<string, unknown>): void {
-  process.stdout.write(`${JSON.stringify(fields)}\n`)
 }
 
 function json(statusCode: number, body: unknown): HttpResult {
@@ -149,8 +159,10 @@ function fail(
 
 // ---- ULID ---------------------------------------------------------------------------
 // 48-bit timestamp + 80 bits of randomness, Crockford base32. Lexicographic order IS
-// creation order, which is what makes `--since 7d` a BETWEEN on the GSI sort key with
-// no filter expression and no scan. Server-minted only; a client id is never trusted.
+// creation order. Under DynamoDB that property was load-bearing (it WAS the GSI sort
+// key); here `received_at` carries the timeline and the ULID is simply a compact,
+// collision-free, time-ordered public id. Server-minted only; a client id is never
+// trusted.
 
 const CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ'
 
@@ -173,7 +185,7 @@ function ulid(now: number): string {
 
 // ---- spam scoring (§9.5) ------------------------------------------------------------
 // SCORED, NEVER REJECTED. A wrongly-rejected real bug report costs far more than a
-// DynamoDB row, so nothing here can change the response — triage bulk-marks later.
+// database row, so nothing here can change the response — triage bulk-marks later.
 
 const URL_RE = /https?:\/\//g
 const REPEAT_RE = /(.)\1{20,}/
@@ -210,7 +222,7 @@ export function spamScore(description: string): number {
 
 /**
  * ADAPTER — the ONE place this handler touches the validator's return SHAPE (as
- * opposed to its meaning. If `Validated<T>` ever changes discriminant, this is the
+ * opposed to its meaning). If `Validated<T>` ever changes discriminant, this is the
  * only line that has to move.
  */
 function validate(body: unknown): Validated<SubmitRequest> {
@@ -232,84 +244,122 @@ function secondsToUtcMidnight(now: number): number {
 
 interface LoadedContext {
   config: FeedbackConfig
-  profile: InstallProfile | null
+  blocked: boolean
   replayReportId: string | null
 }
 
+const PROFILE_AND_IDEMP = `
+  (SELECT blocked FROM install_profile WHERE install_id = $1)        AS blocked,
+  (SELECT report_id FROM report_idempotency
+     WHERE install_id = $1 AND client_report_id = $2)                AS replay_report_id`
+
+/** Everything step 3 needs, as scalar subqueries in ONE statement = ONE round trip. */
+const CONTEXT_SQL = `SELECT
+  (SELECT accepting               FROM feedback_config WHERE id = 'FEEDBACK') AS accepting,
+  (SELECT closed_message          FROM feedback_config WHERE id = 'FEEDBACK') AS closed_message,
+  (SELECT max_per_install_per_day FROM feedback_config WHERE id = 'FEEDBACK') AS max_per_day,
+${PROFILE_AND_IDEMP}`
+
+/** Warm variant: the config is cached for 60s, so do not pay to read it again. */
+const CONTEXT_CACHED_SQL = `SELECT${PROFILE_AND_IDEMP}`
+
 /** Step 3: config + install profile + idempotency probe in ONE round trip. */
 async function loadContext(req: SubmitRequest, now: number): Promise<LoadedContext> {
-  const cached = configCache && now - configCache.at < CONFIG_CACHE_MS ? configCache.value : null
-  const keys: { pk: string; sk: string }[] = [
-    { pk: `INSTALL#${req.installId}`, sk: 'PROFILE' },
-    { pk: `INSTALL#${req.installId}`, sk: `IDEMP#${req.clientReportId}` },
-  ]
-  if (!cached) keys.push({ pk: 'CONFIG', sk: 'FEEDBACK' })
+  const cached =
+    configCache && now - configCache.at < CONFIG_CACHE_MS ? configCache.value : null
+  const rows = await query<ContextRow>(cached ? CONTEXT_CACHED_SQL : CONTEXT_SQL, [
+    req.installId,
+    req.clientReportId,
+  ])
+  const row = rows[0]
 
-  const res = await ddb.send(
-    new BatchGetCommand({ RequestItems: { [TABLE]: { Keys: keys } } }),
-  )
-  const items = (res.Responses?.[TABLE] ?? []) as Record<string, unknown>[]
-  const find = (sk: string): Record<string, unknown> | undefined =>
-    items.find((i) => i.sk === sk)
-
-  const config = cached ?? toConfig(find('FEEDBACK'))
+  const config = cached ?? toConfig(row)
   if (!cached) configCache = { at: now, value: config }
 
-  const idemp = find(`IDEMP#${req.clientReportId}`)
   return {
     config,
-    profile: (find('PROFILE') ?? null) as InstallProfile | null,
-    replayReportId: typeof idemp?.reportId === 'string' ? idemp.reportId : null,
-  }
-}
-
-/** Step 4: consume one unit of the per-install daily quota. Returns false when exhausted. */
-async function consumeQuota(req: SubmitRequest, config: FeedbackConfig, now: number): Promise<boolean> {
-  const max = config.maxPerInstallPerDay
-  try {
-    await ddb.send(
-      new UpdateCommand({
-        TableName: TABLE,
-        Key: { pk: `INSTALL#${req.installId}`, sk: `QUOTA#${utcDate(now)}` },
-        UpdateExpression: 'ADD #n :one, #b :bytes SET expiresAt = :ttl',
-        ConditionExpression: 'attribute_not_exists(#n) OR #n < :max',
-        ExpressionAttributeNames: { '#n': 'n', '#b': 'bytes' },
-        ExpressionAttributeValues: {
-          ':one': 1,
-          ':bytes': req.log?.bytes ?? 0,
-          ':max': max,
-          ':ttl': Math.floor(now / 1000) + QUOTA_TTL_SEC,
-        },
-      }),
-    )
-    return true
-  } catch (err) {
-    if ((err as { name?: string }).name === 'ConditionalCheckFailedException') return false
-    throw err
+    blocked: row?.blocked === true,
+    replayReportId: row?.replay_report_id ?? null,
   }
 }
 
 /**
- * A cheap copy-paste-flood signal: the same description text arriving today from a
- * DIFFERENT install. One counter item, TTL 2 days, never blocks anything.
+ * Step 4: consume one unit of the per-install daily quota. Returns false when
+ * exhausted. The check and the increment are ONE statement — there is no
+ * read-modify-write window for a snapshot to sit inside.
+ *
+ * WHY THE CAP CANNOT BE EXCEEDED under DSQL's fixed Repeatable Read + optimistic
+ * concurrency. Two submits from one install on one day can race in exactly two
+ * ways, and neither of them over-counts:
+ *
+ *   1. THEY SERIALIZE. The second transaction's snapshot already contains the
+ *      first's increment, so `install_quota.n < :max` is evaluated against the
+ *      real current count. At the cap the DO UPDATE's WHERE is false, no row is
+ *      returned, and the request is refused. This is the ordinary path.
+ *   2. THEY CONFLICT. Both read the same row from the same snapshot; DSQL takes
+ *      no locks, detects the write-write conflict AT COMMIT, and aborts one with
+ *      SQLSTATE 40001. The loser never committed, so nothing was double-counted
+ *      and nothing was lost.
+ *
+ * There is no third case. What case 2 costs is a spurious 500 for a user who did
+ * nothing wrong, which is why this runs inside `withRetry` — THE RETRY IS FOR THE
+ * CALLER'S SAKE, NOT FOR THE CAP'S. On retry the racer lands in case 1 and gets
+ * the honest answer. The INSERT arm is covered by the same reasoning through the
+ * primary key: two first-of-the-day submits cannot both insert.
  */
-async function duplicateDescription(req: SubmitRequest, hash: string, now: number): Promise<boolean> {
-  const res = await ddb.send(
-    new UpdateCommand({
-      TableName: TABLE,
-      Key: { pk: `DEDUPE#${hash}`, sk: `DAY#${utcDate(now)}` },
-      UpdateExpression:
-        'SET firstInstall = if_not_exists(firstInstall, :id), expiresAt = :ttl ADD #n :one',
-      ExpressionAttributeNames: { '#n': 'n' },
-      ExpressionAttributeValues: {
-        ':id': req.installId,
-        ':one': 1,
-        ':ttl': Math.floor(now / 1000) + DEDUPE_TTL_SEC,
-      },
-      ReturnValues: 'ALL_NEW',
-    }),
+const QUOTA_SQL = `INSERT INTO install_quota (install_id, quota_day, n, bytes, expires_at)
+VALUES ($1, $2, 1, $3, $4)
+ON CONFLICT (install_id, quota_day) DO UPDATE
+   SET n          = install_quota.n + 1,
+       bytes      = install_quota.bytes + EXCLUDED.bytes,
+       expires_at = EXCLUDED.expires_at
+ WHERE install_quota.n < $5
+RETURNING n`
+
+async function consumeQuota(
+  req: SubmitRequest,
+  config: FeedbackConfig,
+  now: number,
+): Promise<boolean> {
+  const consumed = await withRetry('quota', () =>
+    execute(QUOTA_SQL, [
+      req.installId,
+      utcDate(now),
+      req.log?.bytes ?? 0,
+      now + QUOTA_TTL_MS,
+      config.maxPerInstallPerDay,
+    ]),
   )
-  const first: unknown = res.Attributes?.firstInstall
+  // Zero rows can only mean the DO UPDATE's guard was false: the cap is spent.
+  return consumed > 0
+}
+
+/**
+ * A cheap copy-paste-flood signal: the same description text arriving today from a
+ * DIFFERENT install. One counter row, swept after 2 days, never blocks anything.
+ * `first_install` is only ever set by the INSERT arm, so the RETURNING value is
+ * always the FIRST install to send this text today — which is the whole question.
+ */
+const DEDUPE_SQL = `INSERT INTO dedupe_probe (hash, probe_day, first_install, n, expires_at)
+VALUES ($1, $2, $3, 1, $4)
+ON CONFLICT (hash, probe_day) DO UPDATE
+   SET n = dedupe_probe.n + 1
+RETURNING first_install`
+
+async function duplicateDescription(
+  req: SubmitRequest,
+  hash: string,
+  now: number,
+): Promise<boolean> {
+  const rows = await withRetry('dedupe', () =>
+    query<{ first_install: string }>(DEDUPE_SQL, [
+      hash,
+      utcDate(now),
+      req.installId,
+      now + DEDUPE_TTL_MS,
+    ]),
+  )
+  const first = rows[0]?.first_install
   return typeof first === 'string' && first !== req.installId
 }
 
@@ -325,56 +375,85 @@ function logObjectKey(reportId: string, now: number): string {
   return `logs/${d.getUTCFullYear()}/${mm}/${dd}/${reportId}.log.gz`
 }
 
-function reportItem(req: SubmitRequest, reportId: string, score: number, now: number) {
-  return {
-    pk: `REPORT#${reportId}`,
-    sk: 'META',
-    gsi1pk: `CH#${req.env.channel}`,
-    gsi1sk: reportId,
-    gsi2pk: 'ST#new',
-    gsi2sk: reportId,
+// The triage-only columns (severity, cluster_id, dupe_of, disposition, issue_url,
+// triaged_at, redacted_at) are deliberately absent: ingest never writes them, and
+// the GRANT list says INSERT, so it could not amend them afterwards either.
+const REPORT_SQL = `INSERT INTO report (
+  report_id, install_id, report_type, title, description, contact,
+  channel, app_version, platform, env_json, log_json, log_key,
+  client_ts, received_at, spam_score, status
+) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,'new')`
+
+const IDEMP_SQL = `INSERT INTO report_idempotency
+  (install_id, client_report_id, report_id, expires_at)
+VALUES ($1, $2, $3, $4)`
+
+const IDEMP_LOOKUP_SQL = `SELECT report_id FROM report_idempotency
+ WHERE install_id = $1 AND client_report_id = $2`
+
+function reportParams(
+  req: SubmitRequest,
+  reportId: string,
+  score: number,
+  now: number,
+): unknown[] {
+  return [
     reportId,
-    installId: req.installId,
-    type: req.draft.type,
-    title: req.draft.title,
-    description: req.draft.description,
-    contact: req.draft.contact,
-    env: req.env,
-    log: req.log,
-    logRef: req.log ? { key: logObjectKey(reportId, now) } : null,
-    clientTs: req.clientTs,
-    receivedAt: now,
-    status: 'new',
-    spamScore: score,
-  }
+    req.installId,
+    req.draft.type,
+    req.draft.title ?? null,
+    req.draft.description,
+    req.draft.contact ?? null,
+    req.env.channel,
+    req.env.appVersion,
+    req.env.platform,
+    JSON.stringify(req.env),
+    req.log ? JSON.stringify(req.log) : null,
+    req.log ? logObjectKey(reportId, now) : null,
+    req.clientTs,
+    now,
+    score,
+  ]
 }
 
-/** Step 6: the report and its idempotency key land together or not at all. */
-async function writeReport(req: SubmitRequest, reportId: string, score: number, now: number): Promise<void> {
-  await ddb.send(
-    new TransactWriteCommand({
-      TransactItems: [
-        {
-          Put: {
-            TableName: TABLE,
-            Item: reportItem(req, reportId, score, now),
-            ConditionExpression: 'attribute_not_exists(pk)',
-          },
-        },
-        {
-          Put: {
-            TableName: TABLE,
-            Item: {
-              pk: `INSTALL#${req.installId}`,
-              sk: `IDEMP#${req.clientReportId}`,
-              reportId,
-              expiresAt: Math.floor(now / 1000) + IDEMP_TTL_SEC,
-            },
-          },
-        },
-      ],
-    }),
-  )
+/**
+ * Step 6: the report and its idempotency row land together or not at all.
+ *
+ * A dead-heat retry (the same clientReportId submitted twice, concurrently, from
+ * one install) loses the race on the idempotency PRIMARY KEY rather than forking
+ * into two reports — which is stronger than the TransactWriteItems this replaces,
+ * where the second write simply overwrote the first's pointer. The loser reads
+ * back the WINNER's id and answers as an idempotent replay.
+ */
+async function writeReport(
+  req: SubmitRequest,
+  reportId: string,
+  score: number,
+  now: number,
+): Promise<{ reportId: string; created: boolean }> {
+  try {
+    await withRetry('report', () =>
+      transaction(async (c) => {
+        await c.query(REPORT_SQL, reportParams(req, reportId, score, now))
+        await c.query(IDEMP_SQL, [
+          req.installId,
+          req.clientReportId,
+          reportId,
+          now + IDEMP_TTL_MS,
+        ])
+      }),
+    )
+    return { reportId, created: true }
+  } catch (err) {
+    if (sqlState(err) !== UNIQUE_VIOLATION) throw err
+    const rows = await query<{ report_id: string }>(IDEMP_LOOKUP_SQL, [
+      req.installId,
+      req.clientReportId,
+    ])
+    const won = rows[0]?.report_id
+    if (won === undefined) throw err
+    return { reportId: won, created: false }
+  }
 }
 
 /**
@@ -409,7 +488,7 @@ async function accept(req: SubmitRequest, now: number): Promise<HttpResult> {
   if (!ctx.config.acceptingReports) {
     return fail(503, 'closed', ctx.config.closedMessage)
   }
-  if (ctx.profile?.blocked === true) {
+  if (ctx.blocked) {
     return fail(403, 'blocked', 'This install is blocked from submitting feedback.')
   }
   if (ctx.replayReportId) {
@@ -420,15 +499,27 @@ async function accept(req: SubmitRequest, now: number): Promise<HttpResult> {
       retryAfterSec: secondsToUtcMidnight(now),
     })
   }
+  // The one place the retention janitor runs: past the quota gate (so a flood of
+  // refusals cannot trigger it) and before anything that matters. Best effort.
+  await sweepExpired(now)
 
-  const reportId = ulid(now)
   const hash = createHash('sha256').update(req.draft.description.trim()).digest('hex')
-  const score = spamScore(req.draft.description) + ((await duplicateDescription(req, hash, now)) ? 40 : 0)
+  const score =
+    spamScore(req.draft.description) + ((await duplicateDescription(req, hash, now)) ? 40 : 0)
 
-  await writeReport(req, reportId, Math.min(score, 100), now)
-  const upload = req.log ? await mintUpload(reportId, now) : null
-  log({ msg: 'report.created', reportId, channel: req.env.channel, score, log: req.log !== null })
-  return json(201, { ok: true, reportId, upload })
+  const written = await writeReport(req, ulid(now), Math.min(score, 100), now)
+  if (!written.created) {
+    return json(200, { ok: true, reportId: written.reportId, upload: null })
+  }
+  const upload = req.log ? await mintUpload(written.reportId, now) : null
+  log({
+    msg: 'report.created',
+    reportId: written.reportId,
+    channel: req.env.channel,
+    score,
+    log: req.log !== null,
+  })
+  return json(201, { ok: true, reportId: written.reportId, upload })
 }
 
 export async function handler(event: HttpEvent): Promise<HttpResult> {
@@ -452,7 +543,11 @@ export async function handler(event: HttpEvent): Promise<HttpResult> {
     if (!v.ok) return fail(400, 'invalid_payload', v.message, { field: v.field })
     return await accept(v.value, now)
   } catch (err) {
-    log({ msg: 'unhandled', error: err instanceof Error ? err.message : String(err) })
+    // A failure we did not classify may well be the CONNECTION. Retiring it costs
+    // one handshake on the next invoke and stops a dead socket poisoning a warm
+    // container for its whole lifetime.
+    if (sqlState(err) === null) resetClient()
+    log({ msg: 'unhandled', error: errorMessage(err) })
     return fail(500, 'internal', 'Something went wrong on our side.')
   }
 }

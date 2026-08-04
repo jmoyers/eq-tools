@@ -10,12 +10,22 @@
 // owner chose Terraform (which brings no build step of its own). So: esbuild,
 // which is already in this tree, driven by 120 lines we own.
 //
-// EVERYTHING IS BUNDLED, including the AWS SDK. The Lambda Node runtimes do ship
-// an SDK v3, but WHICH packages and WHICH version is AWS's business, not ours —
-// `@aws-sdk/s3-presigned-post` in particular is not something to bet a deploy on.
-// A ~3 MB zip against a 50 MB limit is a cheap price for "what we tested is what
-// runs". esbuild's ESM output needs the createRequire banner because parts of the
-// SDK are still CJS.
+// EVERYTHING IS BUNDLED, including the AWS SDK and the postgres driver. The
+// Lambda Node runtimes do ship an SDK v3, but WHICH packages and WHICH version is
+// AWS's business, not ours — `@aws-sdk/s3-presigned-post` and
+// `@aws-sdk/dsql-signer` in particular are not something to bet a deploy on, and
+// `pg` is not in the runtime at all. A few MB against a 50 MB limit is a cheap
+// price for "what we tested is what runs". esbuild's ESM output needs the
+// createRequire banner because parts of the SDK — and all of `pg` — are CJS.
+//
+// PURE-JS `pg`, NEVER `pg-native`. node-postgres reaches for two optional native
+// escape hatches: `pg-native` (a libpq binding, behind a lazy getter) and
+// `cloudflare:sockets` (a workerd builtin). Neither is installed and neither can
+// be, so both are replaced with a stub that THROWS IF IT IS EVER EVALUATED. That
+// is deliberate: marking them `external` would emit a top-level ESM import of a
+// module that does not exist and break the bundle at load; silently returning an
+// empty object would let a future `pg.native` call fail somewhere confusing. The
+// stub is unreachable in practice — nothing here touches either path.
 //
 // THE ZIP IS BYTE-DETERMINISTIC (fixed 1980 timestamps, sorted entries), which is
 // what makes Terraform's `source_code_hash` meaningful: rebuilding without
@@ -130,6 +140,26 @@ function makeZip(files) {
 
 // ---- build ------------------------------------------------------------------
 
+/** Optional native/edge backends of `pg` that this Lambda neither has nor wants. */
+const UNBUNDLABLE = /^(pg-native|cloudflare:sockets)$/
+
+const stubNativeBackends = {
+  name: 'stub-pg-native-backends',
+  setup(build) {
+    build.onResolve({ filter: UNBUNDLABLE }, (args) => ({
+      path: args.path,
+      namespace: 'pg-stub',
+    }))
+    build.onLoad({ filter: /.*/, namespace: 'pg-stub' }, (args) => ({
+      // Evaluated only if something actually requires it, which nothing does.
+      contents: `throw new Error(${JSON.stringify(
+        `${args.path} is deliberately not bundled — this Lambda uses pure-JS pg`,
+      )})`,
+      loader: 'js',
+    }))
+  },
+}
+
 async function main() {
   try {
     statSync(CONTRACT)
@@ -162,6 +192,7 @@ async function main() {
     platform: 'node',
     format: 'esm',
     target: 'node22',
+    plugins: [stubNativeBackends],
     // Parts of the AWS SDK are CJS and call `require` after bundling into ESM.
     banner: {
       js: "import{createRequire as __cr}from'node:module';const require=__cr(import.meta.url);",

@@ -1,36 +1,40 @@
 /**
- * triageStore.mts — the I/O half of triage: DynamoDB + S3, directly over IAM.
+ * triageStore.mts — the I/O half of triage: Aurora DSQL + S3, directly over IAM.
  *
  * THERE IS NO SERVER-SIDE READ API (D4). The dev machine has an AWS profile; this
- * module uses the SDK against the table and the bucket. Building a public,
- * authenticated read endpoint would be a second thing to secure for zero benefit.
+ * module opens a postgres connection to the DSQL cluster and talks to S3 with the
+ * SDK. Building a public, authenticated read endpoint would be a second thing to
+ * secure for zero benefit.
+ *
+ * NO PASSWORD EXISTS. DSQL authenticates with a short-lived IAM token that
+ * `@aws-sdk/dsql-signer` derives LOCALLY from whatever credentials the CLI is
+ * running under. Nothing is stored, nothing is rotated, nothing can be copied out
+ * of a config file — which is the same reason the ingest Lambda needs no secret.
+ * The CLI connects as `admin` (IAM action `dsql:DbConnectAdmin`, granted to the
+ * triage role in iam.tf) because it is the operator identity: it applies the
+ * schema and it is the deletion path for `forget` and `wipe`.
  *
  * POLITENESS, the same discipline AGENTS.md's scraper law asks of every fetcher in
  * this repo, applied to a paid API instead of someone else's server:
  *   * CACHE FIRST — `terraform output -json` is shelled out ONCE and cached in
  *     .triage/stack.json; a downloaded slice is written to .triage/slices/ and a
  *     second `show` never re-downloads it. Re-runs are free.
- *   * RATE LIMIT — a deliberate pause between query pages, so a `--since 90d`
- *     sweep never behaves like a burst.
- *   * BACK OFF — adaptive retry mode with 5 attempts, so a throttle is answered by
- *     waiting rather than by hammering.
- *   * IDEMPOTENT — every mutation is a keyed Put/Update; re-running a command
+ *   * ONE ROUND TRIP — every read is a single indexed statement with a LIMIT.
+ *     The DynamoDB version paged and paused between pages because a `--since 90d`
+ *     sweep was N queries; in SQL it is one, so there is nothing to pace.
+ *   * BACK OFF — DSQL is optimistic: a write that raced is aborted at commit with
+ *     SQLSTATE 40001 and must be retried, not hammered. `withRetry` is bounded
+ *     and jittered.
+ *   * IDEMPOTENT — every mutation is keyed by primary key; re-running a command
  *     converges instead of duplicating.
  *
  * PHYSICAL NAMES ARE NEVER COMMITTED. Everything comes from the Terraform outputs
  * at run time; .triage/ is gitignored.
  */
 
-import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
-import {
-  DeleteCommand,
-  DynamoDBDocumentClient,
-  GetCommand,
-  PutCommand,
-  QueryCommand,
-  ScanCommand,
-  UpdateCommand,
-} from '@aws-sdk/lib-dynamodb'
+import pg from 'pg'
+import type { Client as PgClient, QueryResultRow } from 'pg'
+import { DsqlSigner } from '@aws-sdk/dsql-signer'
 import {
   DeleteObjectCommand,
   GetObjectCommand,
@@ -43,22 +47,30 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { gunzipSync } from 'node:zlib'
 import { setTimeout as sleep } from 'node:timers/promises'
-import { ulidFloor, type TriageReport } from './triageCluster.mjs'
+import type { TriageReport } from './triageCluster.mjs'
 import type { AppChannelTag, FeedbackType, ReportStatus, Severity } from '../src/shared/feedback'
+
+const { Client, types } = pg
 
 const ROOT = resolve(import.meta.dirname, '..')
 export const TRIAGE_DIR = join(ROOT, '.triage')
 const STACK_FILE = join(TRIAGE_DIR, 'stack.json')
 const SLICE_DIR = join(TRIAGE_DIR, 'slices')
+export const SCHEMA_FILE = join(ROOT, 'infra', 'schema.sql')
 
-/** Pause between query pages. Nothing here is time-critical; the table is not free. */
-const PAGE_PAUSE_MS = 150
+/**
+ * Same reasoning as the Lambda's db.ts: int8 comes back as a STRING by default,
+ * and every bigint in this schema is an epoch-millisecond or a byte count that the
+ * shared contract types as `number`.
+ */
+types.setTypeParser(20, (value: string): number => Number(value))
 
 export interface Stack {
   region: string
-  table_name: string
+  cluster_endpoint: string
   bucket_name: string
   triage_role_arn: string
+  lambda_role_arn: string
   api_url: string
 }
 
@@ -67,7 +79,14 @@ export interface AccessOptions {
   roleArn?: string
 }
 
-const STACK_KEYS = ['region', 'table_name', 'bucket_name', 'triage_role_arn', 'api_url'] as const
+const STACK_KEYS = [
+  'region',
+  'cluster_endpoint',
+  'bucket_name',
+  'triage_role_arn',
+  'lambda_role_arn',
+  'api_url',
+] as const
 
 /**
  * Resolve every physical name from `terraform output -json`, ONCE, and cache it.
@@ -96,16 +115,44 @@ export function loadStack(refresh = false): Stack {
   return stack as unknown as Stack
 }
 
+export type Row = Record<string, unknown>
+
 export interface Clients {
-  ddb: DynamoDBDocumentClient
+  query: <R extends QueryResultRow = Row>(text: string, params?: unknown[]) => Promise<R[]>
+  execute: (text: string, params?: unknown[]) => Promise<number>
   s3: S3Client
   stack: Stack
+  close: () => Promise<void>
+}
+
+const RETRYABLE = new Set(['40001', '40P01'])
+const MAX_ATTEMPTS = 4
+
+function sqlState(err: unknown): string | null {
+  const code: unknown = (err as { code?: unknown }).code
+  return typeof code === 'string' ? code : null
+}
+
+async function withRetry<T>(run: () => Promise<T>): Promise<T> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await run()
+    } catch (err) {
+      const code = sqlState(err)
+      if (attempt >= MAX_ATTEMPTS || code === null || !RETRYABLE.has(code)) throw err
+      await sleep(25 * attempt)
+    }
+  }
 }
 
 /**
  * `--profile` is usually all that is needed: the deploy profile itself performs the
  * role assumption (source_profile + role_arn in ~/.aws/config). `--role-arn` is for
- * the case where it does not — a second machine, or a future CI job.
+ * the case where it does not — a second machine, or a future CI job. Whichever it
+ * is, the same credentials sign the DSQL token AND the S3 requests.
+ *
+ * The connection is opened LAZILY on the first statement: `list --help` and a bad
+ * argument must not cost a database round trip.
  */
 export function makeClients(stack: Stack, options: AccessOptions): Clients {
   if (options.profile) process.env.AWS_PROFILE = options.profile
@@ -120,36 +167,126 @@ export function makeClients(stack: Stack, options: AccessOptions): Clients {
     retryMode: 'adaptive',
     ...(credentials ? { credentials } : {}),
   }
+
+  let client: PgClient | null = null
+  const connect = async (): Promise<PgClient> => {
+    if (client) return client
+    const signer = new DsqlSigner({
+      hostname: stack.cluster_endpoint,
+      region: stack.region,
+      ...(credentials ? { credentials } : {}),
+    })
+    const fresh = new Client({
+      host: stack.cluster_endpoint,
+      port: 5432,
+      database: 'postgres',
+      user: 'admin',
+      password: await signer.getDbConnectAdminAuthToken(),
+      ssl: { rejectUnauthorized: true },
+      application_name: 'eq-companion-triage',
+    })
+    await fresh.connect()
+    client = fresh
+    return fresh
+  }
+
   return {
-    ddb: DynamoDBDocumentClient.from(new DynamoDBClient(config)),
+    query: async <R extends QueryResultRow = Row>(text: string, params: unknown[] = []) => {
+      const c = await connect()
+      return withRetry(async () => (await c.query<R>(text, params)).rows)
+    },
+    execute: async (text: string, params: unknown[] = []) => {
+      const c = await connect()
+      return withRetry(async () => (await c.query(text, params)).rowCount ?? 0)
+    },
     s3: new S3Client(config),
     stack,
+    close: async () => {
+      const open = client
+      client = null
+      if (open) await open.end()
+    },
   }
+}
+
+// ---- schema ------------------------------------------------------------------------
+
+/**
+ * Statement splitter for infra/schema.sql: a statement ends at the first line whose
+ * last character is `;`. That is enough because the file is authored for it (no
+ * string literal ends a line with a semicolon, and DSQL has no PL/pgSQL to
+ * dollar-quote) — the rule is written down at the top of schema.sql.
+ */
+export function splitStatements(sql: string): string[] {
+  const out: string[] = []
+  let buffer: string[] = []
+  for (const line of sql.split(/\r?\n/)) {
+    const code = line.replace(/^\s*--.*$/, '')
+    if (code.trim().length === 0) continue
+    buffer.push(code)
+    if (code.trimEnd().endsWith(';')) {
+      out.push(buffer.join('\n').trimEnd().replace(/;$/, ''))
+      buffer = []
+    }
+  }
+  if (buffer.join('').trim().length > 0) throw new Error('schema.sql ends mid-statement')
+  return out
+}
+
+/** Already-exists codes: duplicate_table (also index), duplicate_object (role/grant), duplicate_schema. */
+const ALREADY_EXISTS = new Set(['42P07', '42710', '42P06'])
+
+export interface MigrateStep {
+  sql: string
+  status: 'applied' | 'exists'
+}
+
+/**
+ * Apply the schema, ONE STATEMENT PER TRANSACTION — a DSQL law (a transaction may
+ * carry only one DDL statement, and may not mix DDL with DML). node-postgres runs
+ * each `query` in its own implicit transaction, so obeying the law is simply a
+ * matter of never batching.
+ *
+ * IDEMPOTENT: an "already exists" is reported, not thrown. Anything else IS thrown,
+ * with the offending statement, because a half-applied schema is worth stopping on.
+ */
+export async function applySchema(c: Clients, sql: string): Promise<MigrateStep[]> {
+  const steps: MigrateStep[] = []
+  for (const statement of splitStatements(sql)) {
+    try {
+      await c.execute(statement)
+      steps.push({ sql: statement, status: 'applied' })
+    } catch (err) {
+      const code = sqlState(err)
+      if (code === null || !ALREADY_EXISTS.has(code)) {
+        throw new Error(`${String(err)}\n\nwhile applying:\n${statement}`)
+      }
+      steps.push({ sql: statement, status: 'exists' })
+    }
+  }
+  return steps
 }
 
 // ---- reads -------------------------------------------------------------------------
 
-export type Row = Record<string, unknown>
-
 const str = (v: unknown, fallback = ''): string => (typeof v === 'string' ? v : fallback)
 const num = (v: unknown, fallback = 0): number => (typeof v === 'number' ? v : fallback)
 
-/** DynamoDB row -> the PII-free projection clustering and the digest work on. */
+/** Report row -> the PII-free projection clustering and the digest work on. */
 export function toTriageReport(row: Row): TriageReport {
-  const env = (row.env ?? {}) as Row
   const title = str(row.title)
   return {
-    reportId: str(row.reportId),
-    type: str(row.type, 'bug') as FeedbackType,
+    reportId: str(row.report_id),
+    type: str(row.report_type, 'bug') as FeedbackType,
     ...(title ? { title } : {}),
     description: str(row.description),
-    appVersion: str(env.appVersion, '?'),
-    platform: str(env.platform, '?'),
-    channel: str(env.channel, 'prod') as AppChannelTag,
+    appVersion: str(row.app_version, '?'),
+    platform: str(row.platform, '?'),
+    channel: str(row.channel, 'prod') as AppChannelTag,
     status: str(row.status, 'new') as ReportStatus,
-    spamScore: num(row.spamScore),
-    receivedAt: num(row.receivedAt),
-    hasLog: row.log !== null && row.log !== undefined,
+    spamScore: num(row.spam_score),
+    receivedAt: num(row.received_at),
+    hasLog: row.log_json !== null && row.log_json !== undefined,
   }
 }
 
@@ -163,72 +300,48 @@ export interface ListFilter {
 }
 
 /**
- * A ULID range query on the byChannel GSI: `BETWEEN` on the sort key, no filter
- * expression, no scan. status/type/score are applied client-side afterwards — a
- * third index would cost write amplification on every report for a query run by
- * hand once a week.
+ * ONE indexed statement. `--since` is `received_at >= :floor` against
+ * `report_by_channel (channel, received_at)`, which is what gsi1 was for.
+ *
+ * DELIBERATE IMPROVEMENT over the DynamoDB version, which could only key on
+ * channel + time and had to filter status/type/score in JS AFTER the page limit —
+ * so `--status new --limit 100` really meant "of the last 100 reports, the new
+ * ones". Here the predicates are in the WHERE and the LIMIT applies to the
+ * ANSWER. Same flags, same meaning, no truncation artefact.
  */
-export async function listReports(c: Clients, filter: ListFilter): Promise<Row[]> {
+const LIST_SQL = `SELECT * FROM report
+ WHERE channel = ANY($1::text[])
+   AND received_at >= $2
+   AND ($3::text IS NULL OR status = $3)
+   AND ($4::text IS NULL OR report_type = $4)
+   AND spam_score >= $5
+ ORDER BY received_at DESC
+ LIMIT $6`
+
+export function listReports(c: Clients, filter: ListFilter): Promise<Row[]> {
   const channels: AppChannelTag[] = filter.channel === 'all' ? ['prod', 'dev'] : [filter.channel]
-  const floor = ulidFloor(filter.sinceMs)
-  const rows: Row[] = []
-
-  for (const channel of channels) {
-    let cursor: Row | undefined
-    do {
-      const page = await c.ddb.send(
-        new QueryCommand({
-          TableName: c.stack.table_name,
-          IndexName: 'gsi1',
-          KeyConditionExpression: 'gsi1pk = :pk AND gsi1sk >= :floor',
-          ExpressionAttributeValues: { ':pk': `CH#${channel}`, ':floor': floor },
-          ScanIndexForward: false,
-          Limit: Math.min(filter.limit, 100),
-          ExclusiveStartKey: cursor,
-        }),
-      )
-      rows.push(...((page.Items ?? []) as Row[]))
-      cursor = page.LastEvaluatedKey as Row | undefined
-      if (cursor) await sleep(PAGE_PAUSE_MS)
-    } while (cursor && rows.length < filter.limit * channels.length)
-  }
-
-  return rows
-    .filter((r) => (filter.status ? r.status === filter.status : true))
-    .filter((r) => (filter.type ? r.type === filter.type : true))
-    .filter((r) => num(r.spamScore) >= (filter.minScore ?? 0))
-    .sort((a, b) => str(b.reportId).localeCompare(str(a.reportId)))
-    .slice(0, filter.limit)
+  return c.query(LIST_SQL, [
+    channels,
+    filter.sinceMs,
+    filter.status ?? null,
+    filter.type ?? null,
+    filter.minScore ?? 0,
+    filter.limit,
+  ])
 }
 
 export async function getReport(c: Clients, reportId: string): Promise<Row | null> {
-  const res = await c.ddb.send(
-    new GetCommand({
-      TableName: c.stack.table_name,
-      Key: { pk: `REPORT#${reportId}`, sk: 'META' },
-    }),
-  )
-  return (res.Item as Row | undefined) ?? null
+  const rows = await c.query('SELECT * FROM report WHERE report_id = $1', [reportId])
+  return rows[0] ?? null
 }
 
-/** The escape hatch. Callers print a loud warning before using it (§10.2). */
-export async function scanInstall(c: Clients, installId: string): Promise<Row[]> {
-  const rows: Row[] = []
-  let cursor: Row | undefined
-  do {
-    const page = await c.ddb.send(
-      new ScanCommand({
-        TableName: c.stack.table_name,
-        FilterExpression: 'installId = :id AND sk = :meta',
-        ExpressionAttributeValues: { ':id': installId, ':meta': 'META' },
-        ExclusiveStartKey: cursor,
-      }),
-    )
-    rows.push(...((page.Items ?? []) as Row[]))
-    cursor = page.LastEvaluatedKey as Row | undefined
-    if (cursor) await sleep(PAGE_PAUSE_MS)
-  } while (cursor)
-  return rows
+/**
+ * `wipe --install` only. There is deliberately NO index on install_id (the plan
+ * refused a third GSI for the same reason), so this is a full table read; callers
+ * print a loud warning before using it (§10.2).
+ */
+export function reportsForInstall(c: Clients, installId: string): Promise<Row[]> {
+  return c.query('SELECT * FROM report WHERE install_id = $1', [installId])
 }
 
 // ---- writes ------------------------------------------------------------------------
@@ -242,34 +355,33 @@ export interface TriagePatch {
   issueUrl?: string
 }
 
-/** Idempotent by construction: a keyed UpdateItem of exactly the fields provided. */
-export async function setTriage(c: Clients, reportId: string, patch: TriagePatch): Promise<void> {
-  const sets: string[] = ['triagedAt = :now']
-  const names: Record<string, string> = {}
-  const values: Record<string, unknown> = { ':now': Date.now() }
+/** The triage-only columns, keyed by the patch field that writes them. */
+const PATCH_COLUMN: Record<keyof TriagePatch, string> = {
+  status: 'status',
+  severity: 'severity',
+  cluster: 'cluster_id',
+  dupeOf: 'dupe_of',
+  note: 'disposition',
+  issueUrl: 'issue_url',
+}
 
+/** Idempotent by construction: a keyed UPDATE of exactly the fields provided. */
+export async function setTriage(c: Clients, reportId: string, patch: TriagePatch): Promise<void> {
+  const sets = ['triaged_at = $1']
+  const values: unknown[] = [Date.now()]
   for (const [key, value] of Object.entries(patch)) {
     if (value === undefined) continue
-    sets.push(`#${key} = :${key}`)
-    names[`#${key}`] = key === 'note' ? 'disposition' : key
-    values[`:${key}`] = value
+    values.push(value)
+    sets.push(`${PATCH_COLUMN[key as keyof TriagePatch]} = $${String(values.length)}`)
   }
-  // byStatus is a real index, so the projection has to move with the field.
-  if (patch.status) {
-    sets.push('gsi2pk = :gsi2pk')
-    values[':gsi2pk'] = `ST#${patch.status}`
-  }
-
-  await c.ddb.send(
-    new UpdateCommand({
-      TableName: c.stack.table_name,
-      Key: { pk: `REPORT#${reportId}`, sk: 'META' },
-      UpdateExpression: `SET ${sets.join(', ')}`,
-      ConditionExpression: 'attribute_exists(pk)',
-      ...(Object.keys(names).length > 0 ? { ExpressionAttributeNames: names } : {}),
-      ExpressionAttributeValues: values,
-    }),
+  values.push(reportId)
+  const rows = await c.execute(
+    `UPDATE report SET ${sets.join(', ')} WHERE report_id = $${String(values.length)}`,
+    values,
   )
+  // The DynamoDB version used `ConditionExpression: attribute_exists(pk)`; a typo'd
+  // reportId must fail loudly rather than silently update nothing.
+  if (rows === 0) throw new Error(`no such report: ${reportId}`)
 }
 
 export async function setBlocked(
@@ -278,69 +390,54 @@ export async function setBlocked(
   blocked: boolean,
   reason: string,
 ): Promise<void> {
-  await c.ddb.send(
-    new PutCommand({
-      TableName: c.stack.table_name,
-      Item: {
-        pk: `INSTALL#${installId}`,
-        sk: 'PROFILE',
-        blocked,
-        blockedReason: reason,
-        blockedAt: Date.now(),
-      },
-    }),
+  await c.execute(
+    `INSERT INTO install_profile (install_id, blocked, blocked_reason, blocked_at)
+     VALUES ($1, $2, $3, $4)
+     ON CONFLICT (install_id) DO UPDATE
+        SET blocked = EXCLUDED.blocked,
+            blocked_reason = EXCLUDED.blocked_reason,
+            blocked_at = EXCLUDED.blocked_at`,
+    [installId, blocked, reason, Date.now()],
   )
 }
 
-/** The kill switch (§9.6). One UpdateItem — instant, no deploy, no release. */
+/**
+ * The kill switch (§9.6). One statement — instant, no deploy, no release. Written
+ * as an UPSERT so it works even against a cluster whose config row was never
+ * seeded; `$2 IS NULL` keeps the existing message when `--message` is omitted.
+ */
 export async function setAccepting(c: Clients, accepting: boolean, message?: string): Promise<void> {
-  const values: Record<string, unknown> = { ':a': accepting }
-  let expr = 'SET acceptingReports = :a'
-  if (message !== undefined) {
-    expr += ', closedMessage = :m'
-    values[':m'] = message
-  }
-  await c.ddb.send(
-    new UpdateCommand({
-      TableName: c.stack.table_name,
-      Key: { pk: 'CONFIG', sk: 'FEEDBACK' },
-      UpdateExpression: expr,
-      ExpressionAttributeValues: values,
-    }),
+  await c.execute(
+    `INSERT INTO feedback_config (id, accepting, closed_message, max_per_install_per_day)
+     VALUES ('FEEDBACK', $1, COALESCE($2::text, 'Feedback is paused right now. Please try again later.'), 10)
+     ON CONFLICT (id) DO UPDATE
+        SET accepting = EXCLUDED.accepting,
+            closed_message = COALESCE($2::text, feedback_config.closed_message)`,
+    [accepting, message ?? null],
   )
 }
 
 /**
  * `forget` (§3.5): the ONE PII field goes, the description stays — it is the bug
  * report, and keeping it is why "we deleted your contact details" is not a lie about
- * the rest. `redactedAt` records that it happened.
+ * the rest. `redacted_at` records that it happened.
  */
 export async function redactContact(c: Clients, reportId: string): Promise<void> {
-  await c.ddb.send(
-    new UpdateCommand({
-      TableName: c.stack.table_name,
-      Key: { pk: `REPORT#${reportId}`, sk: 'META' },
-      UpdateExpression: 'REMOVE contact SET redactedAt = :now',
-      ConditionExpression: 'attribute_exists(pk)',
-      ExpressionAttributeValues: { ':now': Date.now() },
-    }),
+  const rows = await c.execute(
+    'UPDATE report SET contact = NULL, redacted_at = $1 WHERE report_id = $2',
+    [Date.now(), reportId],
   )
+  if (rows === 0) throw new Error(`no such report: ${reportId}`)
 }
 
 export async function deleteReportRow(c: Clients, reportId: string): Promise<void> {
-  await c.ddb.send(
-    new DeleteCommand({
-      TableName: c.stack.table_name,
-      Key: { pk: `REPORT#${reportId}`, sk: 'META' },
-    }),
-  )
+  await c.execute('DELETE FROM report WHERE report_id = $1', [reportId])
 }
 
 // ---- the log objects ---------------------------------------------------------------
 
 export function logKeyOf(row: Row): string | null {
-  const ref = row.logRef as Row | null | undefined
-  const key = ref ? str(ref.key) : ''
+  const key = str(row.log_key)
   return key.length > 0 ? key : null
 }
 
@@ -363,9 +460,7 @@ export async function downloadSlice(c: Clients, reportId: string, key: string): 
   mkdirSync(SLICE_DIR, { recursive: true })
   const dest = join(SLICE_DIR, `${reportId}.log`)
   if (existsSync(dest)) return dest
-  const res = await c.s3.send(
-    new GetObjectCommand({ Bucket: c.stack.bucket_name, Key: key }),
-  )
+  const res = await c.s3.send(new GetObjectCommand({ Bucket: c.stack.bucket_name, Key: key }))
   if (!res.Body) throw new Error(`S3 returned no body for ${key}`)
   const gz = Buffer.from(await res.Body.transformToByteArray())
   writeFileSync(dest, gunzipSync(gz))

@@ -86,8 +86,14 @@ variable "log_object_expiration_days" {
   default     = 90
 }
 
+variable "dsql_dpu_alarm_threshold" {
+  description = "Aurora DSQL TotalDPU (Sum) over 5 minutes that trips the ops alarm. 200 is ~17x the free tier's average burn rate and lands under the monthly budget if sustained — it fires before the bill does, not after."
+  type        = number
+  default     = 200
+}
+
 variable "default_max_reports_per_day" {
-  description = "Fallback per-install daily quota used when the CONFIG/FEEDBACK DynamoDB item does not override it. The item is the live control; this is only the cold-start default."
+  description = "Fallback per-install daily quota used when the feedback_config row does not override it. That row is the live control; this is only the cold-start default."
   type        = number
   default     = 10
 }

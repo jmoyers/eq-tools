@@ -10,6 +10,15 @@
 # reserved_concurrent_executions is the hard blast-radius cap. It bounds spend
 # even if a route throttle is misconfigured, and — because it is a RESERVATION,
 # not a limit — it also means this function can never starve a future one.
+#
+# THE 10s TIMEOUT AND THE DSQL CONNECTION. A cold invoke now has to mint an IAM
+# auth token and open a TLS postgres connection before it can do any work. The
+# token is signed LOCALLY (SigV4 over the cluster hostname — no network call),
+# and the connection is opened lazily and then CACHED on the module scope, so
+# only the first request in a container pays for it and warm requests pay
+# nothing. 10s stays comfortable; the handler's own connect/statement timeouts
+# (infra/lambda/db.ts) fire well inside it so a stuck connect returns a clean
+# 500 instead of an API Gateway timeout.
 # -----------------------------------------------------------------------------
 
 locals {
@@ -42,11 +51,16 @@ resource "aws_lambda_function" "submit" {
 
   reserved_concurrent_executions = var.lambda_reserved_concurrency
 
+  # DSQL_ENDPOINT + DSQL_USER are all the handler needs to authenticate: the
+  # password is an IAM token it mints itself with @aws-sdk/dsql-signer on every
+  # cold connect. THERE IS NO SECRET HERE — no Secrets Manager entry, no SSM
+  # parameter, nothing to rotate and nothing to leak in a console screenshot.
   environment {
     variables = {
-      TABLE_NAME  = aws_dynamodb_table.feedback.name
-      BUCKET_NAME = aws_s3_bucket.logs.bucket
-      MAX_PER_DAY = tostring(var.default_max_reports_per_day)
+      DSQL_ENDPOINT = local.dsql_endpoint
+      DSQL_USER     = local.dsql_ingest_role
+      BUCKET_NAME   = aws_s3_bucket.logs.bucket
+      MAX_PER_DAY   = tostring(var.default_max_reports_per_day)
     }
   }
 
