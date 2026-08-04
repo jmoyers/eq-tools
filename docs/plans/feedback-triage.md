@@ -82,7 +82,13 @@ export type AppChannelTag = 'prod' | 'dev'          // 'e2e' never submits — s
 export type ReportStatus =
   | 'new' | 'triaged' | 'accepted' | 'shipped' | 'wontfix' | 'duplicate' | 'spam'
 export type Severity = 'p0' | 'p1' | 'p2' | 'p3'
+```
 
+> **Deviation (2026-08):** `title` and `contact` were **retired from the wire** — the
+> description is the whole draft, and anyone wanting a reply puts their email/Discord in it.
+> See `src/shared/feedback.ts`; legacy fields from an old client are dropped, never rejected.
+
+```ts
 /** What the user typed. Renderer-owned; validated by the SAME function main and the Lambda use. */
 export interface FeedbackDraft {
   type: FeedbackType
@@ -164,6 +170,16 @@ inside an attached slice — that is disclosed in the dialog, and it is the user
 their own log, which they have seen before sending.
 
 ### 3.2 DynamoDB — single table `EqCompanionFeedback`
+
+> **Deviation (2026-08): storage is Aurora DSQL, not DynamoDB.** Everything in this section
+> is the original design and is kept for its rationale, not as a description of what runs.
+> The single-table shape below existed only because DynamoDB cannot filter without an index;
+> in serverless Postgres the five item kinds are five tables, the two GSIs are two ordinary
+> indexes, and `--since 7d` is a `WHERE`. **The as-built schema is `infra/schema.sql`; the
+> runbook and the DSQL-specific consequences (no TTL — the counter tables are swept by the
+> ingest path; IAM-token auth, so there is no database password) are in `infra/README.md`.**
+> The S3 layout (§3.3), the retention bounds (§3.5) and the handler contract (§8.3) are
+> unchanged by the swap.
 
 Billing: **PAY_PER_REQUEST**. No provisioned capacity to over-scale, no autoscaling to
 misconfigure. TTL attribute: `expiresAt` (epoch seconds).
@@ -932,6 +948,9 @@ triage-feedback closed <on|off> [--message "..."]
 expression, no scan. A `--scan` escape hatch exists and prints a loud warning.
 
 ### 10.3 Clustering
+
+> **Deviation (2026-08): storage is Aurora DSQL, not DynamoDB** — the queries feeding this are
+> SQL against `infra/schema.sql`, not GSI range queries; see the §3.2 banner and `infra/README.md`.
 
 Two layers. The script is deterministic and never calls a model; the model reasons over the
 script's output.

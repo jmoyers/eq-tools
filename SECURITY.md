@@ -23,7 +23,7 @@ ask otherwise.
 
 | Thing                                              | Access                                 |
 | -------------------------------------------------- | -------------------------------------- |
-| Your EverQuest log file(s)                          | **read-only**, never modified or uploaded |
+| Your EverQuest log file(s)                          | **read-only**, never modified. Uploaded only as an opt-in, previewed, scrubbed slice attached to a bug report you send — see [Feedback reports](#feedback-reports) |
 | `%APPDATA%\everquest-companion\`                    | read/write — your settings and progress |
 | `%LOCALAPPDATA%\Programs\everquest-companion\`      | the install directory                   |
 | Windows registry (`HKCU`, uninstall entry)          | written by the installer only           |
@@ -33,9 +33,11 @@ no UAC prompt at install, update, or uninstall time — the installer is built w
 `perMachine: false`, so it has no elevation manifest at all.
 
 Your log file is the only game data it reads, and it is opened read-only. Log
-contents are parsed locally and never leave your machine.
+contents are parsed locally, and they leave your machine in exactly one case: you
+attach a slice to a feedback report and press Send, having seen it first.
 
-**Over the network** — four hosts, all HTTPS, all read-only GETs:
+**Over the network** — all HTTPS. Everything the app does on its own is a read-only
+GET:
 
 | Host                                             | Why                                                   |
 | ------------------------------------------------ | ----------------------------------------------------- |
@@ -44,19 +46,64 @@ contents are parsed locally and never leave your machine.
 | `eqlwiki.com`                                    | item lookups + item icons                              |
 | `peonping.github.io`, `raw.githubusercontent.com`| the optional sound-pack registry and pack downloads     |
 
+Two more hosts are reached **only when you press Send in the feedback dialog**, never
+on a timer and never at startup: our ingest API (`*.execute-api.us-east-1.amazonaws.com`)
+and, if you attached a log slice, our own S3 bucket. The upload URL comes back from
+the API, and the main process checks it against an exact hostname match for that one
+bucket before a byte moves — a redirected or substituted URL uploads nothing. The
+endpoint is compiled into the build; nothing in settings, in the UI, or on disk can
+point it somewhere else.
+
 Remote images are fetched only from an exact hostname allowlist
 (`wiki.project1999.com`, `eqlwiki.com`), HTTPS only, default port only, no embedded
 credentials, and are cached on disk after content sniffing.
 
 ## What the app never does
 
-- No telemetry, analytics, crash reporting, or phone-home of any kind.
+- No telemetry, analytics, crash reporting, or phone-home of any kind. The app
+  sends us nothing unless you open the feedback dialog and press Send.
 - No account, no login, no credentials, nothing stored that identifies you.
-- Nothing about your logs, characters, or gameplay is ever uploaded anywhere.
+- Nothing about your logs, characters, or gameplay is uploaded on its own. The one
+  exception is a log slice you deliberately attach to a bug report, after reading it.
 - It does not write to, inject into, or otherwise touch the EverQuest client.
 - It does not run with administrator privileges.
 - It does not accept an update feed URL from settings, from the UI, or from any
   file on disk. The update source is compiled in.
+
+## Feedback reports
+
+The one place the app sends data anywhere is the feedback dialog, and only when you
+press Send. [`README.md`](README.md#feedback) describes what a report contains; this
+section is about what happens to it afterwards. Nothing here is a promise about a
+third party — the ingest API, the database, and the bucket are ours, in a dedicated
+AWS account, and the whole stack is in this repo under [`infra/`](infra/).
+
+**How long each piece is kept:**
+
+| Data | Kept |
+| --- | --- |
+| The report itself — type, your description, the version block | **indefinitely**. It *is* the bug backlog; deleting it would mean losing the bug. |
+| An attached log slice | **90 days**, then the object expires automatically. This is an S3 lifecycle rule on the bucket, not a script we have to remember to run — and versioning is off, so an expired or deleted object is gone rather than shadowed by an old version. |
+| Contact details | Reports no longer have a contact field — anything you want us to have goes in the description, where you can see it. Rows filed before that change still carry one, and it can be stripped on request without touching the report. |
+| API gateway access logs, which include your source IP | **14 days**, then CloudWatch drops them. They exist for one reason: if the public endpoint is ever flooded, there is evidence for two weeks. **Your IP is never written onto a report and the two are never joined** — there is no query that turns an access log line back into "who filed what". |
+| Rate-limit counters and duplicate-send keys | Days, not weeks (3 and 7 respectively), then deleted. |
+
+**Asking us to delete something.** The dialog shows a **report id** after a successful
+send — keep it. Quote that id in a
+[GitHub issue](https://github.com/jmoyers/everquest-companion/issues) (or a
+[private advisory](https://github.com/jmoyers/everquest-companion/security/advisories/new)
+if you'd rather it not be public) and say what you want removed. Deleting a slice
+deletes the object outright; stripping contact details clears the field and stamps the
+row so we can tell it was done. The description itself stays unless you ask for the
+whole report to go, in which case the report and its slice both go — that is what the
+`wipe` path in the triage tool exists for.
+
+Two things about how the collected data is handled, because they bound the damage a
+mistake could do: **a log slice is never pasted into a public GitHub issue** (the repo
+is public; an issue gets the description and a summary of what the log showed), and the
+public ingest endpoint's database credentials can `INSERT` a report and touch the
+counters — nothing more. It cannot read the backlog and it cannot delete anything, so
+compromising the public half of the system leaks no reports.
 
 ## How updates are verified today
 

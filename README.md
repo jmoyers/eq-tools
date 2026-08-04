@@ -79,6 +79,47 @@ apply now, or it installs the next time you quit.
   look, view preferences, favorites — as one string or a file. It carries no file paths,
   no window positions, and no character progress.
 
+## Feedback
+
+**Send feedback** in the nav drawer (also in **Settings → Feedback**) opens a dialog with
+two choices — **Feature request** or **Bug report** — and one box to type in. That box is
+the only thing you fill out; there's no title field and no contact field to fill in.
+
+A report carries exactly this:
+
+- the type (feature or bug) and the description you typed;
+- what the app knows about *itself* — app version, release channel, `win32`, your OS
+  build number, CPU architecture, and the Electron/Chrome/Node versions it's running on;
+- an anonymous per-install id, which exists only to rate-limit and to link your follow-up
+  report to your earlier one. It's a random UUID in a file you own, tied to nothing.
+
+**It does not contain your character name, your server, your EverQuest install path, your
+Windows user name, or your machine name.** None of those are collected, and none of your
+gameplay, progress, or settings ride along.
+
+**Bug reports can attach a slice of your EverQuest log**, and this is the one place log
+contents leave your machine. It's opt-in (ticked by default for bugs, and never offered
+for feature requests), covers the last 15, 30, or 60 minutes, and it is **scrubbed before
+you ever see it**: chat, tells, group lines, and `/who` output are dropped by the same
+filter that governs the log fixtures committed to this repo. Your own character name,
+zones, spells, and combat lines stay — that's what makes a bug reproducible.
+
+The dialog shows you the slice, expanded, before you send anything: how many lines it is,
+the exact time span, how many lines the scrub removed, and its compressed size. **Save a
+copy…** writes every byte to a file of your choosing, so you can read the whole thing
+first rather than trusting a preview. Nothing is uploaded until you press Send.
+
+**Want a reply?** Put your email or Discord handle in the message itself. That's the only
+way we'll have to reach you, and leaving it out is a perfectly normal way to file.
+
+After a successful send you get a **report id**. It's worth keeping: quote it in a
+[GitHub issue](https://github.com/jmoyers/everquest-companion/issues) and we can delete
+that report's log slice and any contact details you included. See
+[`SECURITY.md`](SECURITY.md) for how long each piece is kept.
+
+If you're offline, the report is saved and sent the next time the app runs with a working
+connection.
+
 ## Development
 
 Contributions welcome. Everything about building, testing, and the architecture lives in
