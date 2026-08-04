@@ -346,7 +346,12 @@ export class BuffInstances {
     }
     if (openKey !== undefined && open !== undefined) {
       const dur = fadeTs - open.landedTs
-      if (dur > 0 && dur <= MAX_SAMPLE_MS) this.addSample(key, spell, dur)
+      // CENSOR a sample whose land→fade window crossed an offline gap (world-model law 5).
+      // The fade itself is still authoritative — the instance clears exactly as it always
+      // did — but the SPAN is not a duration: it contains an absence whose length we know
+      // only to within the reconnect window. Contributing it would poison the per-spell
+      // recency-weighted MAX with a value that is guaranteed too large.
+      if (open.spannedGap !== true && dur > 0 && dur <= MAX_SAMPLE_MS) this.addSample(key, spell, dur)
       this.open.delete(openKey)
       this.active.delete(openKey)
     }
@@ -376,6 +381,56 @@ export class BuffInstances {
       }
     }
     this.dirty = true
+  }
+
+  /**
+   * OFFLINE GAP — the buff-timer PAUSE. Buff timers do NOT run while the character is out of
+   * the world; the game saves each buff's REMAINING duration and resumes it at login. So an
+   * instance that survives a gap must have its clock shifted forward by the absence, or every
+   * countdown reads as long-expired and the hygiene sweep retires a buff that is still up.
+   *
+   * MEASURED, not assumed (world-model law 1 — the game's semantics were verified before
+   * being encoded). Real log, Swift Like the Wind (DB duration 16 min):
+   *   land        Fri Jul 31 00:51:59   (`You feel much faster.`)
+   *   camp        Fri Jul 31 01:05:43   (+ the five countdown ticks to 01:06:07)
+   *   login       Fri Jul 31 14:49:15   (`Welcome to EverQuest Legends!`)
+   *   wears off   Fri Jul 31 14:50:28   (`Your speed returns to normal.`)
+   * Wall-clock elapsed is 13h58m29s; the measured absence is 13h43m08s; the difference is
+   * 15m21s — which matches this character's observed online duration for that spell (two
+   * clean same-evening pairs: 15m13s and 15m09s) to within the camp's own ~30s fuzz. And the
+   * post-login remainder is 1m13s, exactly the 16-minute timer's leftover after 14m14s of
+   * online time. If timers RAN while offline the buff would have expired unobserved around
+   * 01:08 and that wears-off line could never have printed at all.
+   *
+   * This is DISPLAY ONLY. `startedTs` feeds the countdown and the sort order and nothing else
+   * (it is never rendered as a wall clock), the wears-off line stays the authority on when a
+   * buff actually ended, and the shifted open cast is flagged so its span never becomes a
+   * mined duration sample.
+   *
+   * Note the interaction with SESSION_GAP_MS: an absence of 30 minutes or more has already
+   * wiped every live instance via clearForGap() by the time the gap event arrives (the
+   * reconnect preamble trips it before the Welcome line does), so in practice this shift
+   * applies to the 1-to-30-minute absences — a crash-and-relog, not an overnight camp.
+   */
+  onOfflineGap(offlineMs: number): void {
+    if (offlineMs <= 0) return
+    let changed = false
+    for (const o of this.open.values()) {
+      o.landedTs += offlineMs
+      o.spannedGap = true
+      changed = true
+    }
+    for (const [ik, a] of this.active) {
+      this.active.set(ik, { ...a, startedTs: a.startedTs + offlineMs })
+      changed = true
+    }
+    // A cast in flight when the character left the world never completed — the camp (or the
+    // crash) took it. Shifting it would resurrect a cast that produced no landing message.
+    if (this.pending) {
+      this.pending = null
+      changed = true
+    }
+    if (changed) this.dirty = true
   }
 
   /** Session-gap clear (Task #33, finding #5): wipe live actives/opens/pending. */

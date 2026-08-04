@@ -525,6 +525,78 @@ export interface EpochEvent extends LogEventBase {
 }
 
 /**
+ * A LOGIN — `Welcome to EverQuest Legends!`, printed on EVERY entry into the world
+ * (19× in the real 1.15M-line log; measured, not assumed). It is NOT an epoch signal
+ * (epochDetector.ts says so explicitly) — it is the ONE unambiguous "the character is in
+ * the world again" line, and therefore the right side of every offline gap.
+ *
+ * The line carries nothing but itself: no character, no zone, no elapsed time. A
+ * `You have entered <zone>.` ALWAYS follows within 0–1 lines (verified for all 19), so
+ * the existing zone path — not this event — remains the single source of the zone-change
+ * censor (world-model law 4). Nothing here duplicates it.
+ */
+export interface SessionStartEvent extends LogEventBase {
+  kind: 'sessionStart'
+}
+
+/**
+ * The player STARTED camping out — `It will take you about 30 seconds to prepare your camp.`
+ * (20× in the real log). Only the INITIATION line is an event; the five countdown ticks
+ * (`It will take about {25,20,15,10,5} more seconds to prepare your camp.`, 78 lines) stay
+ * `unknown` on purpose — they are the same fact repeated and nothing consumes them.
+ *
+ * A camp is CANCELLABLE, and the game SAYS SO (see {@link CampAbortEvent}) — so a campStart
+ * is an INTENT, never a completed logout. Only the pairing rule in sessionDetector.ts decides
+ * whether a gap was camped.
+ */
+export interface CampStartEvent extends LogEventBase {
+  kind: 'campStart'
+}
+
+/**
+ * The camp was CANCELLED — `You abandon your preparations to camp.` (2× in the real log,
+ * Aug 02 01:34:09 and 01:34:14, each in the SAME second as its own campStart).
+ *
+ * World-model law 1 (messages over inference): the brief for this feature assumed an abort
+ * had to be INFERRED from "camp lines followed by more activity without a Welcome". It does
+ * not — the game prints an explicit line, so we read it instead of guessing. Without it, a
+ * player who aborts a camp and then CRASHES seconds later would be reported as having camped.
+ */
+export interface CampAbortEvent extends LogEventBase {
+  kind: 'campAbort'
+}
+
+/**
+ * A DERIVED absence: the character was OUT OF THE WORLD between two known instants.
+ * Synthesized by sessionDetector.ts at each {@link SessionStartEvent} and handed back onto
+ * the SAME bus via `emitDerived` (the Task #47 path the epoch detector and the buffs module
+ * both use), so consumers see it AFTER the Welcome finishes delivering. Identical in replay
+ * and live — nothing here reads the wall clock.
+ *
+ * WHY `fromTs` IS NOT "THE LAST EVENT BEFORE THE WELCOME" (measured correction). Every login
+ * prints a RECONNECT PREAMBLE *before* the Welcome — `You are not currently assigned to an
+ * adventure.`, `The Marketplace is unavailable at this time. Please try again later.`,
+ * `Channel <X> was too full to join`, `Channels: 1=…`, and (because the client is already
+ * connected to chat) other players' channel chat. Across all 19 logins in the real log the
+ * newest event before the Welcome is 0–2 SECONDS older than it — every single time. Anchoring
+ * on it would report a 13-hour absence as a 1-second one and emit ZERO gaps, ever.
+ *
+ * So `fromTs` is the newest event at least {@link RECONNECT_WINDOW_MS} older than the
+ * Welcome — a MEASURED window (the whole preamble fits inside 22s in 19/19 logins; see
+ * sessionDetector.ts), in the same family as the model's other measured windows (the ~5s
+ * encounter linger, the ~2.5s clicky window). It is a LOWER bound on the true absence.
+ */
+export interface OfflineGapEvent extends LogEventBase {
+  kind: 'offlineGap'
+  /** Last instant the character is KNOWN to have been in the world (a lower bound). */
+  fromTs: number
+  /** The Welcome line's ts — the character is in the world again. Exact. */
+  toTs: number
+  /** True when a non-aborted `campStart` sits within 60s of `fromTs` (an orderly logout). */
+  camped: boolean
+}
+
+/**
  * The player changed their combat STANCE (Task #51). EQ Legends has two mutually-
  * exclusive combat-modifier groups; this is the melee/general one. The commit line is
  * `You assume a <stance> stance.` (`You begin to change your stance.` is the pre-commit
@@ -941,6 +1013,10 @@ export type LogEvent =
   | IllusionFadeEvent
   | BuffExpiredEvent
   | EpochEvent
+  | SessionStartEvent
+  | CampStartEvent
+  | CampAbortEvent
+  | OfflineGapEvent
   | StanceChangeEvent
   | InvocationChangeEvent
   | SelfWhoEvent

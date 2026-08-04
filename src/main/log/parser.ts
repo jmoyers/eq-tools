@@ -45,6 +45,7 @@ import {
   classifyWornOff
 } from './parseCasts'
 import { classifyItemActivate, classifySelfWho, classifySkillUp } from './parseWho'
+import { classifyCamp, classifySessionStart } from './parseSession'
 import {
   classifyAa,
   classifyConsider,
@@ -105,6 +106,15 @@ const CLASSIFIERS: readonly Classifier[] = [
   classifyPetClaim,
   classifyDeath,
   classifyZone,
+  // SESSION frame (login / camp-out / camp-abort). Beside the zone rule because they answer
+  // the same question one level up — zone says WHERE you are, these say WHETHER you are in
+  // the world at all — and because a Welcome is always followed within 0–1 lines by a zone
+  // line, so reading the pair adjacently is how the log itself reads. All three are EXACT
+  // string matches on lines that were measured to be `{kind:'unknown'}` before they existed
+  // (41 lines total), so they can neither shadow nor be shadowed by any other family; the
+  // position is for legibility, not disambiguation.
+  classifySessionStart,
+  classifyCamp,
   classifyLoot,
   classifyItemMerge,
   classifyTurnIn,

@@ -19,6 +19,7 @@ import { IPC } from '../shared/ipc'
 import { logInfo } from './errorLog'
 import { LogBus } from './log/bus'
 import { EpochDetector } from './log/epochDetector'
+import { SessionDetector } from './log/sessionDetector'
 import { installSpellDb } from './log/rulesets'
 import { loadSpellDb, applyOverlayCorrections } from './data/spellDb'
 import { MessageOverlayMiner } from './data/messageOverlay'
@@ -63,6 +64,14 @@ export const combat = new CombatEngine()
 // works identically. (The old level-regression heuristic was removed — EQ Legends loadout
 // swaps legitimately change level, so a level drop is NOT a reliable rebirth signal.)
 export const epoch = new EpochDetector()
+// LOGIN/LOGOUT (the session frame). `Welcome to EverQuest Legends!` is a parsed `sessionStart`;
+// this detector turns each one into a derived `offlineGap {fromTs, toTs, camped}` on the SAME
+// bus (the emitDerived path epoch and buffs already use), so every consumer learns the world
+// stopped being observable for a while. It shares index.ts's LAST bus subscription with the
+// epoch detector for the same reason: it must see each event only after the modules and the
+// combat engine have folded it. See sessionDetector.ts for why `fromTs` is NOT the last event
+// before the Welcome (a measured reconnect preamble makes that read a 13-hour absence as 6s).
+export const sessionDetector = new SessionDetector()
 
 // The extension framework. Modules own their slice of log-derived state and push
 // deltas to the renderer over the generic `module:delta` channel. Registration

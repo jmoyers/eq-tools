@@ -36,6 +36,7 @@ import {
   levelingModule,
   lootModule,
   registry,
+  sessionDetector,
   turnInsModule
 } from './pipeline'
 import {
@@ -165,6 +166,10 @@ function resetWorldFor(ref: CharacterRef): void {
   seq = 0
   registry.reset()
   epoch.reset()
+  // The offline-gap detector is per-LOG state (a rolling window of recent timestamps + the
+  // pending camp), so it resets alongside the epoch detector: a new character's first login
+  // must not inherit the previous log's last-seen instant as its `fromTs`.
+  sessionDetector.reset()
   characterModule.setCharacter(ref)
   // Tell the PARSER whose log this is (class-combo inference Wave 1). A `/who` prints every
   // stranger in the zone in the same grammar as the player's own row, so the self-`/who` rule

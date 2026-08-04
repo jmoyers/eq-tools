@@ -260,6 +260,26 @@ export class BuffsModule implements EqModule<BuffsSnap, BuffsDelta> {
       this.clearAllForGap()
       return
     }
+    // OFFLINE GAP (login/logout): the character was out of the world, and EQ PAUSES buff
+    // timers while it is — verified against the real log, see BuffInstances.onOfflineGap for
+    // the evidence lines. Shift every surviving instance's clock by the absence so countdowns
+    // resume where they stopped instead of reading as long-expired, and mark their open casts
+    // so the stretched land→fade span never becomes a duration sample (law 5).
+    //
+    // It is a DERIVED event (sessionDetector.ts), so the bus drains it immediately after its
+    // `sessionStart` has finished reaching every listener — and therefore BEFORE the
+    // `You have entered <zone>.` line that follows every login (verified for all 20 logins in
+    // the real log: the zone line is 0–1 lines after the Welcome). That ordering is fine and
+    // deliberate: this shift only moves clocks, and the zone event that lands next runs the
+    // EXISTING law-4 censor, which is what leaves charmed pets and hostiles behind on a login
+    // exactly as it does on any other zone. We add no second opinion about that here.
+    //
+    // `lastEventTs` is NOT advanced: the gap restates the Welcome's instant, which the
+    // Welcome itself already recorded as a primary event.
+    if (ev.kind === 'offlineGap') {
+      this.inst.onOfflineGap(ev.toTs - ev.fromTs)
+      return
+    }
     // Record the primary event's identity so any buffExpired we synthesize while folding it is
     // stamped with the right seq/ts/live (alerts respects the replay gate via `live`).
     this.curSeq = ev.seq

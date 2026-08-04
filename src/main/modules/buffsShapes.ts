@@ -79,6 +79,16 @@ export interface OpenCast {
   landedTs: number
   /** The entity disposition this cast is bound to (for censoring on zone/death). */
   disp: EntityDisposition
+  /**
+   * True once an `offlineGap` has passed over this open cast. The instance SURVIVES (EQ
+   * saves buffs across a camp and resumes their timers on login — measured, see
+   * BuffInstances.onOfflineGap), but its eventual land→fade span is no longer a clean
+   * observation of the spell's duration: it is stretched by an absence we only know to
+   * within ~30s. Such a sample is CENSORED rather than corrected — world-model law 5's
+   * recency-weighted MAX is chosen precisely because it is sensitive to over-long samples,
+   * and our offline estimate is a lower bound, so any correction would bias the MAX upward.
+   */
+  spannedGap?: boolean
 }
 
 /** A cast in flight (You begin casting …) not yet landed/cleared. */

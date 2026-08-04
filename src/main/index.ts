@@ -34,7 +34,7 @@ import { errorLogPath, logError, logInfo } from './errorLog'
 import { saveUserOverlay } from './data/overlayPersistence'
 import { installImageCacheProtocol, registerImageCacheSchemes } from './imageCache'
 import { registerIpc } from './ipc'
-import { bus, buffsModule, epoch } from './pipeline'
+import { bus, buffsModule, epoch, sessionDetector } from './pipeline'
 import { provisionDefaultPacks } from './provisionPacks'
 import { getActiveCharacter, startTailing, stopSession } from './session'
 import { getOverlayConfig } from './store'
@@ -80,6 +80,21 @@ bus.subscribe((ev, live) => {
     // in tailCharacter already covers this, so we only do it live.
     if (live) queueMicrotask(() => sendToMain(IPC.onCharacter, getActiveCharacter()))
   }
+})
+
+// Offline-gap subscription (login/logout). Same position and same contract as the epoch
+// subscription above and for the same reason: it must observe each event only after the
+// modules and the combat engine have folded it, then hand its synthesized `offlineGap` back
+// through emitDerived so the bus delivers it once the primary `sessionStart` has finished
+// reaching everyone. Unlike the epoch, this fires repeatedly (15 times over the real log's
+// 19 logins), so it does NOT force a renderer re-hydrate — modules fold a gap as an ordinary
+// event and express the result through their normal deltas. The detector filters derived
+// kinds itself; the guard here mirrors the epoch subscription so the no-feedback-loop
+// contract is visible at the call site rather than only inside the class.
+bus.subscribe((ev, live) => {
+  if (ev.kind === 'offlineGap') return
+  const gap = sessionDetector.observe(ev)
+  if (gap) bus.emitDerived(gap, live)
 })
 
 // Single-instance lock (Task #23): a second launch (e.g. re-running the installed
