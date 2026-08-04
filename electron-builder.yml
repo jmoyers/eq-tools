@@ -13,20 +13,50 @@ files:
   - package.json
   - '!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}'
   - '!**/*.{o,obj,map,ts,tsx}'
+  # onnxruntime-node ships PREBUILT binaries for every platform it supports in one npm
+  # package — 184 MB on disk, of which this Windows-x64-only app can use 33 MB. Without these
+  # excludes the installer carries macOS dylibs and Linux .so files it can never load. Keep
+  # the list in sync with `win.target.arch` above; a future arm64 target needs its line back.
+  - '!node_modules/onnxruntime-node/bin/napi-v3/{darwin,linux}/**'
+  - '!node_modules/onnxruntime-node/bin/napi-v3/win32/arm64/**'
+  # DirectML.dll (18.5 MB) is NOT excludable, and that was MEASURED, not assumed. This app
+  # never asks for the DirectML execution provider — Kokoro runs on CPU on purpose, because it
+  # is a background alert reader on a machine that is also running EverQuest — so dropping the
+  # DLL looks free. It is not: onnxruntime.dll STATICALLY imports it, so the binding fails to
+  # load at all and `speech:say` answers 'engine-not-installed' forever (verified: dist:dir
+  # with the exclusion, then a real synthesis in the packed app — zero wavs produced). It has
+  # to ship. Do not re-litigate this without repeating that experiment.
 
 asarUnpack:
   - resources/**
+  # The ONE native module in the tree (voice alerts, docs/plans/voice-alerts.md W3). A .node
+  # cannot be dlopen'd from inside an asar, and neither can the onnxruntime.dll it links
+  # against — and the DLL must stay in the SAME directory as the binding, so unpacking the
+  # whole bin/ dir is the only arrangement that works. electron-builder auto-unpacks *.node
+  # but NOT the sibling .dll, which is exactly the failure this line exists to prevent.
+  - node_modules/onnxruntime-node/bin/**
 
 # npmRebuild defaults to TRUE, which makes electron-builder shell out to
 # @electron/rebuild -> node-gyp against the whole production tree at package
-# time. This project has NO native modules (chokidar 4, electron-store/conf and
-# electron-updater are pure JS; there is not a single binding.gyp or prebuilt
-# .node in the tree), so that pass rebuilds nothing — it only keeps a
-# compile-and-execute path wired into every build, which is exactly the kind of
-# step `.npmrc`'s ignore-scripts is there to close. Turning it off is a no-op for
-# output and removes the path. If a native dependency is ever added, this must
-# flip back to true (or `electron-builder install-app-deps` must run explicitly)
-# or the module will ship built against the wrong ABI.
+# time — a compile-and-execute path wired into every build, which is exactly the
+# kind of step `.npmrc`'s ignore-scripts is there to close.
+#
+# THE TREE NOW HAS ONE NATIVE MODULE (onnxruntime-node, voice alerts W3), and this
+# still stays false. It is the ABI question that decides, not the presence of a
+# .node file: onnxruntime-node ships PREBUILT binaries under bin/napi-v3, i.e. it
+# targets N-API version 3, which is ABI-STABLE ACROSS NODE AND ELECTRON VERSIONS
+# by definition. There is nothing to rebuild — the shipped binary is the binary
+# Electron loads. (Verified end to end: `npm run dist:dir` + launching the packed
+# app + a real synthesis, with ignore-scripts on and npmRebuild off.)
+#
+# Its `postinstall` is likewise a non-issue under `.npmrc ignore-scripts=true`:
+# that script's ONLY job is downloading the Linux/x64 CUDA execution-provider
+# binaries, and it exits 0 immediately on any other platform. Every CPU binary,
+# Windows included, is inside the npm tarball.
+#
+# A future native dependency that ships node-gyp sources instead of N-API
+# prebuilds would need this flipped back to true (or an explicit
+# `electron-builder install-app-deps`), or it would ship built against the wrong ABI.
 npmRebuild: false
 
 # Auto-update + release hosting: electron-updater pulls from GitHub Releases of

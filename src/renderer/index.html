@@ -15,6 +15,10 @@
                                 bypassing the cache (imageCache.ts); `data:` is for inline SVG.
         media-src blob:         alert sounds arrive over IPC as bytes and are played from a
                                 Blob URL (features/alerts/soundCache.ts) — never fetched.
+        media-src eqspeech:     the permanent SPEECH cache's scheme (speech/cache.ts): a
+                                synthesized alert utterance, served read-only from disk by
+                                main. Exactly the eqimg: argument one directive down — no
+                                `https:` here either, so audio can only come from the app.
         connect-src 'self'      the renderer performs NO fetch/XHR of its own (all network
                                 lives in main). 'self' is what electron-vite's dev HMR
                                 WebSocket needs (same origin as the page).
@@ -25,7 +29,7 @@
     -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: eqimg:; media-src 'self' blob:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; child-src 'none'; base-uri 'none'; form-action 'none'"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: eqimg:; media-src 'self' blob: eqspeech:; font-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; child-src 'none'; base-uri 'none'; form-action 'none'"
     />
     <title>EQ Legends Companion</title>
   </head>

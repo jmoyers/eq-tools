@@ -344,8 +344,9 @@ export interface ProtocolLike {
 }
 
 /**
- * Declare the scheme's privileges. MUST be called at module/import time — before the app's
- * `ready` event — which is why it is separate from `installImageCacheProtocol`.
+ * This scheme's privileges. Handed to the ONE `registerSchemesAsPrivileged` call this
+ * process makes (`appSchemes.ts`) — Electron allows exactly one, and a second call is
+ * ignored, so the app's custom schemes have to be declared together.
  *
  *   standard  : gives the scheme normal URL semantics (host/path parsing, a real origin) so
  *               Chromium treats `eqimg://item/7` as a subresource URL like any other.
@@ -357,14 +358,10 @@ export interface ProtocolLike {
  * bypassCSP is deliberately NOT set: the renderer's own CSP lists `eqimg:` under img-src, so
  * the policy stays explicit and auditable in index.html/overlay.html.
  */
-export function registerImageCacheSchemes(protocol: ProtocolLike): void {
-  protocol.registerSchemesAsPrivileged([
-    {
-      scheme: EQIMG_SCHEME,
-      privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true }
-    }
-  ])
-}
+export const EQIMG_SCHEME_PRIVILEGES = {
+  scheme: EQIMG_SCHEME,
+  privileges: { standard: true, secure: true, supportFetchAPI: true, stream: true }
+} as const
 
 /** Options for the handler (injected so tests/other callers never touch `app`). */
 export interface ImageCacheOptions {
