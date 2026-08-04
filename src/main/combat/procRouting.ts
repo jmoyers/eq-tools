@@ -7,7 +7,7 @@
 // in progress only while that fight is FRESH, and always to the zone aggregate.
 
 import { idKey } from '../log/parser'
-import { DISPEL_FAMILY, SLOW_STRIKE } from '../../shared/poisons'
+import { DISPEL_FAMILY, SLOW_STRIKE, coatLineKey } from '../../shared/poisons'
 import { procBuffInCandidates } from '../../shared/procBuffs'
 import { stateKeyOf, type CloseStateArgs, type OpenStateArgs } from './stateTimeline'
 import type { EngineState } from './state'
@@ -44,9 +44,17 @@ function noteStateTransition(st: EngineState, group: string, ts: number): void {
 /**
  * Apply a blade coat (Task #64). ONLY your own coats move state — a third-person coat line
  * is another player's blades and is dropped after logging. A UTILITY coat replaces the one
- * utility slot; a COMBAT venom is added to the stack (re-coating the same venom just
- * refreshes its ts). An 'unknown' poison is recorded in the segment's coat list (the blades
- * demonstrably got re-coated) but never placed in a slot — we cannot claim what is on them.
+ * utility slot; a COMBAT venom replaces whatever is on ITS OWN LINE and stacks with the other
+ * lines. An 'unknown' poison is recorded in the segment's coat list (the blades demonstrably
+ * got re-coated) but never placed in a slot — we cannot claim what is on them.
+ *
+ * THE LINE, not the name (corrected 2026-08-04). The stack used to be keyed on the venom's
+ * NAME, which is right for a re-coat of the same venom and wrong for an upgrade: eqlwiki says
+ * Cobra Venom "replaces" Asp Venom and Blood Draw Venom "replaces" Blood Siphon Venom, so a
+ * name-keyed stack would have shown FOUR or FIVE simultaneous venoms where the game allows
+ * three. `coatLineKey` is the fold; see shared/poisons.ts for the wiki wording. Nothing in the
+ * user's log exercises it — this character is level 45 and both upgrades are level 46 — so the
+ * rule comes from the wiki, and the log neither confirms nor contradicts it.
  */
 export function routeCoat(st: EngineState, ev: PoisonCoatEvent): void {
   const { ts, poison, group, who } = ev
@@ -57,7 +65,8 @@ export function routeCoat(st: EngineState, ev: PoisonCoatEvent): void {
   const slot: CoatSlot = { poison, sinceTs: ts }
   if (group === 'utility') st.coatUtility = slot
   else if (group === 'combat') {
-    st.coatCombat = [...st.coatCombat.filter((c) => c.poison !== poison), slot]
+    const line = coatLineKey(poison)
+    st.coatCombat = [...st.coatCombat.filter((c) => coatLineKey(c.poison) !== line), slot]
   }
   // A coat is not combat: it never opens or extends an encounter. It attaches to an
   // in-progress fight (same freshness rule a miss uses) and always to the zone aggregate.
@@ -71,16 +80,17 @@ export function routeCoat(st: EngineState, ev: PoisonCoatEvent): void {
   // ACTIVE-STATE SPAN (proc-analytics §3.1). An 'unknown' poison opens NO span: the blades
   // demonstrably got re-coated, but the line refused to name what is on them, and a span keyed
   // on a name we do not have would be an invention. The utility slot is one exclusive group
-  // (a new coat replaces the old); each combat venom is its OWN group, because combat venoms
-  // STACK (wiki, Rogue page — and the real log proves it: three venoms coated eighteen minutes
-  // before a utility coat were all still proccing afterwards).
+  // (a new coat replaces the old); each combat venom LINE is its own group, because venoms on
+  // different lines STACK (wiki, Rogue page — and the real log proves it: three venoms coated
+  // eighteen minutes before a utility coat were all still proccing afterwards) while the two
+  // members of one line replace each other.
   if (poison !== 'unknown' && group !== 'unknown') {
     commitState(st, {
       kind: 'coat',
       key: idKey(poison),
       name: poison,
       ts,
-      group: group === 'utility' ? 'coat:utility' : `coat:combat:${idKey(poison)}`
+      group: group === 'utility' ? 'coat:utility' : `coat:combat:${coatLineKey(poison)}`
     })
   }
   st.log(ts, 'poison', 'info', `☠ coated: ${label}${group === 'unknown' ? '' : ` (${group})`}`)

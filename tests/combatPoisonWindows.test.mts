@@ -9,12 +9,15 @@
 // is the evidence every assertion below is pinned to, and several of these facts contradict
 // the obvious design:
 //
-//   1. COATS ARE TWO SLOTS, NOT ONE. eqlwiki's Rogue page: combat venoms STACK, utility
-//      poisons replace one another. The log proves it — the last coat line before the fights
-//      in W36 is Neurotoxic (a UTILITY poison), yet Asp Venom Strike, Blood Siphon Strike and
-//      Stunning Strike all proc during them, because the three COMBAT venoms coated eighteen
-//      minutes earlier were still up. A single-slot model would have to call those procs
-//      impossible.
+//   1. COATS ARE FOUR SLOTS, NOT ONE — three combat venoms plus one utility poison (the owner,
+//      2026-08-04; eqlwiki's Rogue page and the per-venom pages state the mechanism). Combat
+//      venoms STACK across their three mutually-exclusive LINES; utility poisons all share one
+//      slot and replace one another. The log proves the stacking half — the last coat line
+//      before the fights in W36 is Neurotoxic (a UTILITY poison), yet Asp Venom Strike, Blood
+//      Siphon Strike and Stunning Strike all proc during them, because the three COMBAT venoms
+//      coated eighteen minutes earlier were still up. A single-slot model would have to call
+//      those procs impossible. The last section of this file pins the slot model itself, the
+//      line-replacement rule, the death boundary, and the rows the UI draws from all of it.
 //   2. `<mob>'s limbs move slower!` IS the slow, and it IS a rogue poison proc: it is
 //      Weakening Strike's cast-on-other message and exactly one spell in the whole DB carries
 //      it. But FOUR poisons grant Weakening Strike (Weakening / Binding / Neurotoxic /
@@ -47,8 +50,10 @@ import { parseEvent } from '../src/main/log/parser'
 import { installSpellDb } from '../src/main/log/rulesets'
 import { loadSpellDb } from '../src/main/data/spellDb'
 import { CombatEngine } from '../src/main/combat/engine'
+import { COMBAT_POISON_LINES, MAX_COMBAT_COATS, POISONS, coatLineKey } from '../src/shared/poisons'
+import { coatRows } from '../src/renderer/src/features/combat/procRows'
 import type { LogEvent } from '../src/shared/logEvents'
-import type { CombatSnapshot, SegmentView, TimelineView } from '../src/shared/combat'
+import type { CombatSnapshot, ProcsView, SegmentView, TimelineView } from '../src/shared/combat'
 
 const FIXTURES = join(dirname(fileURLToPath(import.meta.url)), 'fixtures')
 
@@ -399,4 +404,206 @@ test('W37: dispel landings are COUNTED, labeled with every candidate, and never 
   assert.equal(eng.snapshot(lastTs).poison.slow.pulls, 0)
 
   installSpellDb(undefined) // leave the shared parser config as we found it
+})
+
+// ── THE FOUR SLOTS: three combat venoms + one utility poison ────────────────────────
+//
+// The owner's correction (2026-08-04): "you get 3 COMBAT poisons and 1 UTILITY poison." He is
+// right, and the mechanism is not a slot counter the game enforces — it is the ROSTER. The
+// five combat venoms form three mutually-exclusive LINES, each stated in the venom's own
+// eqlwiki description:
+//   Cobra Venom      "stacks with all other combat poisons, excluding Asp Venom, which this
+//                     replaces."
+//   Blood Draw Venom "stacks with all other combat poisons, except Blood Siphon Venom, which
+//                     this ability replaces."
+//   Stunning Venom   "stacks with all other combat poisons."   (no exception at all)
+// ⇒ asp | blood | stunning, one member of each ⇒ 3 combat coats, plus the one utility slot.
+//
+// THE LOG CANNOT PROVE THE CAP and this file will not pretend it does: the character is level
+// 45, both upgrade venoms are level 46, so the three venoms in every observed burst are simply
+// every combat venom he owns. The wiki is the source; the log is consistent with it.
+
+test('the roster IS the cap: three combat lines, and every combat venom sits on one', () => {
+  assert.equal(MAX_COMBAT_COATS, 3)
+  assert.deepEqual([...COMBAT_POISON_LINES].sort(), ['asp', 'blood', 'stunning'])
+  for (const p of POISONS) {
+    if (p.group === 'combat') assert.ok(p.line, `${p.name} declares a venom line`)
+    // A utility poison declaring a line would be meaningless — they already share ONE slot.
+    else assert.equal(p.line, undefined, `${p.name} is utility and declares no line`)
+  }
+  // The two shared-emote Strike pairs (law 3) sit on the SAME line each, which is what makes
+  // an ambiguous lane attributable to whichever member is coated: only one can ever be on.
+  assert.equal(coatLineKey('Asp Venom'), coatLineKey('Cobra Venom'))
+  assert.equal(coatLineKey('Blood Siphon Venom'), coatLineKey('Blood Draw Venom'))
+  assert.notEqual(coatLineKey('Asp Venom'), coatLineKey('Stunning Venom'))
+})
+
+test('a fourth venom does not stack — the upgrade REPLACES its own line, and only its own', () => {
+  // Synthetic because the log has no Cobra/Blood Draw line to hand-read (level 46, he is 45).
+  // Every coat message below is the DB's own msgCastOnYou, so the parser path is the real one.
+  const { eng, lastTs } = replay([
+    '[Mon Aug 03 02:00:00 2026] You coat your blades in a neurotoxic poison.',
+    // A swing before the venoms, so the zone segment's window actually COVERS the spans below
+    // (`spansOverlapping` is scoped to the segment, and a span that closed before it opened is
+    // correctly none of its business).
+    '[Mon Aug 03 02:00:01 2026] You slash a rock golem for 10 points of damage.',
+    '[Mon Aug 03 02:00:03 2026] You coat your blades in asp venom.',
+    '[Mon Aug 03 02:00:06 2026] You coat your blades in a siphoning poison.',
+    '[Mon Aug 03 02:00:09 2026] You coat your blades with a stunning agent.',
+    '[Mon Aug 03 02:00:12 2026] You coat your blades in cobra venom.',
+    '[Mon Aug 03 02:00:15 2026] You slash a rock golem for 10 points of damage.'
+  ])
+  const coat = eng.snapshot(lastTs).poison.coat
+  assert.equal(coat.utility?.poison, 'Neurotoxic Poison')
+  // THREE, not four: Cobra took Asp's line. Under the old name-keyed stack this read
+  // [Asp, Blood Siphon, Stunning, Cobra] — four concurrent venoms the game cannot give you.
+  assert.deepEqual(coat.combat.map((c) => c.poison), ['Blood Siphon Venom', 'Stunning Venom', 'Cobra Venom'])
+  assert.ok(coat.combat.length <= MAX_COMBAT_COATS)
+  // The span timeline agrees, and says HOW it ended: no line printed Asp's end, so 'inferred'.
+  const spans = eng.snapshot(lastTs, { selectedId: 'zone' }).selected?.procs.states ?? []
+  const asp = spans.find((s) => s.key === 'asp venom')
+  assert.equal(asp?.endEvidence, 'inferred')
+  assert.equal(asp?.endTs, Date.parse('Aug 03 2026 02:00:12'))
+  for (const key of ['blood siphon venom', 'stunning venom', 'neurotoxic poison', 'cobra venom']) {
+    assert.equal(spans.find((s) => s.key === key)?.endEvidence, 'open', `${key} is still on`)
+  }
+})
+
+test('your own death clears the blades — the wiki says so and the log corroborates it', () => {
+  // eqlwiki (Rogue): poisons "remain active until class swap or death". The log corroborates
+  // WITHOUT ever printing a dry line for it: `Your Paralytic Poison spell did not take hold.
+  // (Blocked by Neurotoxic Poison.)` at 20:01:47 Aug 03, then — after the 21:01:40 death — the
+  // same Paralytic coat lands cleanly at 21:15:23. Something removed Neurotoxic and no line
+  // said so. Before this the slot state and the span timeline disagreed at that instant:
+  // censorAll ended the spans while `coatUtility` kept naming a poison the corpse did not have.
+  const { eng, lastTs } = replay([
+    '[Mon Aug 03 02:00:00 2026] You coat your blades in a neurotoxic poison.',
+    '[Mon Aug 03 02:00:03 2026] You coat your blades in asp venom.',
+    '[Mon Aug 03 02:00:06 2026] You slash a rock golem for 10 points of damage.',
+    '[Mon Aug 03 02:00:20 2026] You have been slain by a rock golem!'
+  ])
+  const coat = eng.snapshot(lastTs).poison.coat
+  assert.equal(coat.utility, undefined)
+  assert.deepEqual(coat.combat, [])
+  // CENSORED, never 'observed': the game printed no dry line, so the end is where our knowledge
+  // stops, not a fact about the poison (law 1).
+  const spans = eng.snapshot(lastTs, { selectedId: 'zone' }).selected?.procs.states ?? []
+  for (const s of spans.filter((x) => x.kind === 'coat')) {
+    assert.equal(s.endEvidence, 'censored')
+    assert.equal(s.endTs, Date.parse('Aug 03 2026 02:00:20'))
+  }
+})
+
+test('a pull after a death is honestly slow-INCAPABLE — the stale coat used to say otherwise', () => {
+  const { eng, lastTs } = replay([
+    '[Mon Aug 03 02:00:00 2026] You coat your blades in a neurotoxic poison.',
+    '[Mon Aug 03 02:00:05 2026] You slash a rock golem for 10 points of damage.',
+    '[Mon Aug 03 02:00:20 2026] You have been slain by a rock golem!',
+    '[Mon Aug 03 02:05:00 2026] You slash a sand scarab for 10 points of damage.'
+  ])
+  const snap = eng.snapshot(lastTs, { maxSegments: 20 })
+  const ids = fightIds(snap)
+  // The pre-death pull opened under Neurotoxic: a slow was possible there.
+  assert.equal(segment(eng, lastTs, ids[ids.length - 1]).procs.slowExpected, true)
+  // The post-death pull opened on bare blades: `slowExpected` must be false, or the Procs tab
+  // reports "not landed" — blaming the dice — for a fight in which no slow could ever land.
+  const after = segment(eng, lastTs, ids[0]).procs
+  assert.equal(after.coatAtEngage, undefined)
+  assert.deepEqual(after.combatAtEngage, [])
+  assert.equal(after.slowExpected, false)
+})
+
+
+// ── what the UI draws from the four slots ───────────────────────────────────────────
+//
+// `coatRows` (renderer, pure) is the shaping the Procs tab renders and the reason this engine
+// file reaches across into the renderer: the model above is only worth having if every slot
+// reaches the screen. The Procs tab used to render all four coats as a single dim line of
+// joined names, and the header pill named ONLY the utility slot — which is what the owner
+// reported: "the combat tab is only showing one of them that's applied."
+
+const COATED: ProcsView = {
+  coatAtEngage: { poison: 'Neurotoxic Poison', sinceTs: 1_000 },
+  combatAtEngage: [
+    { poison: 'Asp Venom', sinceTs: 2_000 },
+    { poison: 'Blood Siphon Venom', sinceTs: 3_000 },
+    { poison: 'Stunning Venom', sinceTs: 4_000 }
+  ],
+  slowExpected: true,
+  coats: [],
+  // The ledger's own lane spelling, INCLUDING the shared-emote join (law 3): one emote,
+  // two candidate Strikes.
+  strikes: [
+    { name: 'Weakening Strike', count: 3 },
+    { name: 'Asp Venom Strike / Cobra Venom Strike', count: 5, ambiguous: true },
+    { name: 'Blood Siphon Strike / Blood Draw Strike', count: 2, ambiguous: true }
+  ],
+  strikeCount: 10,
+  slowLands: 3,
+  poisonDamage: [],
+  poisonDamageTotal: 0,
+  dispels: [],
+  dispelCount: 0,
+  stanceSwitches: 0,
+  invocationSwitches: 0
+}
+
+test('every coat gets its OWN row — all four, utility first, never just the one', () => {
+  const rows = coatRows(COATED)
+  assert.deepEqual(
+    rows.map((r) => `${r.poison}|${r.group}`),
+    [
+      'Neurotoxic Poison|utility',
+      'Asp Venom|combat',
+      'Blood Siphon Venom|combat',
+      'Stunning Venom|combat'
+    ]
+  )
+  // The applied time rides through untouched: a coat routinely predates the segment it is
+  // reported in (the w41 window's venoms went on eighteen minutes before its first swing).
+  assert.deepEqual(rows.map((r) => r.sinceTs), [1_000, 2_000, 3_000, 4_000])
+})
+
+test('a row carries its own Strikes, and the SLOW carrier is the utility poison', () => {
+  const rows = coatRows(COATED)
+  const by = new Map(rows.map((r) => [r.poison, r]))
+
+  // Neurotoxic grants Befuddling + Weakening. Befuddling never landed here and the row SAYS so
+  // with a zero rather than dropping the Strike: "it was coated and it never fired" is an
+  // answer, and hiding it makes an unlucky coat look like one that was never applied.
+  assert.deepEqual(by.get('Neurotoxic Poison')?.strikes, [
+    { name: 'Befuddling Strike', count: 0 },
+    { name: 'Weakening Strike', count: 3 }
+  ])
+
+  // THE AMBIGUOUS LANES RESOLVE HERE, and only because of the line model: `Asp Venom Strike /
+  // Cobra Venom Strike` is one emote shared by two Strikes (law 3), but those two venoms sit on
+  // ONE line and cannot both be coated — so with Asp up, the lane is Asp's.
+  assert.deepEqual(by.get('Asp Venom')?.strikes, [{ name: 'Asp Venom Strike', count: 5 }])
+  assert.deepEqual(by.get('Blood Siphon Venom')?.strikes, [{ name: 'Blood Siphon Strike', count: 2 }])
+  assert.deepEqual(by.get('Stunning Venom')?.strikes, [{ name: 'Stunning Strike', count: 0 }])
+
+  // ONLY the utility poison can carry the slow — every Weakening-Strike granter in the roster
+  // is a utility poison, which is exactly why `slowExpected` keys off the utility slot alone.
+  assert.deepEqual(rows.filter((r) => r.slowCarrier).map((r) => r.poison), ['Neurotoxic Poison'])
+})
+
+test('coats with no utility poison still produce rows — the case that rendered as NOTHING', () => {
+  // The owner's own loadout after a death or a fresh log-in: three venoms, no utility poison.
+  // The header pill returned null for exactly this shape.
+  const rows = coatRows({ ...COATED, coatAtEngage: undefined, slowExpected: false })
+  assert.equal(rows.length, 3)
+  assert.ok(rows.every((r) => r.group === 'combat'))
+  assert.ok(!rows.some((r) => r.slowCarrier), 'no venom can proc a slow')
+  // And a selection with nothing coated is genuinely empty — never a placeholder row.
+  assert.deepEqual(coatRows({ ...COATED, coatAtEngage: undefined, combatAtEngage: [] }), [])
+})
+
+test('an UNKNOWN coat is listed without being classified or given Strikes', () => {
+  // The coat line demonstrably fired but refused to name the poison. The blades are coated —
+  // that is true and shown — but nothing may be claimed about what is on them.
+  const rows = coatRows({ ...COATED, coatAtEngage: { poison: 'unknown', sinceTs: 9 }, combatAtEngage: [] })
+  assert.deepEqual(rows, [
+    { key: 'unknown|9|0', poison: 'unknown', group: 'unknown', sinceTs: 9, strikes: [], slowCarrier: false }
+  ])
 })

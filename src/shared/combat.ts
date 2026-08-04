@@ -197,15 +197,20 @@ export interface CoatSlot {
 }
 
 /**
- * The player's blade coats (Task #64). TWO slots, because that is what the game has (wiki,
- * Rogue page): combat venoms STACK, utility poisons replace one another. Modeling it as one
- * "current poison" would have made four of the five procs in the user's own log impossible —
- * see the block comment in shared/logEvents.ts.
+ * The player's blade coats (Task #64). FOUR concurrent coats — three combat venoms plus one
+ * utility poison — because that is what the game has (wiki, Rogue page): combat venoms stack
+ * across their three mutually-exclusive LINES, utility poisons all share one slot. Modeling it
+ * as one "current poison" would have made four of the five procs in the user's own log
+ * impossible — see the block comment in shared/poisons.ts.
+ *
+ * EVERY consumer must render ALL of them. The header pill showed only `utility` until
+ * 2026-08-04, which meant a rogue running the usual asp + siphoning + stunning with no utility
+ * poison on saw NOTHING at all in the passive readout.
  */
 export interface BladeCoatState {
   /** The ONE active utility poison, if any. */
   utility?: CoatSlot
-  /** Active combat venoms, in the order they were coated. */
+  /** Active combat venoms, in the order they were coated. At most one per venom line (3). */
   combat: CoatSlot[]
 }
 

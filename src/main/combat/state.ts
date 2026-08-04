@@ -80,10 +80,13 @@ export class EngineState {
   stance?: { name: string; ts: number }
   invocation?: { name: string; ts: number }
   /**
-   * BLADE COATS (Task #64). Two slots because the game has two: `coatUtility` is the ONE
-   * active utility poison (a new utility coat replaces it), `coatCombat` holds the combat
-   * venoms, which STACK. Session-scoped exactly like the stance pair — a coat survives zoning
-   * (the wiki: poisons last until class swap or death) — and cleared by reset().
+   * BLADE COATS (Task #64). FOUR concurrent coats, because that is what the game has:
+   * `coatUtility` is the ONE active utility poison (a new utility coat replaces it) and
+   * `coatCombat` holds up to `MAX_COMBAT_COATS` (3) combat venoms, one per mutually-exclusive
+   * VENOM LINE — venoms on different lines stack, the two members of a line replace each other
+   * (shared/poisons.ts carries the wiki wording). Session-scoped exactly like the stance pair:
+   * a coat survives zoning, is cleared by your own death (ingest.ts's playerDeath case) and by
+   * reset().
    */
   coatUtility?: CoatSlot
   coatCombat: CoatSlot[] = []

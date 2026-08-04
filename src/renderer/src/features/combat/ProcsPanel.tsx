@@ -10,11 +10,13 @@
 
 import { type ReactNode } from 'react'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
-import type { CoatSlot, ProcLane, ProcsView, SlowRollup } from '@shared/combat'
+import type { ProcLane, ProcsView, SlowRollup } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
+import { formatDateTime, formatTime } from '../../lib/formatDate'
 import { CAT_COLOR, KIND_COLOR } from './combatShared'
 import { fmtElapsed, slowRollupText } from './copyText'
 import { MARKER_COLOR } from './markerStyle'
+import { coatRows, type CoatRow } from './procRows'
 import { NoProcs, ProcAnalytics, hasProcAnalytics } from './ProcAnalytics'
 
 // The three hues below are the MARKER hues — this panel and the charts are talking about the
@@ -158,14 +160,64 @@ function SlowRolling({ slow }: { slow: SlowRollup | undefined }): React.JSX.Elem
   )
 }
 
-/** What was on the blades when the pull opened — the utility slot first, then the venom stack. */
-function CoatLine({ coat, combat }: { coat: CoatSlot | undefined; combat: CoatSlot[] }): React.JSX.Element | null {
-  if (coat === undefined && combat.length === 0) return null
-  const names = [...(coat ? [coat.poison] : []), ...combat.map((c) => c.poison)]
+/**
+ * WHAT WAS ON THE BLADES when the pull opened — one row per coat, up to the game's four (one
+ * utility poison plus one venom from each of the three combat lines).
+ *
+ * This replaced a single dim line of joined names (2026-08-04). The names alone could not
+ * answer the question the owner was actually asking of it — which of these is doing anything —
+ * so each row now carries the coat's OWN state: when it went on, which Strikes it grants, and
+ * how many of each landed in this segment. A granted Strike with no landings stays on the row:
+ * "it was on and it never fired" is a finding, and hiding it would make an unlucky coat look
+ * like a coat that was never applied.
+ *
+ * The slow carrier wears the slow hue — it is the one coat the tab's headline is about.
+ */
+function CoatRowView({ row }: { row: CoatRow }): React.JSX.Element {
+  const landings = row.strikes.map((s) => `${s.name} ×${s.count}`).join(' · ')
   return (
-    <Typography variant="caption" color="text.disabled" noWrap sx={{ display: 'block', mt: 0.25 }}>
-      {names.join(' · ')}
-    </Typography>
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.75, py: '1px', minWidth: 0 }}>
+      <Box
+        sx={{
+          width: 6,
+          height: 6,
+          borderRadius: '2px',
+          bgcolor: row.slowCarrier ? SLOW_COLOR : POISON_COLOR,
+          flexShrink: 0
+        }}
+      />
+      <Typography variant="caption" noWrap sx={{ flexGrow: 1, minWidth: 0 }}>
+        {row.poison}
+        <Typography component="span" variant="caption" color="text.disabled">
+          {' '}
+          · {row.group}
+        </Typography>
+      </Typography>
+      {landings !== '' && (
+        <Tooltip title={`Strikes this coat grants, and how many landed in this selection: ${landings}.`}>
+          <Typography variant="caption" color="text.secondary" noWrap sx={{ flexShrink: 0 }}>
+            {row.strikes.reduce((n, s) => n + s.count, 0)} strikes
+          </Typography>
+        </Tooltip>
+      )}
+      <Tooltip title={`Coated ${formatDateTime(row.sinceTs)} — it may have gone on well before this segment opened.`}>
+        <Typography variant="caption" color="text.disabled" noWrap sx={{ flexShrink: 0 }}>
+          {formatTime(row.sinceTs)}
+        </Typography>
+      </Tooltip>
+    </Box>
+  )
+}
+
+function CoatSection({ procs }: { procs: ProcsView }): React.JSX.Element | null {
+  const rows = coatRows(procs)
+  if (rows.length === 0) return null
+  return (
+    <ProcSection title="COATED">
+      {rows.map((r) => (
+        <CoatRowView key={r.key} row={r} />
+      ))}
+    </ProcSection>
   )
 }
 
@@ -259,7 +311,7 @@ export function ProcsBody({
     <Box sx={{ overflow: 'auto', flexGrow: 1, minHeight: 0, minWidth: 0 }}>
       <SlowHeadline procs={procs} isFight={isFight} />
       <SlowRolling slow={slow} />
-      <CoatLine coat={procs.coatAtEngage} combat={procs.combatAtEngage} />
+      <CoatSection procs={procs} />
 
       <ProcAnalytics procs={procs} activeSec={activeSec} endTs={endTs} />
 

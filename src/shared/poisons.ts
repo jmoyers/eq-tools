@@ -22,7 +22,40 @@
 // the last coat line was Neurotoxic: three combat venoms (asp / siphoning / stunning, coated
 // 01:05:10–01:05:36) were still up alongside the utility Neurotoxic (01:16:29). A
 // single-slot "current poison" model would have had to call four of those five procs
-// impossible. Hence `PoisonGroup` and the engine's two-slot state.
+// impossible. Hence `PoisonGroup` and the engine's slot state.
+//
+// FOUR COATS, AND WHY IT IS FOUR (the owner's "3 combat + 1 utility", verified 2026-08-04).
+// The cap is NOT an arbitrary slot count the game enforces — it falls out of the roster, and
+// the per-spell wiki pages say so in their own words:
+//   * Cobra Venom       — "stacks with all other combat poisons, excluding Asp Venom, which
+//                          this replaces."
+//   * Blood Draw Venom  — "stacks with all other combat poisons, except Blood Siphon Venom,
+//                          which this ability replaces."
+//   * Stunning Venom    — "stacks with all other combat poisons." (no exception at all)
+// So the five combat venoms form exactly THREE mutually-exclusive LINES — asp, blood,
+// stunning — and at most one member of each can be on the blades. Three combat + the one
+// utility slot = four concurrent coats, at any level. `PoisonDef.line` is that grouping, and
+// it is what the engine keys its combat stack on; keying on the NAME (the pre-2026-08-04
+// model) would have let Cobra sit beside Asp for a fourth simultaneous venom.
+//
+// WHAT THE PLAYER'S LOG CANNOT SHOW (say it rather than claim the observation): this
+// character is level 45 and both upgrade venoms are level 46, so the log has never carried a
+// Cobra or Blood Draw coat line. Every observed venom burst is exactly asp + siphoning +
+// stunning — consistent with the model, but the CONFIRMATION is the wiki's replacement
+// wording, not the log's three-at-a-time.
+//
+// TWO MORE LINES THE LOG PRINTS AROUND A COAT, neither of which this file matches (they are
+// recorded here so nobody later mistakes them for coat evidence):
+//   `You activate Neurotoxic Poison.`   — the ITEM/ability activation, 2–3s before the coat
+//                                         line. It names the poison outright, but it fires
+//                                         even when the coat then FAILS, so it is not a coat.
+//   `Your Antimagic Poison spell did not take hold. (Blocked by Neurotoxic Poison.)`
+//                                       — the coat FAILED. Three in the log (Antimagic ×2,
+//                                         Paralytic ×1, all blocked by the utility poison
+//                                         already on), and each is followed by NO coat line,
+//                                         so the model correctly records nothing. This is
+//                                         also the log's own proof that the utility slot is
+//                                         exclusive: two utility poisons cannot coexist.
 //
 // WHAT THE LOG CANNOT SAY (law 6): a Strike emote names no caster. `<mob>'s limbs move
 // slower!` is Weakening Strike's landing message and nothing else's (verified: exactly one
@@ -80,6 +113,12 @@ export interface PoisonDef {
   level?: number
   /** Strike names this poison grants (wiki Rogue page). Drives `slowCapable` below. */
   strikes: string[]
+  /**
+   * COMBAT venoms only: the mutually-exclusive LINE this venom belongs to (see the header).
+   * Two venoms sharing a line replace one another; venoms on different lines stack. Utility
+   * poisons leave it undefined — they already share ONE slot, so a line would say nothing.
+   */
+  line?: string
 }
 
 /**
@@ -89,12 +128,15 @@ export interface PoisonDef {
  * tar-like poison", "with a stunning agent" — which is why this is a TABLE and not a regex
  * over `in <name> poison`.
  *
- * OBSERVED IN THE USER'S LOG (full sweep of eqlog_Primitive_freeport.txt, 2026-08-03 — 6 coat
- * lines total, all on Aug 03): Asp Venom 01:05:10, Blood Siphon Venom 01:05:13, Stunning Venom
- * 01:05:36, Neurotoxic 01:06:16, Mage Bane 01:06:47, Neurotoxic 01:16:29. The other 14 have
- * never been coated here; they are listed anyway for the same reason the consider ladder lists
- * unobserved rungs — recognising a line we haven't seen costs nothing, and declining it would
- * silently drop a real coat.
+ * OBSERVED IN THE USER'S LOG (full sweep of eqlog_Primitive_freeport.txt, re-run 2026-08-04 —
+ * 26 coat lines, all on Aug 03; the original sweep saw 6 because the log was younger, and the
+ * live log grows): SIX poisons in all — Asp Venom, Blood Siphon Venom, Stunning Venom,
+ * Neurotoxic, Mage Bane, Paralytic. The venom bursts are the interesting shape: 01:05:10–:36,
+ * 18:21:24–:32 and 21:15:27–:38 each coat asp + siphoning + stunning and nothing else, which
+ * is the full combat set available below level 46. The other 14 poisons have never been coated
+ * here; they are listed anyway for the same reason the consider ladder lists unobserved rungs —
+ * recognising a line we haven't seen costs nothing, and declining it would silently drop a real
+ * coat.
  */
 export const POISONS: readonly PoisonDef[] = [
   // ── utility (ONE at a time; replaces the previous utility coat) ────────────────────
@@ -113,18 +155,43 @@ export const POISONS: readonly PoisonDef[] = [
   { name: 'Antimagic Poison', group: 'utility', level: 36, coatMsg: 'You coat your blades in antimagic poison.', strikes: ['Concussive Strike', 'Banishing Strike'] },
   { name: 'Mage Bane Poison', group: 'utility', level: 39, coatMsg: 'You coat your blades in mage bane poison.', strikes: ['Befuddling Strike', 'Banishing Strike'] },
   { name: 'Paralytic Poison', group: 'utility', level: 42, coatMsg: 'You coat your blades in a paralytic poison.', strikes: ['Weakening Strike', 'Clumsiness Strike'] },
-  // ── combat (STACK with each other) ────────────────────────────────────────────────
-  { name: 'Blood Siphon Venom', group: 'combat', level: 1, coatMsg: 'You coat your blades in a siphoning poison.', strikes: ['Blood Siphon Strike'] },
-  { name: 'Asp Venom', group: 'combat', level: 2, coatMsg: 'You coat your blades in asp venom.', strikes: ['Asp Venom Strike'] },
-  { name: 'Stunning Venom', group: 'combat', level: 15, coatMsg: 'You coat your blades with a stunning agent.', strikes: ['Stunning Strike'] },
-  { name: 'Blood Draw Venom', group: 'combat', level: 46, coatMsg: 'You coat your blades in a drawing poison.', strikes: ['Blood Draw Strike'] },
-  { name: 'Cobra Venom', group: 'combat', level: 46, coatMsg: 'You coat your blades in cobra venom.', strikes: ['Cobra Venom Strike'] }
+  // ── combat (STACK across lines; a line's two members REPLACE each other) ──────────
+  { name: 'Blood Siphon Venom', group: 'combat', level: 1, coatMsg: 'You coat your blades in a siphoning poison.', strikes: ['Blood Siphon Strike'], line: 'blood' },
+  { name: 'Asp Venom', group: 'combat', level: 2, coatMsg: 'You coat your blades in asp venom.', strikes: ['Asp Venom Strike'], line: 'asp' },
+  { name: 'Stunning Venom', group: 'combat', level: 15, coatMsg: 'You coat your blades with a stunning agent.', strikes: ['Stunning Strike'], line: 'stunning' },
+  { name: 'Blood Draw Venom', group: 'combat', level: 46, coatMsg: 'You coat your blades in a drawing poison.', strikes: ['Blood Draw Strike'], line: 'blood' },
+  { name: 'Cobra Venom', group: 'combat', level: 46, coatMsg: 'You coat your blades in cobra venom.', strikes: ['Cobra Venom Strike'], line: 'asp' }
 ]
 
 /** coat line → poison, for the parser's O(1) exact-match lookup. */
 export const POISON_BY_COAT_MSG: ReadonlyMap<string, PoisonDef> = new Map(POISONS.map((p) => [p.coatMsg, p]))
 /** poison NAME → poison, for consumers holding only a name (engine, renderer). */
 export const POISON_BY_NAME: ReadonlyMap<string, PoisonDef> = new Map(POISONS.map((p) => [p.name, p]))
+
+/**
+ * The three combat-venom LINES, in roster order. `MAX_COMBAT_COATS` is DERIVED from this — the
+ * cap is a consequence of the roster's replacement rules, never a magic number typed in
+ * somewhere. Add a fourth line to POISONS and the cap moves with it.
+ */
+export const COMBAT_POISON_LINES: readonly string[] = [
+  ...new Set(POISONS.filter((p) => p.group === 'combat').map((p) => p.line ?? p.name.toLowerCase()))
+]
+
+/** Most combat venoms that can be on the blades at once = one per line. Three today. */
+export const MAX_COMBAT_COATS = COMBAT_POISON_LINES.length
+
+/**
+ * The exclusivity key for a COATED poison — what the engine's combat stack and the state
+ * timeline's `coat:combat:<line>` group are keyed on.
+ *
+ * Falls back to the lowercased name for anything not in the roster (an 'unknown' coat never
+ * reaches here, and a future venom without a `line` is honestly treated as its own line rather
+ * than silently folded onto someone else's).
+ */
+export function coatLineKey(poison: string): string {
+  const def = POISON_BY_NAME.get(poison)
+  return def?.line ?? poison.toLowerCase()
+}
 
 /**
  * The two wears-off lines, split by group exactly as the DB records them. A utility poison

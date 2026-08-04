@@ -19,7 +19,7 @@ import type { CombatScope, ScopeOptions } from './dashboardData'
 import { fmtDur } from './combatShared'
 import { formatDateTime } from '../../lib/formatDate'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
-import type { CombatSnapshot, SegmentView } from '@shared/combat'
+import type { BladeCoatState, CoatSlot, CombatSnapshot, SegmentView } from '@shared/combat'
 
 type StanceState = NonNullable<CombatSnapshot['stance']>
 type PoisonState = CombatSnapshot['poison']
@@ -71,7 +71,11 @@ function ModifierSlot({
         <Typography variant="caption" sx={{ fontSize: 10, color: 'text.disabled', flexShrink: 0 }}>
           {slot}:
         </Typography>
-        <Typography variant="caption" noWrap sx={{ color, fontWeight: 600, textTransform: 'capitalize' }}>
+        {/* `minWidth: 0` is what makes the promise above TRUE. A `noWrap` Typography in a flex
+            row has `min-width: auto`, so without this it refuses to shrink and pushes the lens
+            line wide no matter how much room the Stack gives up — latent until slot 3 started
+            carrying up to four coat names. The tooltip has every full value either way. */}
+        <Typography variant="caption" noWrap sx={{ minWidth: 0, color, fontWeight: 600, textTransform: 'capitalize' }}>
           {value}
         </Typography>
       </Stack>
@@ -80,31 +84,47 @@ function ModifierSlot({
 }
 
 /**
- * The passive modifier readout: stance, invocation, and (Task #64) the BLADE COAT.
+ * The passive modifier readout: stance, invocation, and (Task #64) the BLADE COATS.
  *
  * Slot 3 mirrors slots 1–2 exactly — the same `<n>: <value>` pill in the same shape, which is
- * also the contract the headless e2e harness asserts on the first two. It shows the UTILITY
- * poison, because that is the slot the player actually chooses between: combat venoms stack
- * and simply accumulate, so they belong in the tooltip, not in a one-line status. A short
- * label ("Neurotoxic") carries it — the trailing "Poison"/"Venom" is noise at pill size.
+ * also the contract the headless e2e harness asserts on the first two. Its VALUE is every coat
+ * on the blades, not just one: the game runs up to four at once (three combat venoms, one
+ * utility poison) and this pill named only the utility slot until 2026-08-04 — so the usual
+ * asp + siphoning + stunning loadout with no utility poison rendered as nothing at all, which
+ * is exactly what the owner reported. Short labels carry it ("Neurotoxic · Asp · Blood Siphon
+ * · Stunning"); the trailing "Poison"/"Venom" is noise at pill size and the tooltip has it.
+ *
+ * ORDER IS THE ELLIPSIS BUDGET. The pill is inside the header's one shrinkable group, so under
+ * pressure it truncates from the RIGHT — utility first (the slot the player actually chooses
+ * between and swaps mid-fight), then the venoms (coated once and forgotten). The tooltip
+ * always carries every full name with its applied time, so nothing is lost.
  */
 function coatShortName(poison: string): string {
   return poison === 'unknown' ? 'unknown' : poison.replace(/\s+(Poison|Venom)$/, '')
 }
 
+/** Utility first, then the venom stack — the one order both the pill and its tooltip use, and
+ *  each coat carries the slot family it came from rather than being re-identified later. */
+function coatList(coat: BladeCoatState): { slot: CoatSlot; group: string }[] {
+  return [
+    ...(coat.utility ? [{ slot: coat.utility, group: 'utility' }] : []),
+    ...coat.combat.map((c) => ({ slot: c, group: 'combat' }))
+  ]
+}
+
 /** Slot 3 on its own, so the readout below stays a flat list of three optional pills. */
-function CoatSlotPill({ coat }: { coat: NonNullable<PoisonState>['coat'] }): React.JSX.Element | null {
-  if (!coat.utility) return null
-  const combat = coat.combat
+function CoatSlotPill({ coat }: { coat: BladeCoatState }): React.JSX.Element | null {
+  const all = coatList(coat)
+  if (all.length === 0) return null
+  const detail = all
+    .map((c) => `${c.slot.poison} (${c.group}, applied ${formatDateTime(c.slot.sinceTs)})`)
+    .join(' · ')
   return (
     <ModifierSlot
       slot={3}
-      value={coatShortName(coat.utility.poison)}
+      value={all.map((c) => coatShortName(c.slot.poison)).join(' · ')}
       color="#c46fd2"
-      tip={
-        `Modifier 3 — blade coat: ${coat.utility.poison}, applied ${formatDateTime(coat.utility.sinceTs)}` +
-        (combat.length ? `. Combat venoms also up (they stack): ${combat.map((c) => c.poison).join(', ')}` : '')
-      }
+      tip={`Modifier 3 — blade coats, ${all.length} of a possible 4 (one utility poison plus one venom from each of the three combat lines): ${detail}`}
     />
   )
 }
@@ -116,15 +136,21 @@ function StanceReadout({
   stance: StanceState
   poison: PoisonState
 }): React.JSX.Element | null {
-  const coat = poison?.coat
-  if (!stance.stance && !stance.invocation && !coat?.utility) return null
+  const coat = poison.coat
+  if (!stance.stance && !stance.invocation && !hasCoat(coat)) return null
   return (
     <>
       {stance.stance && <ModifierSlot slot={1} value={stance.stance} color="#d9b25f" />}
       {stance.invocation && <ModifierSlot slot={2} value={stance.invocation} color="#a98fe0" />}
-      {coat && <CoatSlotPill coat={coat} />}
+      <CoatSlotPill coat={coat} />
     </>
   )
+}
+
+/** Any coat at all — utility OR a combat venom. The venoms count: they are three of the four
+ *  slots and they proc on every swing. */
+function hasCoat(coat: BladeCoatState | undefined): boolean {
+  return !!coat && (!!coat.utility || coat.combat.length > 0)
 }
 
 /**
@@ -391,7 +417,7 @@ function InCombatDot(): React.JSX.Element {
 /** Is there any passive state at all? Decides whether the lens line grows its divider. */
 function hasPassiveStatus(snap: CombatSnapshot | null): boolean {
   return (
-    !!snap?.stance?.stance || !!snap?.stance?.invocation || !!snap?.poison?.coat.utility || !!snap?.inCombat
+    !!snap?.stance?.stance || !!snap?.stance?.invocation || hasCoat(snap?.poison.coat) || !!snap?.inCombat
   )
 }
 

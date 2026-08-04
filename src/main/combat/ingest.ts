@@ -360,10 +360,21 @@ function ingestModifier(st: EngineState, ev: LogEvent): void {
       return
     case 'playerDeath':
       // A boundary that SEVERS every span. The end is unknowable, so it is 'censored' — never
-      // 'observed', and never a fabricated expiry (law 1). Deliberately does not touch
-      // st.stance / st.coatUtility / st.coatCombat: those are shipped session-scoped fields
-      // inside the regression surface, and re-deciding their lifetime is not this feature's job.
+      // 'observed', and never a fabricated expiry (law 1).
       st.stateTimeline.censorAll(ev.ts)
+      // BLADE COATS DIE WITH YOU (corrected 2026-08-04). eqlwiki's Rogue page states poisons
+      // "remain active until class swap or death", and the log corroborates it without ever
+      // printing a dry line for it: `Your Paralytic Poison spell did not take hold. (Blocked by
+      // Neurotoxic Poison.)` at 20:01:47 Aug 03, then — after `You have been slain by a rock
+      // golem!` at 21:01:40 — the SAME Paralytic coat lands cleanly at 21:15:23. Something
+      // removed Neurotoxic in between and no line said so. Until this, the slot state and the
+      // span timeline disagreed at exactly this instant: censorAll ended the coat spans while
+      // `coatUtility` kept naming a poison the corpse no longer had, which made the header show
+      // a dead coat and `slowExpected` true for pulls that could not slow.
+      // NOT modeled, and stated rather than guessed: the wiki's other clearer, a CLASS SWAP.
+      // The combat engine sees no loadout signal, so a swap leaves the coats standing.
+      st.coatUtility = undefined
+      st.coatCombat = []
       return
     default:
       return

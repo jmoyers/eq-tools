@@ -36,6 +36,7 @@ import {
 } from '../src/main/combat/procDetect'
 import { StateTimeline, coversWholly, overlapMs, stateKeyOf } from '../src/main/combat/stateTimeline'
 import { PROC_BUFF_CATALOG, procBuffFor, procBuffInCandidates } from '../src/shared/procBuffs'
+import { coatLineKey } from '../src/shared/poisons'
 import type { StateSpan } from '../src/shared/procAnalytics'
 
 // ---------------------------------------------------------------------------------------
@@ -182,8 +183,11 @@ test('combat venoms STACK; a utility coat replaces the one utility slot', () => 
 
 test('a combat dry closes the WHOLE stack, and inferred — the line cannot name the venom', () => {
   const t = new StateTimeline()
-  t.noteState({ kind: 'coat', key: 'asp venom', name: 'Asp Venom', ts: 1_000, group: 'coat:combat:asp venom' })
-  t.noteState({ kind: 'coat', key: 'cobra venom', name: 'Cobra Venom', ts: 1_500, group: 'coat:combat:cobra venom' })
+  // Asp and STUNNING, not Asp and Cobra: those two are one venom line (eqlwiki — "Cobra Venom
+  // … excluding Asp Venom, which this replaces"), so the engine gives them ONE group and they
+  // could never be open together. See the line-replacement test below.
+  t.noteState({ kind: 'coat', key: 'asp venom', name: 'Asp Venom', ts: 1_000, group: 'coat:combat:asp' })
+  t.noteState({ kind: 'coat', key: 'stunning venom', name: 'Stunning Venom', ts: 1_500, group: 'coat:combat:stunning' })
   t.noteState({ kind: 'coat', key: 'binding poison', name: 'Binding Poison', ts: 2_000, group: 'coat:utility' })
   t.closeGroupPrefix('coat:combat:', 9_000, 'inferred')
   assert.equal(t.active.size, 1, 'the utility coat is untouched')
@@ -194,6 +198,23 @@ test('a combat dry closes the WHOLE stack, and inferred — the line cannot name
   // A utility dry, by contrast, IS unambiguous — there is only ever one.
   t.closeGroupPrefix('coat:utility', 10_000, 'observed')
   assert.equal(t.spans.find((s) => s.key === 'binding poison')?.endEvidence, 'observed')
+})
+
+test('a venom LINE is one group: the upgrade supersedes its predecessor, not the whole stack', () => {
+  // The grouping the engine actually derives (`coatLineKey`), asserted here on the timeline
+  // primitive so the exclusivity mechanism and the roster fact are pinned in one place.
+  const t = new StateTimeline()
+  assert.equal(coatLineKey('Cobra Venom'), coatLineKey('Asp Venom'))
+  const line = `coat:combat:${coatLineKey('Asp Venom')}`
+  t.noteState({ kind: 'coat', key: 'asp venom', name: 'Asp Venom', ts: 1_000, group: line })
+  t.noteState({ kind: 'coat', key: 'stunning venom', name: 'Stunning Venom', ts: 1_500, group: 'coat:combat:stunning' })
+  t.noteState({ kind: 'coat', key: 'cobra venom', name: 'Cobra Venom', ts: 2_000, group: line })
+  // Asp is gone — superseded, and 'inferred' because no line printed its end.
+  assert.equal(t.spans.find((s) => s.key === 'asp venom')?.endEvidence, 'inferred')
+  assert.equal(openSpan(t, 'asp venom'), undefined)
+  // Stunning is on a different line and is untouched: venoms across lines still STACK.
+  assert.equal(openSpan(t, 'stunning venom')?.name, 'Stunning Venom')
+  assert.equal(t.active.size, 2, 'cobra + stunning — never three venoms from two lines')
 })
 
 test('a printed wears-off is the ONLY way a span ends observed; a re-apply supersedes inferred', () => {

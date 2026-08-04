@@ -22,6 +22,11 @@
 // never manufacture or suppress a number.
 
 import { formatNum, formatPer100, formatPpm, formatRate } from '../../lib/formatRate'
+// RELATIVE, not '@shared/poisons': this module is node-tested and those tests run without the
+// renderer's `@shared` alias, so a value import through it would break them (the same reason
+// copyText.ts spells its one shared constant literally). Type-only imports may keep the alias.
+import { POISON_BY_NAME, SLOW_STRIKE } from '../../../../shared/poisons'
+import type { CoatSlot, ProcLane, ProcsView } from '@shared/combat'
 import type {
   AttributionReport,
   AttributionVerdict,
@@ -254,6 +259,59 @@ export function stateRows(states: readonly StateSpan[], segEndTs: number): State
         ...(end !== undefined ? { durationMs: Math.max(0, end - s.startTs) } : {})
       }
     })
+}
+
+// ── The blade coats ─────────────────────────────────────────────────────────────────
+
+/** One coat that was on the blades when this segment opened, with what it did in it. */
+export interface CoatRow {
+  key: string
+  /** Full DB name — the pill in the header abbreviates, this list does not. */
+  poison: string
+  /** Which of the four slots it occupies. 'unknown' when the coat line refused to name it. */
+  group: 'utility' | 'combat' | 'unknown'
+  /** epoch ms of the coat line — the "applied" time, and it may predate the segment. */
+  sinceTs: number
+  /** The Strikes this poison GRANTS (roster), each with the landings observed in the segment.
+   *  A granted Strike with zero landings is kept: "coated and it never fired" is an answer. */
+  strikes: { name: string; count: number }[]
+  /** This coat can proc the slow (it grants Weakening Strike) — the `slowExpected` carrier. */
+  slowCarrier: boolean
+}
+
+/**
+ * Landings of one Strike in this segment's ledger.
+ *
+ * The ledger's lane NAME is the engine's candidate join (`Blood Siphon Strike / Blood Draw
+ * Strike` — law 3, two Strikes share one emote), so a lane is split back on ' / ' and matched
+ * by membership. That is exact HERE and nowhere else: the two members of every shared-emote
+ * pair sit on the SAME venom line, so at most one of them can be coated at a time and the
+ * ambiguous lane can only belong to the one coat that is up.
+ */
+function strikeLandings(lanes: readonly ProcLane[], strike: string): number {
+  let n = 0
+  for (const l of lanes) if (l.name.split(' / ').includes(strike)) n += l.count
+  return n
+}
+
+/**
+ * The coats in force at engage, utility first then the venom stack — one row each, because the
+ * game runs up to four at once and a single line naming one of them (what this replaced) hides
+ * three quarters of the loadout.
+ */
+export function coatRows(procs: ProcsView): CoatRow[] {
+  const coats: CoatSlot[] = [...(procs.coatAtEngage ? [procs.coatAtEngage] : []), ...procs.combatAtEngage]
+  return coats.map((c, i) => {
+    const granted = POISON_BY_NAME.get(c.poison)?.strikes ?? []
+    return {
+      key: `${c.poison}|${c.sinceTs}|${i}`,
+      poison: c.poison,
+      group: POISON_BY_NAME.get(c.poison)?.group ?? 'unknown',
+      sinceTs: c.sinceTs,
+      strikes: granted.map((s) => ({ name: s, count: strikeLandings(procs.strikes, s) })),
+      slowCarrier: granted.includes(SLOW_STRIKE)
+    }
+  })
 }
 
 // ── Tier B: the attribution report ──────────────────────────────────────────────────
