@@ -34,6 +34,21 @@ export function fmtDur(sec: number): string {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 }
 
+/**
+ * A short elapsed time. Sub-minute reads in tenths of a second — a slow that lands in 4.2s
+ * versus 4.9s is a real difference to a rogue — and anything longer falls back to the app's
+ * one `m:ss` spelling rather than printing "76.0s".
+ *
+ * MOVED here from procsCopy.ts (the clipboard half) when the breakdown card's proc strip needed
+ * it too: procsCopy already imports procRows, so procRows could not have imported it back
+ * without a cycle. This module is the acyclic floor both view modules stand on, which is exactly
+ * what it was extracted to be — see the header. procsCopy re-exports it, so every existing
+ * import path is unchanged.
+ */
+export function fmtElapsed(ms: number): string {
+  return ms < 60_000 ? `${(ms / 1000).toFixed(1)}s` : fmtDur(ms / 1000)
+}
+
 export type Align = 'left' | 'right'
 export interface Col {
   header: string

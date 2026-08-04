@@ -14,11 +14,13 @@ import { EntityRow } from './EntityRow'
 import { PetBar } from './PetBar'
 import { CAT_COLOR, CopyButton, KIND_COLOR, QuietNote, RESIST_COLOR, SkillBar, fmtDur } from './combatShared'
 import { skillsForTarget, type Drill, type TargetDetail } from './dashboardData'
+import { procAnnotationFor, procTagIndex } from './procRows'
 import { nestedRows, petSources, selfSource } from './petRows'
 import { useCombinePetRow } from './useCombatPrefs'
 import { fmtElapsed, formatEntityText, formatSegmentText, formatTargetText } from './copyText'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
 import type { DamageCategory, SegmentView, SourceView, TimelineView } from '@shared/combat'
+import type { ProcSkillTag } from '@shared/procAnalytics'
 import { CATEGORY_LABEL } from '@shared/combat'
 
 function IncomingHeals({ seg }: { seg: SegmentView }): React.JSX.Element | null {
@@ -141,15 +143,19 @@ function MeleeRoundsNote({ rounds }: { rounds: SourceView['rounds'] }): React.JS
 function EntitySkillBars({
   e,
   pets,
+  procs,
   onDrillPet
 }: {
   e: SourceView
   pets: SourceView[]
+  /** The is-a-proc tags for THIS source — empty for anyone but you (see `SegmentContent`). */
+  procs: readonly ProcSkillTag[]
   onDrillPet: (id: string) => void
 }): React.JSX.Element {
   const [filter, setFilter] = useState<DamageCategory | null>(null)
   const all = nestedRows(e, pets)
   const rows = filter ? all.filter((r) => r.kind === 'skill' && r.skill.category === filter) : all
+  const tags = useMemo(() => procTagIndex(procs), [procs])
   return (
     <Box>
       <CategoryLegend e={e} active={filter} onToggle={(c) => setFilter((f) => (f === c ? null : c))} />
@@ -157,7 +163,11 @@ function EntitySkillBars({
         r.kind === 'pet' ? (
           <PetBar key={r.pet.id} pet={r.pet} pct={r.pct} onDrill={() => onDrillPet(r.pet.id)} />
         ) : (
-          <SkillBar key={`${r.skill.category}|${r.skill.name}`} s={r.skill} />
+          <SkillBar
+            key={`${r.skill.category}|${r.skill.name}`}
+            s={r.skill}
+            proc={procAnnotationFor(tags, r.skill.name)}
+          />
         )
       )}
       {rows.length === 0 && <QuietNote>No skill breakdown for this source.</QuietNote>}
@@ -339,6 +349,18 @@ function useDrillState(rows: SourceView[], tl: TimelineView | null, drill: Drill
   return { entity, targetName, targetDetail, crumb: entity?.name ?? (targetDetail ? targetName : null) }
 }
 
+/**
+ * The is-a-proc tags that belong to ONE drilled source: yours, or none.
+ *
+ * The proc ledger is folded from YOUR procs — poison Strikes on your blades, cast-less effects
+ * behind your swings — so tagging a pet's lanes with those rates would credit your blades to the
+ * pet. Its own function rather than a ternary at the call site so `SegmentContent` stays inside
+ * the complexity budget with room to spare.
+ */
+function ownProcTags(seg: SegmentView, e: SourceView): readonly ProcSkillTag[] {
+  return e.kind === 'you' ? (seg.procs.procSkills ?? []) : []
+}
+
 /** The scrolling body: the ranked source list at level 1, one level-2 subject when drilled. */
 function SegmentContent({
   seg,
@@ -382,6 +404,7 @@ function SegmentContent({
           key={d.entity.id}
           e={d.entity}
           pets={d.entity.kind === 'you' ? pets : []}
+          procs={ownProcTags(seg, d.entity)}
           onDrillPet={(id) => setDrill({ kind: 'entity', entityId: id })}
         />
       )}

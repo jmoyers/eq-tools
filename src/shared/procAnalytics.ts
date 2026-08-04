@@ -142,6 +142,36 @@ export interface ProcLaneView {
 }
 
 /**
+ * THE IS-A-PROC JOIN (docs/plans/proc-visibility.md §2) — "this damage row is a detected proc,
+ * and here is the rate the ledger already counted for it".
+ *
+ * Built in MAIN, at view-build time, where both sources of "is a proc" live: the poison Strike
+ * roster (shared/poisons.ts, matched exactly) and the cast-less detector (procDetect.ts). The
+ * renderer never re-derives it — a drill row is annotated because the LEDGER has a lane for it,
+ * or not at all. No guessing, and no second definition of "proc" downstream.
+ *
+ * ONE TAG PER (skill row, lane). `skill` is the damage row's own name as `SkillView` carries it,
+ * so the join downstream is an equality on a name rather than a re-canonicalization; `lane` is
+ * the ledger row it belongs to, which may name SEVERAL Strikes when the emote is shared
+ * (`Asp Venom Strike / Cobra Venom Strike` — law 3), and the two differ exactly then.
+ *
+ * `rate` is the LANE's own `ProcRateView`, not a copy of its numbers: the drill annotation and
+ * the ledger row divide the same count by the same denominators, so they cannot disagree.
+ */
+export interface ProcSkillTag {
+  /** The damage row's skill name, verbatim (`SkillView.name`). */
+  skill: string
+  /** The ledger lane counting this skill's firings. Differs from `skill` for a shared emote. */
+  lane: string
+  origin: ProcOrigin
+  /** The lane's rates — the same object the ledger row renders. */
+  rate: ProcRateView
+  /** Active seconds `rate.ppmActive` divides by, so the annotation's hover can state its basis
+   *  without reaching for the segment. */
+  activeSec: number
+}
+
+/**
  * How often a lane fired while a given state was active. THIS IS NOT CAUSATION, and the type
  * is shaped so a consumer cannot pretend otherwise: it carries both counts AND the
  * inactive-side EXPOSURE, because "it never fired without it" is only evidence when there was

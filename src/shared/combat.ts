@@ -5,6 +5,7 @@ import type {
   AttributionReport,
   ProcLaneView,
   ProcRateView,
+  ProcSkillTag,
   StateSpan
 } from './procAnalytics'
 
@@ -308,6 +309,17 @@ export interface ProcsView {
   /** Active-state spans overlapping this segment, for the ledger and the link joins. Each
    *  carries evidence on BOTH edges — a span end is almost never printed by the game. */
   states?: StateSpan[]
+  /**
+   * WHICH DAMAGE ROWS ARE PROCS (docs/plans/proc-visibility.md §2). One entry per (skill row,
+   * lane) pair, so the drill can annotate a row with the rate the ledger already counted.
+   *
+   * A row is here because a LANE covers it — the join runs in main against the poison roster
+   * and the cast-less detector (see `ProcSkillTag`). A skill with no lane is simply absent, and
+   * the drill shows nothing rather than a guess. Note the asymmetry that follows from the log:
+   * a lane whose Strike deals no damage (Weakening Strike — a slow) has no damage row to
+   * annotate, so it appears in the ledger and NOT here. That is the honest answer, not a gap.
+   */
+  procSkills?: ProcSkillTag[]
   /** TIER B, the counterfactual. Present only for a ZONE-session selection: a single fight has
    *  no inactive sample, and offering a per-fight counterfactual would be an invitation to read
    *  noise as an effect. */

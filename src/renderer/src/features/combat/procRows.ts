@@ -22,6 +22,9 @@
 // never manufacture or suppress a number.
 
 import { formatNum, formatPer100, formatPpm, formatRate } from '../../lib/formatRate'
+// The `m:ss` / tenths-of-a-second spellings, from the acyclic text-primitives module (procsCopy
+// imports THIS file, so its own re-export of `fmtElapsed` is not importable from here).
+import { fmtElapsed } from './copyTable'
 // RELATIVE, not '@shared/poisons': this module is node-tested and those tests run without the
 // renderer's `@shared` alias, so a value import through it would break them (the same reason
 // copyText.ts spells its one shared constant literally). Type-only imports may keep the alias.
@@ -35,6 +38,7 @@ import type {
   ProcLaneView,
   ProcOrigin,
   ProcRateView,
+  ProcSkillTag,
   StateKind,
   StateSpan
 } from '@shared/procAnalytics'
@@ -197,6 +201,136 @@ export function laneRows(lanes: readonly ProcLaneView[], activeSec: number): Lan
 /** The lanes that have a Tier-A number worth a CONTRIBUTION row: damage, healing, or both. */
 export function contributionRows(rows: readonly LaneRow[]): LaneRow[] {
   return rows.filter((r) => r.contribution !== undefined || r.heal !== undefined)
+}
+
+// ── THE LEDGER ANNOUNCES ITSELF (docs/plans/proc-visibility.md §1) ───────────────────
+//
+// The Procs tab shipped as a dead label: nothing on screen ever said proc data was in there, and
+// the owner — who wrote the engine half — could not find it. These two readouts fix that, and
+// they are shaped HERE so the tab badge, the summary strip and the panel behind them are one
+// number read three times, never three rollups.
+
+/**
+ * How many procs this selection saw — the ledger's own headline.
+ *
+ * The unified lane count when the engine sent one (poison Strikes, cast-less spell effects and
+ * Slay Undead together, which is exactly what `ProcAnalytics` prints as "N procs"), else the
+ * shipped poison-only count. So the badge can never quote a number the list under it does not
+ * add up to.
+ */
+export function procCount(p: ProcsView): number {
+  return p.overall?.count ?? p.strikeCount
+}
+
+/** Is there proc activity to announce at all? Zero procs ⇒ a plain tab label and no strip,
+ *  exactly as before: an empty selection must not grow furniture. */
+export function hasProcActivity(p: ProcsView): boolean {
+  return procCount(p) > 0
+}
+
+/** The card-level readout, in the one spelling the tab badge and the strip share. */
+export interface ProcSummary {
+  /** Every detected proc in this selection. Always exact. */
+  count: number
+  /** `3.1 ppm`, or ABSENT below the engine's own floor — never '0.0' (law 5). */
+  ppm?: string
+  /** `slow landed +31.0s`. Present only when the view actually carries a landing — "no slow
+   *  landed" and "no slow poison was on" are different facts and neither is stated here. */
+  slow?: string
+  /** The tab label: `Procs · 12 (3.1 ppm)`, or plain `Procs` at zero. */
+  tab: string
+  /** The strip: `Procs: 12 landed · 3.1 ppm · slow landed +31.0s`. */
+  strip: string
+}
+
+/**
+ * The badge + strip text, READ from the ProcsView the panel itself renders.
+ *
+ * Nothing is recomputed: `count` is the lanes' own total and `ppm` is the engine's `ppmActive`,
+ * withheld by the engine below its sample floor and simply omitted here when it is. A selection
+ * with procs but too short to divide reads `Procs · 3` — a count with no rate, which is the
+ * honest shape and not a rate of zero.
+ */
+export function procSummary(p: ProcsView): ProcSummary {
+  const count = procCount(p)
+  const ppmActive = p.overall?.ppmActive
+  const ppm = ppmActive === undefined ? undefined : formatPpm(ppmActive)
+  const slow = p.slowLandMs === undefined ? undefined : `slow landed +${fmtElapsed(p.slowLandMs)}`
+  const strip = [`Procs: ${count} landed`, ppm, slow]
+  return {
+    count,
+    ...(ppm === undefined ? {} : { ppm }),
+    ...(slow === undefined ? {} : { slow }),
+    tab: count === 0 ? 'Procs' : ppm === undefined ? `Procs · ${count}` : `Procs · ${count} (${ppm})`,
+    strip: strip.filter((s) => s !== undefined).join(' · ')
+  }
+}
+
+/** The strip's hover: what the number is, and where clicking goes. */
+export const PROC_STRIP_HINT =
+  'Every detected proc in this selection — poison Strikes, cast-less spell effects and Slay ' +
+  'Undead together — over the meter’s own active combat time. Click to open the Procs tab.'
+
+// ── THE DRILL ROWS LEARN THEIR RATE (docs/plans/proc-visibility.md §2) ───────────────
+
+/** What each origin MEANS, said once, so the drill's hover can never soften it into "it's a
+ *  proc". The spell sentence is the only INFERENCE in the feature and says so (law 1). */
+const ORIGIN_NOTE: Record<ProcOrigin, string> = {
+  poison: 'A rogue poison Strike: it printed its landing emote and no cast line, which is the only way a Strike ever appears.',
+  spell: 'Detected as a proc by INFERENCE: this spell effect landed with no “You begin casting” line of yours behind it. The log never names what fired it, so this is a co-occurrence, not a source.',
+  slay: 'The Slay Undead melee proc, counted from the damage taxonomy — it rides an ordinary weapon swing and prints no spell line of its own.'
+}
+
+/** A drill row's proc annotation: `proc · 3.1 ppm`, plus the hover that states its basis. */
+export interface ProcAnnotation {
+  text: string
+  hint: string
+}
+
+/**
+ * The is-a-proc index for one selection, keyed case-insensitively (law 2 — names are dirty, key
+ * folded, display raw).
+ *
+ * The tags are built in MAIN (procViews.ts) against the poison roster and the cast-less
+ * detector; this is only the lookup. FIRST tag wins, which pins the engine's lane order
+ * (poison, then spell, then slay) rather than letting a later lane silently relabel a row.
+ */
+export function procTagIndex(tags: readonly ProcSkillTag[] | undefined): ReadonlyMap<string, ProcSkillTag> {
+  const m = new Map<string, ProcSkillTag>()
+  for (const t of tags ?? []) {
+    const k = t.skill.toLowerCase()
+    if (!m.has(k)) m.set(k, t)
+  }
+  return m
+}
+
+/**
+ * One drill row's annotation, or undefined when the ledger has no lane for that skill — which is
+ * the answer for every ordinary melee row and for any spell you cast with your own hands.
+ *
+ * The rate is the LANE's `ppmActive` and nothing else, so this row and the Procs tab divide the
+ * same count by the same seconds. When the engine withheld it (too little active time) the
+ * annotation degrades to a bare `proc` and the hover says why: the fact that it IS a proc is
+ * still worth stating, and a fabricated rate is not.
+ */
+export function procAnnotationFor(
+  index: ReadonlyMap<string, ProcSkillTag>,
+  skill: string
+): ProcAnnotation | undefined {
+  const t = index.get(skill.toLowerCase())
+  if (!t) return undefined
+  const ppm = ppmCell(t.rate, t.activeSec)
+  const lane =
+    t.lane === t.skill
+      ? ''
+      : ` Counted in the “${t.lane}” lane: one emote names both Strikes, so the count is exact and the name is not.`
+  const basis = ppm.absent
+    ? ''
+    : `${plural(t.rate.count, 'proc')} over ${Math.round(t.activeSec)}s of active combat in this selection. `
+  return {
+    text: ppm.absent ? 'proc' : `proc · ${ppm.text}`,
+    hint: `${ORIGIN_NOTE[t.origin]}${lane} ${basis}${ppm.hint}`
+  }
 }
 
 // ── The active-state ledger ─────────────────────────────────────────────────────────

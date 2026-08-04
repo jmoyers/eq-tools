@@ -8,12 +8,13 @@
 
 import { useMemo, useState } from 'react'
 import { Box, Stack, Tooltip, Typography } from '@mui/material'
-import type { ProcsView, SegmentView, SlowRollup, SourceView } from '@shared/combat'
+import type { SegmentView, SlowRollup, SourceView } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt, formatRate } from '../../lib/formatRate'
-import { CAT_COLOR, CopyButton, DashCard, QuietNote, SkillName } from './combatShared'
+import { CAT_COLOR, CopyButton, DashCard, PROC_COLOR, QuietNote, SkillName } from './combatShared'
 import { formatProcsText } from './copyText'
 import { CardTabs, ProcsBody } from './ProcsPanel'
+import { PROC_STRIP_HINT, procSummary } from './procRows'
 import { composition, flattenSkills } from './dashboardData'
 
 /** How many skill rows the preview lists before deferring to the full drill. */
@@ -73,12 +74,35 @@ function CompositionBody({ source, onOpen }: { source: SourceView; onOpen: () =>
 }
 
 /**
- * How many procs this selection saw — the tab's right-hand readout. The unified lane count when
- * the engine sent one (poison Strikes, cast-less spell effects and Slay Undead together), else
- * the shipped poison-only count, so the number always matches the list under it.
+ * THE SUMMARY STRIP (docs/plans/proc-visibility.md §1) — one line inside the composition body
+ * saying that the proc ledger exists and what it currently holds, and taking you there.
+ *
+ * It renders only when the selection HAS proc activity, which is the opposite discipline from
+ * the tab pair beside it: the tabs are always drawn (an unfindable feature is not a feature),
+ * but a fight with no procs must not grow a row saying so. One Typography line, no card, no
+ * fifth grid cell — the 2x2 grid is already at the density a 900px window allows.
  */
-function procCount(p: ProcsView): number {
-  return p.overall?.count ?? p.strikeCount
+function ProcStrip({ text, onOpen }: { text: string; onOpen: () => void }): React.JSX.Element {
+  return (
+    <Tooltip title={PROC_STRIP_HINT}>
+      <Typography
+        variant="caption"
+        noWrap
+        onClick={onOpen}
+        data-testid="proc-strip"
+        sx={{
+          display: 'block',
+          cursor: 'pointer',
+          userSelect: 'none',
+          mb: 0.5,
+          color: PROC_COLOR,
+          '&:hover': { textDecoration: 'underline' }
+        }}
+      >
+        {text}
+      </Typography>
+    </Tooltip>
+  )
 }
 
 /**
@@ -101,7 +125,10 @@ export function BreakdownPreviewCard({
   const [tab, setTab] = useState<'breakdown' | 'procs'>('breakdown')
   const procs = seg.procs
   const onProcs = tab === 'procs'
-  const nProcs = procCount(procs)
+  // ONE rollup for the tab badge, the strip and the header count — read off the same ProcsView
+  // `ProcsBody` renders below. Three readouts, one number, by construction.
+  const summary = procSummary(procs)
+  const nProcs = summary.count
   // A LIVE segment's open state spans are still running, so `now` is their honest end; a
   // finalized one has no knowable end here and its open spans decline to state a length.
   const endTs = seg.active ? Date.now() : 0
@@ -127,7 +154,7 @@ export function BreakdownPreviewCard({
               discoverability depend on whether the CURRENT selection happened to have procs —
               so a user who had never fought something proccy never learned the tab existed.
               An empty selection now shows a quiet, honest line instead. */}
-          <CardTabs value={tab} onChange={setTab} />
+          <CardTabs value={tab} procs={summary.tab} onChange={setTab} />
         </Stack>
       }
       fill
@@ -141,10 +168,11 @@ export function BreakdownPreviewCard({
           activeSec={seg.activeSec}
           endTs={endTs}
         />
-      ) : source ? (
-        <CompositionBody source={source} onOpen={onOpen} />
       ) : (
-        <QuietNote>No damage from this source yet.</QuietNote>
+        <>
+          {nProcs > 0 && <ProcStrip text={summary.strip} onOpen={() => setTab('procs')} />}
+          {source ? <CompositionBody source={source} onOpen={onOpen} /> : <QuietNote>No damage from this source yet.</QuietNote>}
+        </>
       )}
     </DashCard>
   )

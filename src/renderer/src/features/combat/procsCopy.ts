@@ -17,7 +17,7 @@
 // footnotes because most of a session's stances share one sentence, and printing that paragraph
 // eighteen times is noise, not honesty.
 
-import { MAX_WIDTH, count, fmtDur, statLines, subjectLine, table, wrapText, type Col } from './copyTable'
+import { MAX_WIDTH, count, fmtDur, fmtElapsed, statLines, subjectLine, table, wrapText, type Col } from './copyTable'
 import { formatNum, formatRate } from '../../lib/formatRate'
 import {
   contributionRows,
@@ -31,14 +31,10 @@ import {
 } from './procRows'
 import type { ProcsView, SegmentView, SlowRollup } from '@shared/combat'
 
-/**
- * A short elapsed time. Sub-minute reads in tenths of a second — a slow that lands in 4.2s
- * versus 4.9s is a real difference to a rogue — and anything longer falls back to the app's
- * one `m:ss` spelling rather than printing "76.0s".
- */
-export function fmtElapsed(ms: number): string {
-  return ms < 60_000 ? `${(ms / 1000).toFixed(1)}s` : fmtDur(ms / 1000)
-}
+// `fmtElapsed` now lives in copyTable.ts beside `fmtDur` (the breakdown card's proc strip needs
+// it and this module already depends on procRows, so procRows could not import it from here).
+// Re-exported so `copyText.ts` — and through it every JSX surface — keeps its import path.
+export { fmtElapsed } from './copyTable'
 
 /**
  * The rolling time-to-slow line, in ONE spelling shared by the panel and the clipboard.

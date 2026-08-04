@@ -2,18 +2,21 @@
 // Extracted from CombatView so both surfaces render the SAME bar, the SAME category
 // colors and the SAME card chrome (one look, one source of truth).
 
-import { useEffect, useState, type ReactNode } from 'react'
-import { Box, Collapse, IconButton, Paper, Stack, Tooltip, Typography } from '@mui/material'
-import CheckIcon from '@mui/icons-material/Check'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import { useState, type ReactNode } from 'react'
+import { Box, Collapse, Paper, Stack, Tooltip, Typography } from '@mui/material'
 import type { DamageCategory } from '@shared/combat'
 import { CATEGORY_LABEL } from '@shared/combat'
 import { formatNum as fmt } from '../../lib/formatRate'
+import { MARKER_COLOR } from './markerStyle'
+import type { ProcAnnotation } from './procRows'
 import type { FlatSkill, SkillRow } from './dashboardData'
 
 // `fmtDur` lives in the MUI-free copyText module (the plain-text serializer needs it and cannot
 // import this file), and is re-exported here so every JSX surface keeps its existing import.
 export { fmtDur } from './copyText'
+// The copy affordance moved to its own file (see its header — this one hit the line ceiling).
+// Re-exported so every panel header keeps the import it already had.
+export { CopyButton } from './CopyButton'
 
 export const KIND_COLOR: Record<string, string> = { you: '#d9b25f', pet: '#6fb3d2', enemy: '#cf6679' }
 
@@ -38,76 +41,11 @@ export const CAT_COLOR: Record<DamageCategory, string> = {
 export const RESIST_COLOR = '#e05663'
 
 /**
- * "Copy this view as text": a quiet icon in a panel header that puts the CURRENT view — at
- * whatever drill level it happens to be — on the clipboard as plain text (see copyText.ts).
- *
- * `getText` is a thunk, not a string: serializing a view walks its whole row list, and a panel
- * header re-renders on every snapshot tick — so the text is built when the user actually asks
- * for it and never on the render path.
- *
- * Feedback is the icon itself flashing to a checkmark for ~1.5s. No toast: this app doesn't nag,
- * and a copy is not an event worth a banner. A clipboard that isn't there (or refuses) logs and
- * changes nothing on screen — a failed copy must never look like a successful one.
- *
- * THE COPY GOES THROUGH MAIN (`window.eq.writeClipboard` → `clipboard:write`), not through
- * `navigator.clipboard.writeText`. The web Clipboard API is permission-gated in Chromium
- * ('clipboard-sanitized-write') and this app denies EVERY web permission wholesale
- * (`hardenSession`, src/main/windows.ts), so writeText rejected with `NotAllowedError: Write
- * permission denied.` on every click — measured in the real app, which is exactly why this
- * button did nothing. Electron's main-process clipboard consults no permission, so the fix is a
- * validated IPC hop, never a hole in the permission policy.
+ * The PROC hue. The marker vocabulary's coat magenta, reused rather than re-picked, so the
+ * breakdown card's proc strip, a drill row's `proc · 3.1 ppm` tag and the chart's coat markers
+ * all read as the same subject. One home for a color that means something (markerStyle.ts).
  */
-export function CopyButton({
-  getText,
-  title = 'Copy this view as text'
-}: {
-  getText: () => string
-  title?: string
-}): React.JSX.Element {
-  const [done, setDone] = useState(false)
-  useEffect(() => {
-    if (!done) return
-    const t = setTimeout(() => setDone(false), 1500)
-    return () => clearTimeout(t)
-  }, [done])
-  const copy = (): void => {
-    // Main answers false for a payload it refused to write (empty / oversized), so the
-    // checkmark tracks what actually reached the clipboard rather than that a call was made.
-    window.eq.writeClipboard(getText()).then(
-      (ok) => {
-        if (ok) {
-          setDone(true)
-          return
-        }
-        // Deliberate console (like lib/ErrorBoundary): main's console-message forwarder is what
-        // puts a renderer failure into errors.log, and a failed copy must leave a trace there
-        // rather than silently looking like a successful one.
-        // eslint-disable-next-line no-console
-        console.error('[everquest-companion:error] copy failed: nothing was written')
-      },
-      // eslint-disable-next-line no-console
-      (err: unknown) => console.error('[everquest-companion:error] copy failed', err)
-    )
-  }
-  return (
-    <Tooltip title={done ? 'Copied' : title}>
-      <IconButton
-        size="small"
-        data-testid="copy-view"
-        onClick={copy}
-        sx={{
-          p: 0.25,
-          alignSelf: 'center',
-          flexShrink: 0,
-          color: done ? 'success.main' : 'text.disabled',
-          '&:hover': { color: 'text.primary' }
-        }}
-      >
-        {done ? <CheckIcon sx={{ fontSize: 15 }} /> : <ContentCopyIcon sx={{ fontSize: 15 }} />}
-      </IconButton>
-    </Tooltip>
-  )
-}
+export const PROC_COLOR = MARKER_COLOR.coat
 
 export function Bar({
   color,
@@ -115,6 +53,7 @@ export function Bar({
   rank,
   name,
   right,
+  adorn,
   onClick,
   accent,
   selected
@@ -124,6 +63,9 @@ export function Bar({
   rank?: number
   name: ReactNode
   right: string
+  /** A small RIGHT-ALIGNED annotation between the name and the total — it never shrinks and
+   *  never competes with the total for the row's right edge. The proc-rate tag uses it. */
+  adorn?: ReactNode
   onClick?: () => void
   /** Full-height left stripe — keeps a row's category readable even when its fill is 2% wide. */
   accent?: string
@@ -160,6 +102,7 @@ export function Bar({
         <Typography variant="caption" noWrap sx={{ fontWeight: 600, flexGrow: 1 }}>
           {name}
         </Typography>
+        {adorn}
         <Typography variant="caption" sx={{ whiteSpace: 'nowrap' }}>
           {right}
         </Typography>
@@ -360,6 +303,31 @@ function InlineStats({ children }: { children: ReactNode }): React.JSX.Element {
 }
 
 /**
+ * THE PROC-RATE TAG (docs/plans/proc-visibility.md §2) — `proc · 3.1 ppm` on a drill row whose
+ * skill the proc ledger actually counts.
+ *
+ * The row is annotated because the LEDGER has a lane for it (the join runs in main against the
+ * poison roster and the cast-less detector), so this can never appear on a row the Procs tab
+ * would not list, and the rate is the lane's own — one number, two surfaces. The hover carries
+ * the basis (count over active seconds) and, for an inferred lane, says that it is inferred.
+ */
+function ProcTag({ proc }: { proc: ProcAnnotation }): React.JSX.Element {
+  return (
+    <Tooltip title={proc.hint}>
+      <Typography
+        component="span"
+        variant="caption"
+        noWrap
+        data-testid="proc-tag"
+        sx={{ flexShrink: 0, color: PROC_COLOR, fontWeight: 600 }}
+      >
+        {proc.text}
+      </Typography>
+    </Tooltip>
+  )
+}
+
+/**
  * One flat skill/spell row, colored by its parent category (fill + left stripe). Layout:
  * `<name> <embedded labeled stats> ………… <total>` — the stats live INSIDE the bar next to the
  * name (dimmed), and the right end is the total and nothing else, so a column of these reads
@@ -370,7 +338,19 @@ function InlineStats({ children }: { children: ReactNode }): React.JSX.Element {
  * other row; the difference is only in what its expansion holds. `nested` marks a child of such
  * a group: its parent already names the proc, so the row drops the `· Slay Undead` tag.
  */
-export function SkillBar({ s, approx, nested }: { s: SkillRow; approx?: boolean; nested?: boolean }): React.JSX.Element {
+export function SkillBar({
+  s,
+  approx,
+  nested,
+  proc
+}: {
+  s: SkillRow
+  approx?: boolean
+  nested?: boolean
+  /** The proc-rate annotation, when the ledger has a lane for this skill. Absent otherwise —
+   *  the row simply says nothing rather than guessing. */
+  proc?: ProcAnnotation
+}): React.JSX.Element {
   // Click expands the full per-ability readout in place (the same inline-Collapse pattern the
   // incoming meter rows use) — no extra nav level, so the flat ranked list never moves.
   const [open, setOpen] = useState(false)
@@ -410,6 +390,7 @@ export function SkillBar({ s, approx, nested }: { s: SkillRow; approx?: boolean;
             </InlineStats>
           </>
         }
+        adorn={proc ? <ProcTag proc={proc} /> : undefined}
         right={`${a}${fmt(s.total)}`}
       />
       <Collapse in={open} unmountOnExit>

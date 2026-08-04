@@ -35,12 +35,20 @@ const INVOCATION_COLOR = MARKER_COLOR.invocation
  * that brightens when active, the same `text` weight the direction filter uses — because it
  * switches what one card shows, and a bordered control here would out-rank the view switch in
  * the header that navigates the whole tab.
+ *
+ * THE PROCS LABEL CARRIES A LIVE BADGE (docs/plans/proc-visibility.md §1): `PROCS · 12 (3.1 ppm)`
+ * whenever the selection has procs, plain `PROCS` when it does not. `procs` is the label text
+ * built by `procSummary` from the very ProcsView the panel behind this tab renders — the tab
+ * cannot advertise a number the list disagrees with, because there is only one number.
  */
 export function CardTabs({
   value,
+  procs,
   onChange
 }: {
   value: 'breakdown' | 'procs'
+  /** The Procs tab's label, badge included. Plain 'Procs' at zero procs. */
+  procs: string
   onChange: (v: 'breakdown' | 'procs') => void
 }): React.JSX.Element {
   return (
@@ -49,6 +57,7 @@ export function CardTabs({
         <Typography
           key={k}
           variant="caption"
+          noWrap
           onClick={() => onChange(k)}
           data-testid={`procs-tab-${k}`}
           sx={{
@@ -62,7 +71,7 @@ export function CardTabs({
             '&:hover': { color: 'text.primary' }
           }}
         >
-          {k === 'breakdown' ? 'Breakdown' : 'Procs'}
+          {k === 'breakdown' ? 'Breakdown' : procs}
         </Typography>
       ))}
     </Stack>

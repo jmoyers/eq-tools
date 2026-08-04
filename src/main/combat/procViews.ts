@@ -49,7 +49,7 @@ import type { Agg, SourceStat } from './aggregate'
 import type { SpellProcLane } from './procDetect'
 import type { Encounter } from './encounter'
 import type { EngineState } from './state'
-import type { ProcLaneView, ProcLink, ProcOrigin, ProcRateView, StateSpan } from '../../shared/procAnalytics'
+import type { ProcLaneView, ProcLink, ProcOrigin, ProcRateView, ProcSkillTag, StateSpan } from '../../shared/procAnalytics'
 import type { ProcLane, ProcsView } from '../../shared/combat'
 
 /** Everything one `ProcsView` needs. An args object: a fight, the live zone aggregate and a
@@ -122,6 +122,7 @@ export function buildProcsView(spec: ProcsViewSpec): ProcsView {
     invocationSwitches: p.invocationSwitches,
     lanes,
     overall: overallRate(lanes, rateBase(spec)),
+    procSkills: procSkillTags(spec, lanes),
     states,
     // TIER B IS OVERALL-SCOPE ONLY (§1). A single pull has no inactive sample, so offering a
     // per-fight counterfactual would be an invitation to read one minute of noise as an effect.
@@ -222,15 +223,69 @@ function candidateKeys(label: string): string[] {
   return label.split(' / ').map((n) => spellCanonKey(n.trim()))
 }
 
+/**
+ * YOUR damage rows recorded under any of `keys` — THE one place a proc lane is matched against
+ * the meter's own skill lanes. Both consumers read it (the lane's Tier-A damage, and the
+ * is-a-proc join below), so "which rows is this lane" can never come to mean two things.
+ *
+ * Names are matched rank-normalized (law 2, at the counting boundary) and returned RAW, because
+ * the raw string is what `SkillView.name` carries and therefore what the drill row is labelled
+ * with.
+ */
+function skillsMatching(you: SourceStat | undefined, keys: readonly string[]): { name: string; total: number }[] {
+  const out: { name: string; total: number }[] = []
+  if (!you) return out
+  for (const s of you.bySkill.values()) {
+    if (keys.includes(spellCanonKey(s.name))) out.push({ name: s.name, total: s.total })
+  }
+  return out
+}
+
 /** Damage delivered under a given skill name by YOU, read back out of the same aggregate the
  *  meter's bars come from. An INDEX, never a second accumulation. */
 function deliveredBy(you: SourceStat | undefined, keys: readonly string[]): number {
-  let total = 0
-  if (!you) return total
-  for (const s of you.bySkill.values()) {
-    if (keys.includes(spellCanonKey(s.name))) total += s.total
+  return skillsMatching(you, keys).reduce((n, s) => n + s.total, 0)
+}
+
+/**
+ * THE IS-A-PROC JOIN (docs/plans/proc-visibility.md §2). One tag per (damage row, lane), so the
+ * drill can say `proc · 3.1 ppm` on exactly the rows the ledger already counts — and on no
+ * others.
+ *
+ * It runs HERE because this is where both definitions of "proc" live: `agg.procs.strikes` is the
+ * poison roster matched exactly (shared/poisons.ts, via the parser's emote table) and
+ * `agg.procs.spellProcs` is procDetect's cast-less inference. Deriving it again downstream would
+ * be a second definition, and a second definition is a future disagreement.
+ *
+ * TWO ABSENCES ARE DELIBERATE:
+ *   - a lane with no damage row (Weakening Strike is a slow; it deals nothing) produces no tag.
+ *     It is in the ledger and not in the drill, because the drill lists damage.
+ *   - only YOUR rows are tagged. The lanes are folded from your procs, so tagging a pet's row
+ *     with them would attribute your blades to the pet.
+ */
+function procSkillTags(spec: ProcsViewSpec, lanes: readonly ProcLaneView[]): ProcSkillTag[] {
+  const you = spec.agg.out.get('you')
+  const out: ProcSkillTag[] = []
+  for (const l of lanes) {
+    for (const skill of taggedSkills(you, l)) {
+      out.push({ skill, lane: l.name, origin: l.origin, rate: l.rate, activeSec: spec.activeSec })
+    }
   }
-  return total
+  return out
+}
+
+/**
+ * The damage rows one lane covers.
+ *
+ * A SLAY lane is the exception and it is a presentation one: a Slay Undead proc rides an ordinary
+ * weapon swing, so the aggregate's rows are the WEAPON names ("Melee", "Backstab") and the drill
+ * merges them into a single row labelled with the lane's own name (`groupSlay` in
+ * dashboardData.ts). That merged row is what carries the rate; tagging the weapon rows instead
+ * would put a proc rate on lanes that are mostly ordinary swings.
+ */
+function taggedSkills(you: SourceStat | undefined, l: ProcLaneView): string[] {
+  if (l.origin === 'slay') return [l.name]
+  return skillsMatching(you, candidateKeys(l.name)).map((s) => s.name)
 }
 
 /** Healing recorded under a given skill name by the cast-less detector (`Lifetap Strike`,
