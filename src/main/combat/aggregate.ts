@@ -80,10 +80,11 @@ export interface CategoryStat {
  *  NOT record double/triple attack, so this is an HONEST cluster heuristic, never a
  *  fabricated multi-attack flag. Off-hand vs main-hand is not distinguishable. */
 export interface RoundsAccum {
-  /** key = `${skillLower}|${floor(ts/1000)}` → hit count in that bucket (in progress). */
+  /** key = `${skillLower}|${floor(ts/1000)}` → hit count in that bucket. THE ONLY state:
+   *  the hits-per-round histogram is derived from it at view time (`finalizeRounds`) and
+   *  deliberately not cached back here — a view build may not write to the aggregate
+   *  (tests/combatCombinePetsPurity.test.mts). */
   bucket: Map<string, number>
-  /** finalized rounds: index = hits-1, value = count of rounds with that many hits. */
-  hist: number[]
 }
 function newMissBreakdown(): MissBreakdown {
   return { miss: 0, dodge: 0, parry: 0, riposte: 0, block: 0, absorb: 0 }
@@ -133,7 +134,7 @@ export function newCategory(category: DamageCategory): CategoryStat {
 }
 
 function newRounds(): RoundsAccum {
-  return { bucket: new Map(), hist: [] }
+  return { bucket: new Map() }
 }
 
 /** Fold a melee/slay hit into the rounds heuristic: bump the (skill, second) bucket. */
@@ -142,9 +143,9 @@ function accrueRound(r: RoundsAccum, skill: string, ts: number): void {
   r.bucket.set(key, (r.bucket.get(key) ?? 0) + 1)
 }
 
-/** Collapse the in-progress buckets into the hits-per-round histogram. Idempotent-ish:
- *  we rebuild `hist` from the current bucket map each time (buckets are the source of
- *  truth), so calling it at snapshot/finalize is safe and cheap (buckets ≈ #seconds). */
+/** Collapse the in-progress buckets into the hits-per-round histogram. PURE: the buckets are
+ *  the source of truth and this only reads them, so calling it at snapshot/finalize is safe,
+ *  repeatable and cheap (buckets ≈ #seconds). */
 export function finalizeRounds(r: RoundsAccum): number[] {
   const hist: number[] = []
   for (const hits of r.bucket.values()) {
@@ -152,7 +153,6 @@ export function finalizeRounds(r: RoundsAccum): number[] {
     hist[idx] = (hist[idx] ?? 0) + 1
   }
   for (let i = 0; i < hist.length; i++) hist[i] ??= 0
-  r.hist = hist
   return hist
 }
 

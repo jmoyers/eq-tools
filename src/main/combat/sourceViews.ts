@@ -57,6 +57,37 @@ function withLandings(s: SourceStat, lands: EffectLandings): SourceStat {
   return { ...s, bySkill, byCategory }
 }
 
+/** Copy a lane map and every lane in it. The combine fold accumulates IN PLACE, so every
+ *  object it can reach has to be one we own (see `cloneSource`). */
+function cloneSkills(m: Map<string, SkillStat>): Map<string, SkillStat> {
+  const out = new Map<string, SkillStat>()
+  for (const [k, v] of m) out.set(k, { ...v })
+  return out
+}
+
+/**
+ * DEEP-ENOUGH COPY of a source: every object `mergePetInto` writes into gets its own
+ * instance. The values in the map handed to `sourceViews` are the engine's LIVE
+ * accumulators — `segmentViews.buildView` passes `agg.out` straight through, and `Agg.addOut`
+ * keeps folding into those same objects — so a fold that touched one of them would add the
+ * pet's damage to your row permanently, and again on every snapshot
+ * (tests/combatCombinePetsPurity.test.mts). Copying here is what makes the fold a VIEW.
+ *
+ * Cost is one shallow object per lane of yours (tens), paid once per combined build — not
+ * per row, and only when there is actually a pet to fold.
+ */
+function cloneSource(s: SourceStat): SourceStat {
+  const byCategory = new Map<DamageCategory, CategoryStat>()
+  for (const [cat, c] of s.byCategory) byCategory.set(cat, { ...c, bySkill: cloneSkills(c.bySkill) })
+  return {
+    ...s,
+    miss: { ...s.miss },
+    bySkill: cloneSkills(s.bySkill),
+    byCategory,
+    rounds: { bucket: new Map(s.rounds.bucket) }
+  }
+}
+
 /**
  * Fold one source's per-skill lanes into another's, namespacing each lane by the source it
  * came from ("<pet>: Slash") so a combined row still says which entity landed what. Used for
@@ -81,7 +112,8 @@ function mergeSkills(into: Map<string, SkillStat>, from: Map<string, SkillStat>,
   }
 }
 
-/** Fold a pet source into the synthetic "You +pets" row (combinePets). */
+/** Fold a pet source into the synthetic "You +pets" row (combinePets). Mutates `you`, which
+ *  is ALWAYS a row this module built or cloned — never a value out of `map`. */
 function mergePetInto(you: SourceStat, s: SourceStat): void {
   you.total += s.total
   you.hits += s.hits
@@ -120,16 +152,22 @@ export function sourceViews(
   lands?: EffectLandings
 ): SourceView[] {
   const merged = new Map<string, SourceStat>()
+  const pets: SourceStat[] = []
   for (const [id, raw] of map) {
     const s: SourceStat = id === 'you' && lands !== undefined && lands.size > 0 ? withLandings(raw, lands) : raw
-    if (combinePets && s.kind === 'pet') {
-      const you = merged.get('you') ?? newSource('You +pets', 'you')
-      you.name = 'You +pets'
-      mergePetInto(you, s)
-      merged.set('you', you)
-    } else {
-      merged.set(id, s)
-    }
+    if (combinePets && s.kind === 'pet') pets.push(s)
+    else merged.set(id, s)
+  }
+  if (pets.length > 0) {
+    // The fold target is a COPY of your row — or a fresh empty one for a segment where the
+    // pet swung and you did not. Collected in a second pass rather than folded inline so the
+    // result cannot depend on WHO SWUNG FIRST: `map` is in insertion order, and a pet seen
+    // before you used to have its accumulated row overwritten by your bare one.
+    const you = merged.get('you')
+    const target = you ? cloneSource(you) : newSource('You +pets', 'you')
+    target.name = 'You +pets'
+    for (const p of pets) mergePetInto(target, p)
+    merged.set('you', target)
   }
   const list = [...merged.entries()]
   const maxTotal = Math.max(1, ...list.map(([, s]) => s.total))
