@@ -636,10 +636,13 @@ export function createCursorRingWindow(bounds: ScreenRect): void {
   // creation-order luck — auto-hide re-shows overlays on every EQ refocus, and before this rule
   // each re-show buried the ring, so the circle slid behind an overlay on mouseover.
   w.setAlwaysOnTop(true, 'screen-saver')
-  // Unconditional and permanent: this window is never a mouse target. `forward:true` costs
-  // nothing here (nothing listens for the forwarded moves) and keeps the flag identical to the
-  // locked-overlay call, so there is one spelling of "click-through" in the file.
-  w.setIgnoreMouseEvents(true, { forward: true })
+  // Unconditional and permanent: this window is never a mouse target — and DELIBERATELY not
+  // `forward:true`. On Windows, forwarding installs a low-level mouse hook (WH_MOUSE_LL) owned
+  // by the MAIN process; every system mouse event then waits on our message loop, so a blocked
+  // main (the 8.5 s startup replay) froze the user's cursor system-wide for the duration. The
+  // overlays' locked mode pays that cost for a reason (their hover sensor re-enables capture
+  // over the pin); the ring has no hover sensor and nothing to click, so it pays nothing.
+  w.setIgnoreMouseEvents(true)
 
   const wc = w.webContents
   wc.on('preload-error', (_e, preloadPath, error) =>
