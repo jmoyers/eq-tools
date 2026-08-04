@@ -113,14 +113,22 @@ function IllusionBanner({
   )
 }
 
-/** The scrolling result list. `loaded` gates the "no match" line so an un-hydrated
- *  catalog reads as empty, never as "nothing matches". */
+/**
+ * The scrolling result list. It fills the dialog's fixed-height paper and scrolls inside, so the
+ * paper's geometry is the same whether the list holds MAX_ROWS rows or none.
+ *
+ * `loaded` gates the "no match" line so an un-hydrated catalog reads as empty, never as "nothing
+ * matches". `query` is the DEFERRED query — the one `entries` was actually filtered by, so the
+ * empty-state line can never name a string the list has not caught up to. `stale` marks exactly
+ * that lag: the rows on screen answer an older query than the box shows.
+ */
 function SpellResults({
   entries,
   existingIds,
   onCreate,
   query,
   loaded,
+  stale,
   ctx
 }: {
   entries: SpellCatalogEntry[]
@@ -128,10 +136,19 @@ function SpellResults({
   onCreate: (s: Suggestion) => void
   query: string
   loaded: boolean
+  stale: boolean
   ctx: RowContext
 }): JSX.Element {
   return (
-    <Box sx={{ maxHeight: 420, overflow: 'auto' }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        minHeight: 0,
+        overflow: 'auto',
+        opacity: stale ? 0.6 : 1,
+        transition: 'opacity 120ms ease-out'
+      }}
+    >
       <Stack spacing={0.75}>
         {entries.map((e) => (
           <SpellRow key={e.key} entry={e} existingIds={existingIds} onCreate={onCreate} ctx={ctx} />
@@ -203,6 +220,63 @@ function CreatedSnackbar({
   )
 }
 
+/** The catalog fetch plus the search box's state and its filtered result set. */
+interface SpellSearch {
+  catalog: SpellCatalog | null
+  searchRef: RefObject<HTMLInputElement | null>
+  /** what the input echoes — updates on every keystroke. */
+  query: string
+  setQuery: (v: string) => void
+  /** what the rows answer — React lets this lag while a keystroke is being absorbed. */
+  deferredQuery: string
+  /** the rows are answering an older query than the box shows. */
+  catchingUp: boolean
+  entries: SpellCatalogEntry[]
+}
+
+/**
+ * Catalog + search. Loads the catalog on open, echoes typing instantly, and filters the
+ * 1,600+-spell list from a DEFERRED copy of the query so a keystroke never waits on the rows
+ * (Task #41). The lowercase search key is computed once per catalog load, never per keystroke.
+ */
+function useSpellSearch(open: boolean): SpellSearch {
+  const [catalog, setCatalog] = useState<SpellCatalog | null>(null)
+  const [query, setQuery] = useState('')
+  const searchRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    setQuery('')
+    void window.eq.getSpellCatalog().then(setCatalog)
+    // Focus the search box on open for search-to-select.
+    const t = setTimeout(() => searchRef.current?.focus(), 120)
+    return () => clearTimeout(t)
+  }, [open])
+
+  const deferredQuery = useDeferredValue(query)
+
+  const keyed = useMemo(
+    () => (catalog ? catalog.entries.map((e) => ({ e, key: e.name.toLowerCase() })) : []),
+    [catalog]
+  )
+
+  const entries = useMemo(() => {
+    const q = deferredQuery.trim().toLowerCase()
+    const rows = q ? keyed.filter((r) => r.key.includes(q)) : keyed
+    return rows.slice(0, MAX_ROWS).map((r) => r.e)
+  }, [keyed, deferredQuery])
+
+  return {
+    catalog,
+    searchRef,
+    query,
+    setQuery,
+    deferredQuery,
+    catchingUp: query !== deferredQuery,
+    entries
+  }
+}
+
 export default function SuggestAlertsDialog({
   open,
   existingIds,
@@ -225,35 +299,11 @@ export default function SuggestAlertsDialog({
   /** rank-preserving cast recency from the alerts module — picks each row's target rank. */
   spellLastCast: Record<string, number>
 }): JSX.Element {
-  const [catalog, setCatalog] = useState<SpellCatalog | null>(null)
-  const [query, setQuery] = useState('')
   const [snack, setSnack] = useState<{ name: string; id: string } | null>(null)
-  const searchRef = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    if (!open) return
-    setQuery('')
-    void window.eq.getSpellCatalog().then(setCatalog)
-    // Focus the search box on open for search-to-select.
-    const t = setTimeout(() => searchRef.current?.focus(), 120)
-    return () => clearTimeout(t)
-  }, [open])
-
-  // Typing echoes immediately; filtering the 1,600+-spell catalog + re-rendering its
-  // rows consumes a DEFERRED query so a keystroke never blocks (Task #41).
-  const deferredQuery = useDeferredValue(query)
-
-  // Precompute a lowercase search key ONCE per catalog load (not per keystroke).
-  const keyed = useMemo(
-    () => (catalog ? catalog.entries.map((e) => ({ e, key: e.name.toLowerCase() })) : []),
-    [catalog]
-  )
-
-  const filtered = useMemo(() => {
-    const q = deferredQuery.trim().toLowerCase()
-    const rows = q ? keyed.filter((r) => r.key.includes(q)) : keyed
-    return rows.slice(0, MAX_ROWS).map((r) => r.e)
-  }, [keyed, deferredQuery])
+  // Everything downstream of the search box reads `deferredQuery` — a single raw-`query` read
+  // would put the whole row subtree back on the keystroke's critical path.
+  const { catalog, searchRef, query, setQuery, deferredQuery, catchingUp, entries } =
+    useSpellSearch(open)
 
   const create = useCallback(
     async (s: Suggestion) => {
@@ -261,6 +311,15 @@ export default function SuggestAlertsDialog({
       setSnack({ name: s.def.name, id: s.def.id })
     },
     [onCreate]
+  )
+
+  // Stable handler + context: SpellRow is memoized, and a fresh closure or object literal per
+  // render would defeat its shallow compare for every mounted row.
+  const createNow = useCallback(
+    (s: Suggestion) => {
+      void create(s)
+    },
+    [create]
   )
 
   // One click on a ready-made SET writes every alert it is missing (never re-writes one the
@@ -283,12 +342,22 @@ export default function SuggestAlertsDialog({
   const illusion = catalog?.hasIllusions ? illusionSuggestion() : null
   const lines = useSpellLines(catalog, spellLastCast)
   const resolved = useResolvedClasses()
+  const ctx = useMemo<RowContext>(() => ({ lines, resolved }), [lines, resolved])
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
+    <Dialog
+      open={open}
+      onClose={onClose}
+      maxWidth="md"
+      fullWidth
+      // FIXED paper height. The result list swings between MAX_ROWS rows and none as the user
+      // types; a content-sized, vertically centred paper re-sizes and re-centres on every
+      // keystroke. Height here + a scrolling result list = geometry that never moves.
+      slotProps={{ paper: { sx: { height: 'min(85vh, 760px)' } } }}
+    >
       <SuggestHeader catalog={catalog} onCreateManually={onCreateManually} />
-      <DialogContent>
-        <Stack spacing={1.5}>
+      <DialogContent sx={{ display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+        <Stack spacing={1.5} sx={{ flexGrow: 1, minHeight: 0 }}>
           <SearchBox inputRef={searchRef} query={query} onQuery={setQuery} />
 
           <AlertGroupsPanel
@@ -304,12 +373,13 @@ export default function SuggestAlertsDialog({
           )}
 
           <SpellResults
-            entries={filtered}
+            entries={entries}
             existingIds={existingIds}
-            onCreate={(s) => void create(s)}
-            query={query}
+            onCreate={createNow}
+            query={deferredQuery}
             loaded={catalog != null}
-            ctx={{ lines, resolved }}
+            stale={catchingUp}
+            ctx={ctx}
           />
         </Stack>
       </DialogContent>

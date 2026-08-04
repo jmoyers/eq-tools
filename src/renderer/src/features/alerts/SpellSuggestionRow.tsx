@@ -12,7 +12,7 @@
 //   * the rank you MOST RECENTLY CAST, when the log has shown one,
 //   * how often the buffs model has observed the line.
 
-import type { JSX } from 'react'
+import { memo, useMemo, type JSX } from 'react'
 import { Box, Chip, Stack, Tooltip, Typography } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import type { SpellCatalogEntry } from '@shared/types'
@@ -107,7 +107,7 @@ export function TemplateChip({
 }
 
 /** A single spell row: name, level, buff/debuff + illusion chips, template chips, usage badge. */
-export default function SpellRow({
+function SpellRow({
   entry,
   existingIds,
   onCreate,
@@ -121,9 +121,11 @@ export default function SpellRow({
   const isDebuff = entry.spellType === 'Detrimental'
   // The rank the one-click chips target: the MOST RECENTLY CAST rank of this line (the owner's
   // rule), falling back to the highest rank known when the line has never been observed.
-  const rank = preferredRank(ctx.lines.get(entry.key)?.ranks ?? [])
-  const level = levelFor(entry, ctx.resolved)
-  const suggestions = suggestionsFor(entry, rank)
+  const rank = useMemo(() => preferredRank(ctx.lines.get(entry.key)?.ranks ?? []), [ctx.lines, entry.key])
+  const level = useMemo(() => levelFor(entry, ctx.resolved), [entry, ctx.resolved])
+  // Building the AlertDefs is the row's heaviest work, and it depends only on the entry and the
+  // rank — so a re-render that changes neither (a parent re-render, a hover) does none of it.
+  const suggestions = useMemo(() => suggestionsFor(entry, rank), [entry, rank])
   return (
     <Box
       sx={{
@@ -177,3 +179,11 @@ export default function SpellRow({
     </Box>
   )
 }
+
+/**
+ * MEMOIZED (shallow compare on the four props). The wizard mounts up to MAX_ROWS of these, so a
+ * keystroke that leaves a row's entry in the result set must not re-render it. That only holds
+ * while the caller keeps `existingIds`, `onCreate` and `ctx` referentially stable — the dialog
+ * memoizes all three; a fresh object literal for any of them silently restores the old cost.
+ */
+export default memo(SpellRow)
